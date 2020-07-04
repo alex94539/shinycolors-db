@@ -1,0 +1,22 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+#mainPage_unitsList{
+  border: black solid 1px;
+  padding: 0 5px 0 0;
+  margin: 5px 0 0 0;
+}
+
+#mainPage_idolsList li {
+  color: black;
+  text-decoration: underline solid black;
+}
+
+#mainPage_idolsList li:hover{
+  color: aqua;
+  text-decoration: underline 2px;
+}
+

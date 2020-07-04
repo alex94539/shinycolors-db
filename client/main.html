@@ -1,0 +1,43 @@
+<head>
+  <title>shinycolors-db</title>
+</head>
+
+<body>
+  <h1>偶像大師 閃耀色彩繁體中文站</h1>
+  <div id="mainPage_funcList" style="padding: 0 0 0 10px;">
+    <button>首頁</button>
+    <button>P卡一覽</button>
+    <button>S卡一覽</button>
+  </div>
+  <div id="mainPage_unitsList" style="display: inline-block;">
+    <ul style="font-weight: bold; list-style: none; padding: 0 0 0 10px; margin: 10px 0 0 0;">
+      {{#each units}}
+        <li style="font-size: 13px; ">
+          <a style="text-decoration: underline solid black; color: black; background-color: {{color}};" href="/unit/{{use}}">
+            {{use}}
+          </a>
+        </li>
+        <ul style="padding: 0 0 0 20px; font-size: 13px;" id="mainPage_idolsList">
+          {{#each idols}}
+            <li>
+              <a href="/idol/{{name}}">{{name}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{/each}}
+    </ul>
+  </div>
+  <div id="mainPage_descArea" style="display: inline-block;">
+    {{> mainPage_descArea}}
+  </div>
+  
+</body>
+
+
+<template name="mainPage_descArea">
+  {{> Template.dynamic template = descArea}}
+</template>
+
+<template name="mumi">
+  mumi
+</template>
