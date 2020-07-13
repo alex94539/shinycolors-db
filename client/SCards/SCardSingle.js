@@ -10,6 +10,7 @@ Template.SCardSingle.onCreated(function() {
     Tracker.autorun(() => {
 		this.currentSCard = new ReactiveVar();
 		this.currentSCardDetail = new ReactiveVar();
+		this.currentSCardPic = new ReactiveVar();
 		FlowRouter.watchPathChange();
 		if (FlowRouter.getRouteName() !== 'SCardDetail') {
 			Blaze.remove(this.view);
@@ -20,9 +21,15 @@ Template.SCardSingle.onCreated(function() {
 
 		Meteor.call('getSCardSingleDetail', {cardName: this.currentSCard.get()}, (err, result) => {
 			if (!result.length) {
+				return;
 			}
 			this.currentSCardDetail.set(result[0]);
 			console.log(result);
+		});
+
+		Meteor.call('getThisCardImage', {cardName: this.currentSCard.get().replace(/【/, '').replace(/】/, ' ')}, (err, result) => {
+			console.log(result);
+			this.currentSCardPic.set(result[0]);
 		});
 	});
 });
@@ -35,6 +42,10 @@ Template.SCardSingle.helpers({
 	thisCardName: function () {
 		if (!Template.instance().currentSCardDetail.get()) return '';
 		return Template.instance().currentSCardDetail.get().cardName;
+	},
+	thisCardImage: function(){
+		if (!Template.instance().currentSCardDetail.get()) return '';
+		return Template.instance().currentSCardPic.get().picName;
 	},
 	thisCardSkill20: function () {
 		if (!Template.instance().currentSCardDetail.get()) return '';

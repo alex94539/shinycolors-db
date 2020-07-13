@@ -15,12 +15,11 @@ Meteor.methods({
 	getThisIdolCard({name}) {
 		return idolCards.find({name: name}).fetch();
 	},
-    getThisPCardImage({cardName}){
+    getThisCardImage({cardName}){
 		let reg = new RegExp(cardName);
-		console.log(cardName)
-        console.log(bigPic.find({picName: reg}, {sort: {picName: -1}}).fetch());
         return bigPic.find({picName: reg}, {$sort: {picName: 1}}).fetch();
-    },
+	},
+	
 	//PCardSingle
 	getPCardSingleDetail({cardName}) {
 		return idolCardsDetail.find({cardName: cardName, type: /P/}).fetch();

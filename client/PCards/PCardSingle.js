@@ -28,7 +28,7 @@ Template.PCardSingle.onCreated(function(){
             console.log(result);
         });
 
-        Meteor.call('getThisPCardImage', {cardName: this.currentPCard.get().replace(/【/, '').replace(/】/, ' ')}, (err, result) => {
+        Meteor.call('getThisCardImage', {cardName: this.currentPCard.get().replace(/【/, '').replace(/】/, ' ')}, (err, result) => {
 			console.log(result);
 			this.currentPCardPicArr.set(result);
 			this.currentPCardPicCount.set(1);
