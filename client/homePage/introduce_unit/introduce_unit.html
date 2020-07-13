@@ -1,0 +1,41 @@
+<template name="introduce_unit">
+  <table>
+    <tbody>
+      <tr>
+        <th colspan="{{thisUnitIdolsCount}}">{{thisUnit}}</th>
+      </tr>
+      <tr>
+        <th colspan="{{thisUnitIdolsCount}}">{{thisUnitJap}}</th>
+      </tr>
+      <tr>
+        {{#each thisUnitIdols}}
+        <td style="text-align: center;">
+          <a href="/idol/{{name}}">{{name}}</a>
+        </td>
+        {{/each}}
+      </tr>
+      <tr>
+        <th colspan="{{thisUnitIdolsCount}}">
+            {{thisIdol}}
+        </th>
+      </tr>
+      <tr>
+        <td colspan="{{thisUnitIdolsCount}}">
+          <div id="thisUnitIdolPic">
+            <img src="{{thisIdolPic}}" alt="" />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="{{thisUnitIdolsCount}}">
+          <iframe
+            src="{{thisUnitPV}}"
+            frameborder="0"
+            allowfullscreen
+            style="width: 100%; height: 100%;"
+          ></iframe>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>

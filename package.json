@@ -10,11 +10,12 @@
   "dependencies": {
     "@babel/runtime": "^7.7.6",
     "jquery": "^3.4.1",
+    "js-base64": "^2.6.3",
     "meteor-node-stubs": "^1.0.0"
   },
   "meteor": {
     "mainModule": {
-      "client": "client/main.js",
+      "client": "client/homePage/main.js",
       "server": "server/main.js"
     },
     "testModule": "tests/main.js"

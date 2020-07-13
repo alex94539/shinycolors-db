@@ -1,0 +1,103 @@
+body {
+  padding: 10px;
+  font-family: sans-serif ;
+  margin: 0;
+}
+
+#mainPage_unitsList{
+  outline: black solid 1px;
+  padding: 0 5px 0 0;
+  margin: 20px 0 0 0;
+}
+
+#mainPage_idolsList li {
+  color: black;
+  text-decoration: underline solid black;
+}
+
+#mainPage_idolsList li:hover{
+  color: aqua;
+  text-decoration: underline 2px;
+}
+
+#thisIdolPicFireEvent, #thisUnitIdolPic{
+  cursor: pointer;
+}
+
+#thisIdolCards{
+  font-family: "MS Gothic" ;
+}
+
+#thisIdolData{
+  font-family: Meiryo;
+}
+
+.skillDesc{
+  text-align: center;
+}
+
+.skillDesc::after{
+  height: 100%;
+}
+
+td, th{
+  text-align: center;
+  border: 1px solid;
+}
+
+.eventsTable, .skillPanel, .idolDetail, .memoryAppeal{
+  border-collapse: collapse;
+}
+
+.minHeight{
+  min-height: 60px;
+  align-items:center;
+  justify-content:center;
+}
+
+.classVo{
+  background-color: #FF7FDF;
+}
+
+.classDa{
+  background-color: #7FBFFF;
+}
+
+.classVi{
+  background-color: #FFBF27;
+}
+
+.classMe{
+  background-color: blueviolet;
+}
+
+.classSP{
+  background-color: #ff950b;
+}
+
+.classth{
+  background-color: cadetblue;
+}
+
+.classVoDa{
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, #FF7FDF 50%,#7FBFFF 50%, #7FBFFF);
+}
+
+.classVoVi{
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(left,#FFBF27 50%,#FF7FDF 50%, #FF7FDF);
+}
+
+.classDaVi{
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(left top,#FFBF27 50%,#7FBFFF 50%, #7FBFFF);
+}
+
+.sCardtd{
+  width: 60px;
+  text-align: center;
+}

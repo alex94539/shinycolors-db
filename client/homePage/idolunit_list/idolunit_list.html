@@ -1,0 +1,18 @@
+<template name="idolunit_list">
+	<ul style="font-weight: bold; list-style: none; padding: 0 0 0 10px; margin: 10px 0 0 0; z-index: 10;">
+		{{#each units}}
+		<li style="font-size: 15px; z-index: 10;">
+			<a style="text-decoration: underline solid black; color: black; background-color: {{color}};" href="/unit/{{use}}" class="gotoUnit">
+				{{use}}
+			</a>
+		</li>
+		<ul style="padding: 0 0 0 20px; font-size: 15px; z-index: 10;" id="mainPage_idolsList">
+			{{#each idols}}
+			<li style="z-index: 10;">
+				<a href="/idol/{{name}}" class="gotoIdol">{{name}}</a>
+			</li>
+			{{/each}}
+		</ul>
+		{{/each}}
+	</ul>
+</template>

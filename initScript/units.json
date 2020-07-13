@@ -1,0 +1,44 @@
+[
+  {
+    "unitPV": "https://www.youtube.com/watch?v=N4hI1plukXA",
+    "jap": "イルミネーションスターズ",
+    "use": "illumination STARS",
+    "eng": "illumination STARS",
+    "color": "#FFFF00"
+  },
+  {
+    "unitPV": "https://www.youtube.com/watch?v=EvUEsSzLq1s",
+    "jap": "アンティーカ",
+    "eng": "L'Antica",
+    "use": "L'Antica",
+    "color": "#DA70D6"
+  },
+  {
+    "unitPV": "https://www.youtube.com/watch?v=LxcsFNwQ8qE",
+    "jap": "放課後クライマックスガールズ",
+    "eng": "HokagoClimaxGirls",
+    "use": "放課後クライマックスガールズ",
+    "color": "#FFA500"
+  },
+  {
+    "unitPV": "https://www.youtube.com/watch?v=l6uy19R0K2g",
+    "jap": "アルストロメリア",
+    "eng": "ALSTROEMERIA",
+    "use": "ALSTROEMERIA",
+    "color": "#FFC0CB"
+  },
+  {
+    "unitPV": "https://www.youtube.com/watch?v=qEVxVHtN-SA",
+    "jap": "ストレイライト",
+    "eng": "Straylight",
+    "use": "Straylight",
+    "color": "#FF0000"
+  },
+  {
+    "unitPV": "https://www.youtube.com/watch?v=vNwGOPnFosE",
+    "jap": "ノクチル",
+    "eng": "noctchill",
+    "use": "noctchill",
+    "color": "#42f8ef"
+  }
+]

@@ -1,0 +1,163 @@
+<template name="SCardSingle">
+	<div>
+		<h2>{{thisCardName}}</h2>
+	</div>
+	<div>
+		<img src="{{thisCardImage}}" alt="" />
+	</div>
+	<div>
+		<h3>事件</h3>
+		<div>
+			<table class="eventsTable">
+				<tbody>
+					<tr>
+						<th>事件</th>
+						<th class="classVo sCardtd">Vo</th>
+						<th class="classDa sCardtd">Da</th>
+						<th class="classVi sCardtd">Vi</th>
+						<th class="classMe sCardtd">Me</th>
+						<th class="classSP sCardtd">SP</th>
+					</tr>
+					{{#each thisCardIdolEvents}}
+					<tr>
+						<th>{{eventName}}</th>
+						<th class="classVo sCardtd">{{eventIncreaseVo}}</th>
+						<th class="classDa sCardtd">{{eventIncreaseDa}}</th>
+						<th class="classVi sCardtd">{{eventIncreaseVi}}</th>
+						<th class="classMe sCardtd">{{eventIncreaseMe}}</th>
+						<th class="classSP sCardtd">{{eventIncreaseSp}}</th>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<h3>Live 技能</h3>
+		<div>
+			<table class="skillPanel">
+				<tbody>
+					<tr>
+						<th>技能名稱</th>
+						<th>技能效果</th>
+						<th>獲得等級</th>
+					</tr>
+					{{#each thisCardLiveSkill}}
+					<tr>
+						<td>{{liveSkillName}}</td>
+						<td>{{liveSkillEffect}}</td>
+						<td>{{liveSkillLv}}</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+
+		<h3>Idea Note</h3>
+		<div>
+			<table>
+				<tbody>
+					<tr>
+						<th>{{thisCardIdeaNote}}</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<h3>技能盤</h3>
+		<div>
+			<table class="skillPanel">
+				<thead>
+					<tr>
+						<th>技能點</th>
+						<th colspan="8">盤子</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th rowspan="2" style="width: 4%;" class="classSP">20SP</th>
+						<td rowspan="2" colspan="3" style="width: 30%;"></td>
+						{{#each thisCardSkill20}}
+						<td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">{{skillTitle}}</td>
+						{{/each}}
+						<td rowspan="2" colspan="3" style="width: 30%;"></td>
+					</tr>
+					<tr>
+						{{#each thisCardSkill20}}
+						<td colspan="2">
+							<div class="minHeight">
+								{{#each sliceSkillDesc skillDesc}}
+								<div class="skillDesc">{{this}}</div>
+								{{/each}}
+							</div>
+						</td>
+						{{/each}}
+					</tr>
+					<tr>
+						<th rowspan="2" style="width: 4%;" class="classSP">30SP</th>
+						<td rowspan="2" colspan="2" style="width: 20%;"></td>
+						{{#each thisCardSkill30}}
+						<td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">{{skillTitle}}</td>
+						{{/each}}
+						<td rowspan="2" colspan="2" style="width: 20%;"></td>
+					</tr>
+					<tr>
+						{{#each thisCardSkill30}}
+						<td colspan="2">
+							<div class="minHeight">
+								{{#each sliceSkillDesc skillDesc}}
+								<div class="skillDesc">{{this}}</div>
+								{{/each}}
+							</div>
+						</td>
+						{{/each}}
+					</tr>
+					{{#if has40SPSkill}}
+					<tr>
+						<th rowspan="2" style="width: 4%;" class="classSP">40SP</th>
+						<td rowspan="2" style="width: 10%;"></td>
+						{{#each thisCardSkill40}}
+						<td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">{{skillTitle}}</td>
+						{{/each}}
+						<td rowspan="2" style="width: 10%;"></td>
+					</tr>
+					<tr>
+						{{#each thisCardSkill40}}
+						<td colspan="2">
+							<div class="minHeight">
+								{{#each sliceSkillDesc skillDesc}}
+								<div class="skillDesc">{{this}}</div>
+								{{/each}}
+							</div>
+						</td>
+						{{/each}}
+					</tr>
+					{{/if}} {{#if has50SPSkill}}
+					<tr>
+						<th rowspan="2" style="width: 4%;" class="classSP">50SP</th>
+						{{#if SRColSpan}}
+						<td rowspan="2" colspan="2" style="width: 20%;"></td>
+                        {{/if}} 
+
+                        {{#each thisCardSkill50}}
+						<td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">{{skillTitle}}</td>
+                        {{/each}} 
+                        
+                        {{#if SRColSpan}}
+						<td rowspan="2" colspan="2" style="width: 20%;"></td>
+						{{/if}}
+					</tr>
+					<tr>
+						{{#each thisCardSkill50}}
+						<td colspan="2">
+							<div class="minHeight">
+                                {{#each sliceSkillDesc skillDesc}}
+							    <div class="skillDesc">{{this}}</div>
+							    {{/each}}
+                            </div>
+						</td>
+						{{/each}}
+					</tr>
+					{{/if}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</template>

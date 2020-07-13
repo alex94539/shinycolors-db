@@ -1,0 +1,140 @@
+[
+  {
+    "_id": { "_str": "5efd97e0d84a298e30d0d59d" },
+    "name": "櫻木真乃",
+    "unit": "illumination STARS",
+    "nick": "mano"
+  },
+  {
+    "_id": { "_str": "5efd97ead84a298e30d0d59e" },
+    "name": "風野灯織",
+    "unit": "illumination STARS",
+    "nick": "hiori"
+  },
+  {
+    "_id": { "_str": "5efd97f5d84a298e30d0d59f" },
+    "name": "八宮めぐる",
+    "unit": "illumination STARS",
+    "nick": "meguru"
+  },
+  {
+    "_id": { "_str": "5efd9872d84a298e30d0d5a0" },
+    "name": "月岡恋鐘",
+    "unit": "L'Antica",
+    "nick": "kogane"
+  },
+  {
+    "_id": { "_str": "5efd987cd84a298e30d0d5a1" },
+    "name": "田中摩美々",
+    "unit": "L'Antica",
+    "nick": "mamimi"
+  },
+  {
+    "_id": { "_str": "5efd9891d84a298e30d0d5a2" },
+    "name": "白瀬咲耶",
+    "unit": "L'Antica",
+    "nick": "sakuya"
+  },
+  {
+    "_id": { "_str": "5efd98a1d84a298e30d0d5a3" },
+    "name": "三峰結華",
+    "unit": "L'Antica",
+    "nick": "yuika"
+  },
+  {
+    "_id": { "_str": "5efd98a9d84a298e30d0d5a4" },
+    "name": "幽谷霧子",
+    "unit": "L'Antica",
+    "nick": "kiriko"
+  },
+  {
+    "_id": { "_str": "5efd98e9d84a298e30d0d5a5" },
+    "name": "小宮果穂",
+    "unit": "放課後クライマックスガールズ",
+    "nick": "kaho"
+  },
+  {
+    "_id": { "_str": "5efd98f0d84a298e30d0d5a6" },
+    "name": "園田智代子",
+    "unit": "放課後クライマックスガールズ",
+    "nick": "chiyoko"
+  },
+  {
+    "_id": { "_str": "5efd98f7d84a298e30d0d5a7" },
+    "name": "西城樹里",
+    "unit": "放課後クライマックスガールズ",
+    "nick": "juri"
+  },
+  {
+    "_id": { "_str": "5efd9900d84a298e30d0d5a8" },
+    "name": "杜野凛世",
+    "unit": "放課後クライマックスガールズ",
+    "nick": "rinze"
+  },
+  {
+    "_id": { "_str": "5efd9910d84a298e30d0d5a9" },
+    "name": "有栖川夏葉",
+    "unit": "放課後クライマックスガールズ",
+    "nick": "natsuha"
+  },
+  {
+    "_id": { "_str": "5efd9923d84a298e30d0d5aa" },
+    "name": "大崎甘奈",
+    "unit": "ALSTROEMERIA",
+    "nick": "amana"
+  },
+  {
+    "_id": { "_str": "5efd9933d84a298e30d0d5ab" },
+    "name": "大崎甜花",
+    "unit": "ALSTROEMERIA",
+    "nick": "tenka"
+  },
+  {
+    "_id": { "_str": "5efd9939d84a298e30d0d5ac" },
+    "name": "桑山千雪",
+    "unit": "ALSTROEMERIA",
+    "nick": "chiyuki"
+  },
+  {
+    "_id": { "_str": "5efd9952d84a298e30d0d5ad" },
+    "name": "芹沢あさひ",
+    "unit": "Straylight",
+    "nick": "asahi"
+  },
+  {
+    "_id": { "_str": "5efd995ad84a298e30d0d5ae" },
+    "name": "黛冬優子",
+    "unit": "Straylight",
+    "nick": "fuyuko"
+  },
+  {
+    "_id": { "_str": "5efd9963d84a298e30d0d5af" },
+    "name": "和泉愛依",
+    "unit": "Straylight",
+    "nick": "mei"
+  },
+  {
+    "_id": { "_str": "5efd9972d84a298e30d0d5b0" },
+    "name": "浅倉透",
+    "unit": "noctchill",
+    "nick": "toru"
+  },
+  {
+    "_id": { "_str": "5efd9994d84a298e30d0d5b1" },
+    "name": "樋口円香",
+    "unit": "noctchill",
+    "nick": "madoka"
+  },
+  {
+    "_id": { "_str": "5efd99a1d84a298e30d0d5b2" },
+    "name": "福丸小糸",
+    "unit": "noctchill",
+    "nick": "koito"
+  },
+  {
+    "_id": { "_str": "5efd99a9d84a298e30d0d5b3" },
+    "name": "市川雛菜",
+    "unit": "noctchill",
+    "nick": "hinana"
+  }
+]

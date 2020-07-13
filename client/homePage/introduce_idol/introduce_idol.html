@@ -1,0 +1,181 @@
+<template name="introduce_idol">
+	<h3>{{thisIdolName}}</h3>
+	<div style="display: inline-block; width: 500px; height: 750px;">
+		<div
+			id="thisIdolPic"
+			style="
+				width: 500px;
+				height: 750px;
+
+				vertical-align: top;
+				z-index: 5;
+				position: absolute;
+			"
+		>
+			<img src="/{{thisUnit}}/{{thisIdolPicType}}/{{thisIdolNick}}.png" alt="" height="" width="" style="z-index: 5; margin: -100px 0 0 -150px; position: relative;" />
+		</div>
+		<div id="thisIdolPicFireEvent" style="width: 500px; height: 750px; vertical-align: top; z-index: 5; position: absolute;"></div>
+	</div>
+	<div style="display: inline-block; vertical-align: top;">
+		<div id="thisIdolData">
+			<table>
+				<tbody class="idolDetail">
+					<tr>
+						<th colspan="4">基本資料</th>
+					</tr>
+					<tr>
+						<th>姓名</th>
+						<td colspan="3">{{thisIdolName}}</td>
+					</tr>
+					<tr>
+						<th>組合</th>
+						<td colspan="3">{{thisUnit}}</td>
+					</tr>
+					<tr>
+						<th>年齡</th>
+						<td>{{thisIdolAge}}</td>
+						<th>血型</th>
+						<td>{{thisIdolBloodType}}</td>
+					</tr>
+					<tr>
+						<th>生日</th>
+						<td>{{thisIdolBirth}}</td>
+						<th>星座</th>
+						<td>{{thisIdolStarSign}}</td>
+					</tr>
+					<tr>
+						<th>身高</th>
+						<td>{{thisIdolLength}}</td>
+						<th>體重</th>
+						<td>{{thisIdolWeight}}</td>
+					</tr>
+					<tr>
+						<th>三圍</th>
+						<td>{{thisIdolThreeSize}}</td>
+						<th>慣用手</th>
+						<td>{{thisIdolHand}}</td>
+					</tr>
+					<tr>
+						<th>出生地</th>
+						<td colspan="3">{{thisIdolBirthPlace}}</td>
+					</tr>
+					<tr>
+						<th>興趣</th>
+						<td colspan="3">{{thisIdolInterest}}</td>
+					</tr>
+					<tr>
+						<th>特長</th>
+						<td colspan="3">{{thisIdolSkill}}</td>
+					</tr>
+					<tr>
+						<th>聲優</th>
+						<td colspan="3">{{thisIdolCV}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="thisIdolCards">
+			<ul>
+				<li>
+					<div>Produce</div>
+					<ul>
+						{{#if thisIdolCards.P_SSR}}
+						<li>
+							<div>SSR</div>
+							<ul>
+								{{#each thisIdolCards.P_SSR}}
+								<li>
+									<a href="/PCardDetail/{{base64}}">{{cardName}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+						{{/if}} 
+						
+						{{#if thisIdolCards.P_SR}}
+						<li>
+							<div>SR</div>
+							<ul>
+								{{#each thisIdolCards.P_SR}}
+								<li>
+									<a href="/PCardDetail/{{base64}}">{{cardName}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+						{{/if}} 
+						
+						{{#if thisIdolCards.P_R}}
+						<li>
+							<div>R</div>
+							<ul>
+								{{#each thisIdolCards.P_R}}
+								<li>
+									<a href="/PCardDetail/{{base64}}">{{cardName}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+						{{/if}}
+					</ul>
+				</li>
+				<li>
+					<div>Support</div>
+					<ul>
+						{{#if thisIdolCards.S_SSR}}
+						<li>
+							<div>SSR</div>
+							<ul>
+								{{#each thisIdolCards.S_SSR}}
+								<li>
+									<a href="/SCardDetail/{{base64}}">{{cardName}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+						{{/if}} 
+						
+						{{#if thisIdolCards.S_SR}}
+						<li>
+							<div>SR</div>
+							<ul>
+								{{#each thisIdolCards.S_SR}}
+								<li>
+									<a href="/SCardDetail/{{base64}}">{{cardName}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+						{{/if}} 
+						
+						{{#if thisIdolCards.S_R}}
+						<li>
+							<div>R</div>
+							<ul>
+								{{#each thisIdolCards.S_R}}
+								<li>
+									<a href="/SCardDetail/{{base64}}">{{cardName}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+						{{/if}} 
+						
+						{{#if thisIdolCards.S_N}}
+						<li>
+							<div>N</div>
+							<ul>
+								{{#each thisIdolCards.S_N}}
+								<li>
+									<a href="/SCardDetail/{{base64}}">{{cardName}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+						{{/if}}
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</template>
