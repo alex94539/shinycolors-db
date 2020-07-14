@@ -17,11 +17,14 @@ Meteor.methods({
 	},
     getThisCardImage({cardName}){
 		let reg = new RegExp(cardName);
-        return bigPic.find({picName: reg}, {$sort: {picName: 1}}).fetch();
+		//console.log(cardName);
+        return bigPic.find({cardName: reg}, {$sort: {cardName: 1}}).fetch();
 	},
 	
 	//PCardSingle
 	getPCardSingleDetail({cardName}) {
+		console.log(cardName);
+		console.log(idolCardsDetail.find({cardName: cardName, type: /P/}).fetch());
 		return idolCardsDetail.find({cardName: cardName, type: /P/}).fetch();
 	},
 

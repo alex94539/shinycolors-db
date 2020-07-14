@@ -28,7 +28,7 @@ body {
   font-family: "MS Gothic" ;
 }
 
-#thisIdolData{
+#thisIdolData, .thisIdolCardName{
   font-family: Meiryo;
 }
 
@@ -68,7 +68,7 @@ td, th{
 }
 
 .classMe{
-  background-color: blueviolet;
+  background-color: rgb(180, 100, 255);
 }
 
 .classSP{
@@ -100,4 +100,8 @@ td, th{
 .sCardtd{
   width: 60px;
   text-align: center;
+}
+
+#thisPCardImage{
+  cursor: pointer;
 }

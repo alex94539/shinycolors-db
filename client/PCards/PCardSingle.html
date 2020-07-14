@@ -1,9 +1,9 @@
 <template name="PCardSingle">
 	<div>
-		<h2>{{thisCardName}}</h2>
+		<h2 class="thisIdolCardName">{{thisCardName}}</h2>
 	</div>
 	<div>
-		<img src="/bigPic/{{thisCardImage}}" alt="" height="320" width="568"/>
+		<img src="/bigPic/{{thisCardImage}}" alt="" height="320" width="568" id="thisPCardImage"/>
 	</div>
 	<div>
 		<h3>事件</h3>
@@ -141,10 +141,11 @@
 					<tr>
 						{{#each thisCardSkill30}}
 						<td colspan="2">
-							{{#each sliceSkillDesc skillDesc}}
-							<div class="skillDesc">{{this}}</div>
-
-							{{/each}}
+							<div class="minHeight">
+                                {{#each sliceSkillDesc skillDesc}}
+							    <div class="skillDesc">{{this}}</div>
+							    {{/each}}
+                            </div>
 						</td>
 						{{/each}}
                     </tr>

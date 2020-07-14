@@ -17,7 +17,8 @@ Template.PCardSingle.onCreated(function(){
             Blaze.remove(this.view);
             return;
         }
-        const card = Base64.decode(FlowRouter.current().params.cardName);
+		const card = Base64.decode(FlowRouter.current().params.cardName);
+		console.log(card);
         this.currentPCard.set(card);
 
         Meteor.call('getPCardSingleDetail',{cardName: this.currentPCard.get()},  (err, result) => {
@@ -39,6 +40,7 @@ Template.PCardSingle.onCreated(function(){
 Template.PCardSingle.helpers({
 	sliceSkillDesc: function () {
 		if (!Template.instance().currentPCardDetail.get()) return [];
+		console.log(this);
 		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)/)) {
             if(this.skillDesc.match(/\[.*?\]/g).length < 3){
                 return ['', this.skillDesc.match(/\[.*?\]/g)[0], ''];
@@ -64,7 +66,7 @@ Template.PCardSingle.helpers({
     },
     thisCardImage: function(){
 		if (!Template.instance().currentPCardDetail.get()) return '';
-        else return Template.instance().currentPCardPicArr.get()[Template.instance().currentPCardPicCount.get()].picName;
+        else return Template.instance().currentPCardPicArr.get()[Template.instance().currentPCardPicCount.get()].uuid + '.png';
     },
 	thisCardSkill20: function () {
 		if (!Template.instance().currentPCardDetail.get()) return '';
@@ -145,7 +147,7 @@ Template.PCardSingle.helpers({
 		else return Template.instance().currentPCardDetail.get().memoryAppeal;
     },
     thisOmoideLinkSpan: function(){
-        console.log(this);
+        //console.log(this);
         if (this.appealName.match(/(.*[^\+]\+{2}$)/)) return 3;
 		if (this.appealName.match(/.*[^+]$/)) return 2;
     },

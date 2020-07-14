@@ -24,11 +24,11 @@ Template.SCardSingle.onCreated(function() {
 				return;
 			}
 			this.currentSCardDetail.set(result[0]);
-			console.log(result);
+			//console.log(result);
 		});
 
 		Meteor.call('getThisCardImage', {cardName: this.currentSCard.get().replace(/【/, '').replace(/】/, ' ')}, (err, result) => {
-			console.log(result);
+			//console.log(result);
 			this.currentSCardPic.set(result[0]);
 		});
 	});
@@ -45,7 +45,7 @@ Template.SCardSingle.helpers({
 	},
 	thisCardImage: function(){
 		if (!Template.instance().currentSCardDetail.get()) return '';
-		return Template.instance().currentSCardPic.get().picName;
+		return Template.instance().currentSCardPic.get().uuid + '.png';
 	},
 	thisCardSkill20: function () {
 		if (!Template.instance().currentSCardDetail.get()) return '';
