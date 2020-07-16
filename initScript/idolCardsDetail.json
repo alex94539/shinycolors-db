@@ -2016,76 +2016,74 @@
 		"idol": "八宮めぐる",
 		"cardName": "【夏に恋するピチカート！】八宮めぐる",
 		"cardLink": "https://wikiwiki.jp/shinycolors/%E3%80%90%E5%A4%8F%E3%81%AB%E6%81%8B%E3%81%99%E3%82%8B%E3%83%94%E3%83%81%E3%82%AB%E3%83%BC%E3%83%88%EF%BC%81%E3%80%91%E5%85%AB%E5%AE%AE%E3%82%81%E3%81%90%E3%82%8B",
-		"events": {
-			"trueEnd": {"eventName": "なんでもない日の星空"},
-			"events": [
-				{
-					"eventName": "カラフルサマー",
-					"beginning": "めぐる「新人アイドル特集？」",
-					"beforeSelection": "めぐる「どうしたらいいかな、プロデューサー……！」",
-					"option1": {"optionDesc": "組み合わせてみよう", "optionIncreaseVo": "", "optionIncreaseDa": "", "optionIncreaseVi": "+20"},
-					"option2": {"optionDesc": "明るいのが似合うんじゃないか", "optionIncreaseVo": "+20", "optionIncreaseDa": "", "optionIncreaseVi": ""},
-					"option3": {"optionDesc": "運にまかせてみよう", "optionIncreaseVo": "", "optionIncreaseDa": "+20", "optionIncreaseVi": ""},
-					"addMental": "+5",
-					"addSkillP": "+10",
-					"eventType": "3options"
-				},
-				{
-					"eventName": "太陽のしずく",
-					"beginning": "めぐる「ありがとうございましたー！」",
-					"option1": {"optionDesc": "なし", "optionIncreaseVo": "", "optionIncreaseDa": "+10", "optionIncreaseVi": "+10"},
-					"eventType": "0options"
-				},
-				{
-					"eventName": "それはまだ純白な",
-					"beginning": "P「他のみんなはまだみたいだな……めぐるはいつもこんなに早く来てるのか？」",
-					"beforeSelection": "めぐる「プロデューサーは分かる？恋ってどんな感じなのかな？」",
-					"option1": {"optionDesc": "キュンとする感じかな", "optionIncreaseVo": "", "optionIncreaseDa": "+20", "optionIncreaseVi": ""},
-					"option2": {"optionDesc": "ドキドキする感じかな", "optionIncreaseVo": "+20", "optionIncreaseDa": "", "optionIncreaseVi": ""},
-					"option3": {"optionDesc": "本を読んでみたらいい", "optionIncreaseVo": "", "optionIncreaseDa": "", "optionIncreaseVi": "+20"},
-					"addMental": "+10",
-					"addSkillP": "+10",
-					"eventType": "3options"
-				},
-				{
-					"eventName": "淹れたてコーヒー",
-					"beginning": "P（よし、これで必要な連絡は終わったかな！）",
-					"beforeSelection": "P（……どうしようか……）",
-					"option1": {"optionDesc": "楽しいから大丈夫だ", "optionIncreaseVo": "+20", "optionIncreaseDa": "", "optionIncreaseVi": ""},
-					"option2": {"optionDesc": "めぐるのせいじゃない", "optionIncreaseVo": "", "optionIncreaseDa": "", "optionIncreaseVi": "+20"},
-					"option3": {"optionDesc": "実は休んでるんだ", "optionIncreaseVo": "", "optionIncreaseDa": "+20", "optionIncreaseVi": ""},
-					"addMental": "+10",
-					"addSkillP": "+10",
-					"eventType": "3options"
-				}
-			],
-			"panel": {
-				"20": [{"skillTitle": "Vocal7%UP", "skillDesc": "[条件:4ターン以前][確率:20%][最大:1回]"}],
-				"30": [
-					{"skillTitle": "Visual7%UP", "skillDesc": "[条件:スター10以上][確率:30%][最大:1回]"},
-					{"skillTitle": "夏に恋するピチカート！", "skillDesc": "Vo&Da&Vi1.5倍アピール/Vo&Da&Vi10%UP[4ターン](Link)思い出ゲージ10%UP"}
-				],
-				"40": [
-					{"skillTitle": "メンタルダメージ50%CUT(☆2)", "skillDesc": "[条件:4ターン以前][確率:40%][最大:1回]"},
-					{"skillTitle": "Dance7%UP", "skillDesc": "[条件:3位][確率:40%][最大:1回]"},
-					{"skillTitle": "Vo&Da&Vi21%UP(☆1)", "skillDesc": "[条件:メンタル35%以下][確率:40%][最大:1回]"}
-				],
-				"50": [
-					{"skillTitle": "夏に恋するピチカート！+(☆4)", "skillDesc": "Vo&Da&Vi2倍アピール/Vo&Da&Vi15%UP[4ターン](Link)思い出ゲージ10%UP"},
-					{"skillTitle": "Vocal7%UP(E4)", "skillDesc": "[条件:観客3以上][確率:50%][最大:2回]"},
-					{"skillTitle": "メンタル上限UP", "skillDesc": "メンタル上限+100"},
-					{"skillTitle": "Vocal上限UP(☆3)", "skillDesc": "Vocal上限+200"}
-				]
+		"trueEnd": {"eventName": "なんでもない日の星空"},
+		"events": [
+			{
+				"eventName": "カラフルサマー",
+				"beginning": "めぐる「新人アイドル特集？」",
+				"beforeSelection": "めぐる「どうしたらいいかな、プロデューサー……！」",
+				"option1": {"optionDesc": "組み合わせてみよう", "optionIncreaseVo": "", "optionIncreaseDa": "", "optionIncreaseVi": "+20"},
+				"option2": {"optionDesc": "明るいのが似合うんじゃないか", "optionIncreaseVo": "+20", "optionIncreaseDa": "", "optionIncreaseVi": ""},
+				"option3": {"optionDesc": "運にまかせてみよう", "optionIncreaseVo": "", "optionIncreaseDa": "+20", "optionIncreaseVi": ""},
+				"addMental": "+5",
+				"addSkillP": "+10",
+				"eventType": "3options"
 			},
-			"memoryAppeal": [
-				{"appealName": "プリズムシャワー", "appealEffect": "思い出アピール[Lv1]"},
-				{"appealName": "プリズムシャワー+", "appealEffect": "思い出アピール[Lv2]"},
-				{"appealName": "プリズムシャワー++", "appealEffect": "思い出アピール[Lv3]/メンタル6％回復"},
-				{"appealName": "プリズムシャワー+++", "appealEffect": "思い出アピール[Lv4]/メンタル12％回復"},
-				{"appealName": "[360度]プリズムシャワー", "appealEffect": "思い出アピール[Lv5]/メンタル25％回復"}
+			{
+				"eventName": "太陽のしずく",
+				"beginning": "めぐる「ありがとうございましたー！」",
+				"option1": {"optionDesc": "なし", "optionIncreaseVo": "", "optionIncreaseDa": "+10", "optionIncreaseVi": "+10"},
+				"eventType": "0options"
+			},
+			{
+				"eventName": "それはまだ純白な",
+				"beginning": "P「他のみんなはまだみたいだな……めぐるはいつもこんなに早く来てるのか？」",
+				"beforeSelection": "めぐる「プロデューサーは分かる？恋ってどんな感じなのかな？」",
+				"option1": {"optionDesc": "キュンとする感じかな", "optionIncreaseVo": "", "optionIncreaseDa": "+20", "optionIncreaseVi": ""},
+				"option2": {"optionDesc": "ドキドキする感じかな", "optionIncreaseVo": "+20", "optionIncreaseDa": "", "optionIncreaseVi": ""},
+				"option3": {"optionDesc": "本を読んでみたらいい", "optionIncreaseVo": "", "optionIncreaseDa": "", "optionIncreaseVi": "+20"},
+				"addMental": "+10",
+				"addSkillP": "+10",
+				"eventType": "3options"
+			},
+			{
+				"eventName": "淹れたてコーヒー",
+				"beginning": "P（よし、これで必要な連絡は終わったかな！）",
+				"beforeSelection": "P（……どうしようか……）",
+				"option1": {"optionDesc": "楽しいから大丈夫だ", "optionIncreaseVo": "+20", "optionIncreaseDa": "", "optionIncreaseVi": ""},
+				"option2": {"optionDesc": "めぐるのせいじゃない", "optionIncreaseVo": "", "optionIncreaseDa": "", "optionIncreaseVi": "+20"},
+				"option3": {"optionDesc": "実は休んでるんだ", "optionIncreaseVo": "", "optionIncreaseDa": "+20", "optionIncreaseVi": ""},
+				"addMental": "+10",
+				"addSkillP": "+10",
+				"eventType": "3options"
+			}
+		],
+		"panel": {
+			"20": [{"skillTitle": "Vocal7%UP", "skillDesc": "[条件:4ターン以前][確率:20%][最大:1回]"}],
+			"30": [
+				{"skillTitle": "Visual7%UP", "skillDesc": "[条件:スター10以上][確率:30%][最大:1回]"},
+				{"skillTitle": "夏に恋するピチカート！", "skillDesc": "Vo&Da&Vi1.5倍アピール/Vo&Da&Vi10%UP[4ターン](Link)思い出ゲージ10%UP"}
 			],
-			"memoryLink": ["Vocal&Dance&Visual15％UP[5ターン]", "Vocal&Dance&Visual30％UP[5ターン]"]
+			"40": [
+				{"skillTitle": "メンタルダメージ50%CUT(☆2)", "skillDesc": "[条件:4ターン以前][確率:40%][最大:1回]"},
+				{"skillTitle": "Dance7%UP", "skillDesc": "[条件:3位][確率:40%][最大:1回]"},
+				{"skillTitle": "Vo&Da&Vi21%UP(☆1)", "skillDesc": "[条件:メンタル35%以下][確率:40%][最大:1回]"}
+			],
+			"50": [
+				{"skillTitle": "夏に恋するピチカート！+(☆4)", "skillDesc": "Vo&Da&Vi2倍アピール/Vo&Da&Vi15%UP[4ターン](Link)思い出ゲージ10%UP"},
+				{"skillTitle": "Vocal7%UP(E4)", "skillDesc": "[条件:観客3以上][確率:50%][最大:2回]"},
+				{"skillTitle": "メンタル上限UP", "skillDesc": "メンタル上限+100"},
+				{"skillTitle": "Vocal上限UP(☆3)", "skillDesc": "Vocal上限+200"}
+			]
 		},
+		"memoryAppeal": [
+			{"appealName": "プリズムシャワー", "appealEffect": "思い出アピール[Lv1]"},
+			{"appealName": "プリズムシャワー+", "appealEffect": "思い出アピール[Lv2]"},
+			{"appealName": "プリズムシャワー++", "appealEffect": "思い出アピール[Lv3]/メンタル6％回復"},
+			{"appealName": "プリズムシャワー+++", "appealEffect": "思い出アピール[Lv4]/メンタル12％回復"},
+			{"appealName": "[360度]プリズムシャワー", "appealEffect": "思い出アピール[Lv5]/メンタル25％回復"}
+		],
+		"memoryLink": ["Vocal&Dance&Visual15％UP[5ターン]", "Vocal&Dance&Visual30％UP[5ターン]"],
 		"type": "P_SSR"
 	},
 	{
@@ -3576,8 +3574,8 @@
 			{"appealName": "心に映して+++", "appealEffect": "思い出アピール[Lv4]/Vocal25%UP[4ターン]"},
 			{"appealName": "[瞳に留めて]心に映して", "appealEffect": "思い出アピール[Lv5]/Vocal50%UP[4ターン]"}
 		],
-        "memoryLink": ["Vocal1.5倍アピール", "Vocal3倍アピール"],
-        "type": "P_SSR"
+		"memoryLink": ["Vocal1.5倍アピール", "Vocal3倍アピール"],
+		"type": "P_SSR"
 	},
 	{
 		"idol": "三峰結華",

@@ -1,5 +1,8 @@
 import { Meteor } from 'meteor/meteor';
+import { check } from 'meteor/check';
 import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic} from '../db/db.js';
+
+
 
 Meteor.methods({
 	getIdols() {
@@ -10,9 +13,12 @@ Meteor.methods({
 		return units.find({}).fetch();
 	},
 	getIdolDetail({name}) {
+		//if (name.match('\$')) return [];
+		check(name, String);
 		return idolDetail.find({name: name}).fetch();
 	},
 	getThisIdolCard({name}) {
+		//if (name.match('\$')) return []; // name.match('\$') !check(name, String)
 		return idolCards.find({name: name}).fetch();
 	},
     getThisCardImage({cardName}){
@@ -23,8 +29,6 @@ Meteor.methods({
 	
 	//PCardSingle
 	getPCardSingleDetail({cardName}) {
-		console.log(cardName);
-		console.log(idolCardsDetail.find({cardName: cardName, type: /P/}).fetch());
 		return idolCardsDetail.find({cardName: cardName, type: /P/}).fetch();
 	},
 

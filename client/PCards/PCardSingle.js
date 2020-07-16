@@ -30,7 +30,7 @@ Template.PCardSingle.onCreated(function(){
         });
 
         Meteor.call('getThisCardImage', {cardName: this.currentPCard.get().replace(/【/, '').replace(/】/, ' ')}, (err, result) => {
-			console.log(result);
+			//console.log(result);
 			this.currentPCardPicArr.set(result);
 			this.currentPCardPicCount.set(1);
 		});
@@ -51,42 +51,35 @@ Template.PCardSingle.helpers({
 		} else if (this.skillTitle.match(/(メンタル上限UP)|(Vocal上限UP)|(Visual上限UP)|(Dance上限UP)/)) {
 			return [this.skillDesc];
 		} else {
-			let temp = this.skillDesc.match(/(.*)(\(Link\).*)/).slice(1);
-			return temp;
+			
+			let temp = this.skillDesc.match(/(.*)(\(Link\).*)/);
+			return [...(temp[1].split('/')), temp[temp.length - 1]];
 		}
 	},
 	thisCardIdolEvents: function () {
-		if (!Template.instance().currentPCardDetail.get()) return [];
-		return Template.instance().currentPCardDetail.get().events;
+		return Template.instance().currentPCardDetail.get()?.events ?? [];
 	},
 
 	thisCardName: function () {
-		if (!Template.instance().currentPCardDetail.get()) return '';
-		return Template.instance().currentPCardDetail.get().cardName;
+		return Template.instance().currentPCardDetail.get()?.cardName ?? '';
     },
     thisCardImage: function(){
-		if (!Template.instance().currentPCardDetail.get()) return '';
-        else return Template.instance().currentPCardPicArr.get()[Template.instance().currentPCardPicCount.get()].uuid + '.png';
+        return Template.instance().currentPCardPicArr.get()[Template.instance().currentPCardPicCount.get()]?.uuid ?? '';
     },
 	thisCardSkill20: function () {
-		if (!Template.instance().currentPCardDetail.get()) return '';
-		return Template.instance().currentPCardDetail.get().panel[20];
+		return Template.instance().currentPCardDetail.get()?.panel[20] ?? [];
 	},
 	thisCardSkill30: function () {
-		if (!Template.instance().currentPCardDetail.get()) return '';
-		return Template.instance().currentPCardDetail.get().panel[30];
+		return Template.instance().currentPCardDetail.get()?.panel[30] ?? [];
 	},
 	thisCardSkill40: function () {
-		if (!Template.instance().currentPCardDetail.get()) return '';
-		return Template.instance().currentPCardDetail.get().panel[40];
+		return Template.instance().currentPCardDetail.get()?.panel[40] ?? [];
 	},
 	thisCardSkill50: function () {
-		if (!Template.instance().currentPCardDetail.get()) return '';
-		return Template.instance().currentPCardDetail.get().panel[50];
+		return Template.instance().currentPCardDetail.get()?.panel[50] ?? [];
     },
     thisCardTrueEnd: function(){
-        if (!Template.instance().currentPCardDetail.get() || !Template.instance().currentPCardDetail.get().trueEnd) return false;
-        else return Template.instance().currentPCardDetail.get().trueEnd.eventName;
+        return Template.instance().currentPCardDetail.get()?.trueEnd.eventName ?? false;
     },
 
 	has40SPSkill: function () {
@@ -143,8 +136,7 @@ Template.PCardSingle.helpers({
 
 
     thisCardOmoide: function(){
-        if (!Template.instance().currentPCardDetail.get()) return '';
-		else return Template.instance().currentPCardDetail.get().memoryAppeal;
+		return Template.instance().currentPCardDetail.get().memoryAppeal ?? '';
     },
     thisOmoideLinkSpan: function(){
         //console.log(this);
@@ -164,9 +156,15 @@ Template.PCardSingle.events({
     'click img'(event, instance){
         event.preventDefault();
         let nextIndex = instance.currentPCardPicCount.get() === 1 ? 0 : 1
-        instance.currentPCardPicCount.set(nextIndex);
-        
-    }
+		instance.currentPCardPicCount.set(nextIndex);
+		instance.find('#thisCardPicLoading').style.display = 'block';
+		instance.find('#thisCardBigPic').style.background = 'rgba(0,0,0,0.5)';
+	},
+	'load img'(event, instance){
+		event.preventDefault();
+		instance.find('#thisCardPicLoading').style.display = 'none';
+		instance.find('#thisCardBigPic').style.background = 'transparent';
+	}
 }); 
 
 Template.PCardSingle.onDestroyed(function(){

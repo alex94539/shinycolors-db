@@ -1,13 +1,13 @@
 <template name="SCardSingle">
-	<div>
+	<div id="thisIdolCardName">
 		<h2 class="thisIdolCardName">{{thisCardName}}</h2>
 	</div>
-	<div>
+	<div id="thisCardBigPic">
 		<img src="/bigPic/{{thisCardImage}}" alt="" height="320" width="568" id="thisSCardImage"/>
 	</div>
-	<div>
+	<div id="thisCardDesc">
 		<h3>事件</h3>
-		<div>
+		<div id="thisCardEvents">
 			<table class="eventsTable">
 				<tbody>
 					<tr>
@@ -32,7 +32,7 @@
 			</table>
 		</div>
 		<h3>Live 技能</h3>
-		<div>
+		<div id="thisCardLiveSkill">
 			<table class="skillPanel">
 				<tbody>
 					<tr>
@@ -50,9 +50,29 @@
 				</tbody>
 			</table>
 		</div>
-
+		<h3>輔助技能</h3>
+		<div id="thisCardSupportSkill">
+			<table class="skillPanel">
+				<thead>
+					<tr>
+						<th>技能名稱</th>
+						<th>技能效果</th>
+						<th>技能最大等級</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each thisCardSupportSkill}}
+					<tr>
+						<td>{{skillName}}</td>
+						<td>{{skillEffect}}</td>
+						<td>{{thisSkillMaxLevel}}</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
 		<h3>Idea Note</h3>
-		<div>
+		<div id="thisCardIdeaNote">
 			<table>
 				<tbody>
 					<tr>
@@ -62,7 +82,7 @@
 			</table>
 		</div>
 		<h3>技能盤</h3>
-		<div>
+		<div id="thisCardSkillPanel">
 			<table class="skillPanel">
 				<thead>
 					<tr>

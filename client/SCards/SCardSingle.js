@@ -24,7 +24,7 @@ Template.SCardSingle.onCreated(function() {
 				return;
 			}
 			this.currentSCardDetail.set(result[0]);
-			//console.log(result);
+			console.log(result);
 		});
 
 		Meteor.call('getThisCardImage', {cardName: this.currentSCard.get().replace(/【/, '').replace(/】/, ' ')}, (err, result) => {
@@ -36,32 +36,25 @@ Template.SCardSingle.onCreated(function() {
 
 Template.SCardSingle.helpers({
 	thisCardIdolEvents: function () {
-		if (!Template.instance().currentSCardDetail.get()) return [];
-		else return Template.instance().currentSCardDetail.get().events;
+		return Template.instance().currentSCardDetail.get()?.events ?? [];
 	},
 	thisCardName: function () {
-		if (!Template.instance().currentSCardDetail.get()) return '';
-		return Template.instance().currentSCardDetail.get().cardName;
+		return Template.instance().currentSCardDetail.get()?.cardName ?? '';
 	},
 	thisCardImage: function(){
-		if (!Template.instance().currentSCardDetail.get()) return '';
-		return Template.instance().currentSCardPic.get().uuid + '.png';
+		return Template.instance().currentSCardPic.get()?.uuid ?? ''
 	},
 	thisCardSkill20: function () {
-		if (!Template.instance().currentSCardDetail.get()) return '';
-		return Template.instance().currentSCardDetail.get().panel[20];
+		return Template.instance().currentSCardDetail.get()?.panel[20] ?? '';
 	},
 	thisCardSkill30: function () {
-		if (!Template.instance().currentSCardDetail.get()) return '';
-		return Template.instance().currentSCardDetail.get().panel[30];
+		return Template.instance().currentSCardDetail.get()?.panel[30] ?? '';
 	},
 	thisCardSkill40: function () {
-		if (!Template.instance().currentSCardDetail.get()) return '';
-		return Template.instance().currentSCardDetail.get().panel[40];
+		return Template.instance().currentSCardDetail.get()?.panel[40] ?? '';
 	},
 	thisCardSkill50: function () {
-		if (!Template.instance().currentSCardDetail.get()) return '';
-		return Template.instance().currentSCardDetail.get().panel[50];
+		return Template.instance().currentSCardDetail.get()?.panel[50] ?? '';
 	},
 	has40SPSkill: function () {
 		if (!Template.instance().currentSCardDetail.get() || Template.instance().currentSCardDetail.get().type === 'S_N') {
@@ -85,6 +78,7 @@ Template.SCardSingle.helpers({
 		if (this.skillTitle.match(/Vocal/)) return 'classVo';
 		if (this.skillTitle.match(/Dance/)) return 'classDa';
 		if (this.skillTitle.match(/Visual/)) return 'classVi';
+		if (this.skillTitle.match(/メンタル\d+%回復/)) return 'classVi';
 		if (this.skillTitle.match(/メンタル/)) return 'classMe';
 	},
 	SRColSpan: function () {
@@ -103,15 +97,18 @@ Template.SCardSingle.helpers({
         if (!Template.instance().currentSCardDetail.get()) return [];
         let tempStr = this.skillDesc;
         tempStr = strReplacement(tempStr);
-        console.log(tempStr);
-		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(Vo.*\d+%UP)|(Da.*\d+%UP)|(Vi.*\d+%UP)/)) {
+        //console.log(tempStr);
+		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(Vo.*\d+%UP)|(Da.*\d+%UP)|(Vi.*\d+%UP)|(注目度\d+%DOWN)/)) {
 			return tempStr.match(/\[.*?\]/g);
-		} else if (this.skillTitle.match(/(メンタル上限UP)|(Vocal上限UP)|(Visual上限UP)|(Dance上限UP)|(アピール)/)) {
+		} 
+		else if (this.skillTitle.match(/(メンタル上限UP)|(Vocal上限UP)|(Visual上限UP)|(Dance上限UP)|(アピール)/)) {
 			return [tempStr];
-		} else if (tempStr.match(/(アピール)/)) {
-			return [tempStr];
-		} else {
-			let temp = tempStr.match(/(.*)(\(Link\).*)/).slice(1);
+		} 
+		//else if (tempStr.match(/(アピール)/)) {
+		//	return [tempStr];
+		//} 
+		else {
+			let temp = tempStr.split('/');
 			return temp;
 		}
 	},
@@ -119,12 +116,16 @@ Template.SCardSingle.helpers({
 	//Live Skill
 
 	thisCardLiveSkill: function () {
-		if (!Template.instance().currentSCardDetail.get()) return [];
-		else return Template.instance().currentSCardDetail.get().skill.liveSkill;
+		return Template.instance().currentSCardDetail.get()?.skill?.liveSkill ?? [];
+	},
+	thisCardSupportSkill: function(){
+		return Template.instance().currentSCardDetail.get()?.skill?.supportSkill ?? [];
+	},
+	thisSkillMaxLevel: function(){
+		return findMaxSillLevel(this.skillLevel) ?? '';
 	},
 	thisCardIdeaNote: function(){
-		if (!Template.instance().currentSCardDetail.get()) return [];
-        else return Template.instance().currentSCardDetail.get().idea.ideaText;
+        return Template.instance().currentSCardDetail.get()?.idea?.ideaText ?? [];
     }
 });
 
@@ -136,3 +137,13 @@ function strReplacement(strToReplace){
     
     return strToReplace;
 }
+
+function findMaxSillLevel(skillLvArr){
+	if(!skillLvArr.length) return null;
+	let maxLV = 0;
+	skillLvArr.forEach(element => {
+		if (Number(element) > maxLV) maxLV = Number(element);
+	});
+	return maxLV;
+}
+

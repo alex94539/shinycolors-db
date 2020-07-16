@@ -1,0 +1,10 @@
+user-agent: Googlebot
+allow: /*
+Crawl-delay: 1
+
+user-agent: Baiduspider
+disallow: /*
+
+user-agent: Yahoo! Slurp
+allow: /*
+Crawl-delay: 10

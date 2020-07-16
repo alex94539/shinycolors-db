@@ -1,14 +1,15 @@
 <template name="PCardSingle">
-	<div>
+	<div id="thisIdolCardName">
 		<h2 class="thisIdolCardName">{{thisCardName}}</h2>
 	</div>
-	<div>
-		<img src="/bigPic/{{thisCardImage}}" alt="" height="320" width="568" id="thisPCardImage"/>
+	<div id="thisCardBigPic" style="height: 320px; width: 568px;">
+        <img src="/bigPic/{{thisCardImage}}" alt="" height="320" width="568" id="thisPCardImage" style="position: absolute; z-index: 20;"/>
+        <div id="thisCardPicLoading" style="top: 50%; left: 50%; height: 50px; width: 50px; display: block; position: absolute; z-index: 25;"></div>
 	</div>
-	<div>
+	<div id="thisCardDesc">
 		<h3>事件</h3>
 		{{#each thisCardIdolEvents}}
-		<div>
+		<div id="thisCardEvents">
             <h4>{{eventName}}</h4>
             {{#if (event3Option eventType)}}
             <table class="eventsTable">
@@ -87,7 +88,7 @@
         
         {{#if thisCardTrueEnd}}
         <h3>True End</h3>
-        <div>
+        <div id="thisCardTrueEnd">
             <table>
                 <tbody>
                     <tr>
@@ -102,7 +103,7 @@
         {{/if}}
 
 		<h3>技能盤</h3>
-		<div>
+		<div id="thisCardSkillPanel">
 			<table class="skillPanel">
 				<thead>
 					<tr>
@@ -203,7 +204,7 @@
 			</table>
         </div>
         <h3>回憶綻放</h3>
-        <div>
+        <div id="thisCardOmoide">
             <table class="memoryAppeal">
                 <thead>
                     <tr>

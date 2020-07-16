@@ -23,14 +23,14 @@ Template.introduce_idol.onCreated(function() {
         this.thisIdol.set(FlowRouter.current().params.idolName);
         this.thisIdolPicType.set(0);
 
-        Meteor.call('getIdolDetail', {name: this.thisIdol.get()}, (err, result) => {
-            //console.log(result[0]);
-            this.thisIdolDetail.set(result[0]);
-        });
-        Meteor.call("getThisIdolCard", {name: this.thisIdol.get()}, (err, result) => {
-            this.thisIdolCards.set(result[0]);
-            //console.log(result);
-        });
+        Meteor.call('getIdolDetail', {name: FlowRouter.current().params.idolName}, (err, result) => {
+			//console.log(result[0]);
+			this.thisIdolDetail.set(result[0]);
+		});
+        Meteor.call('getThisIdolCard', {name: FlowRouter.current().params.idolName}, (err, result) => {
+			this.thisIdolCards.set(result[0]);
+			//console.log(result);
+		});
     });
 });
 
