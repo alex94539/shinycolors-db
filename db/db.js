@@ -9,3 +9,6 @@ export const idolDetail = new Mongo.Collection("idolDetail");
 export const idolCardsDetail = new Mongo.Collection('idolCardsDetail');
 
 export const bigPic = new Mongo.Collection('bigPic');
+
+
+export const init = new Mongo.Collection('init');
