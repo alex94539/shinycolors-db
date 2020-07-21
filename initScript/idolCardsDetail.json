@@ -284,7 +284,7 @@
 				{"skillTitle": "Visual上限UP", "skillDesc": "Visual上限+50　"}
 			],
 			"40": [
-				{"skillTitle": "Visua90%UP/メンタルダメージ40%CUT(☆2)", "skillDesc": "[条件:メンタル95%以上][確率:20%][最大:3回]"},
+				{"skillTitle": "Visual90%UP/メンタルダメージ40%CUT(☆2)", "skillDesc": "[条件:メンタル95%以上][確率:20%][最大:3回]"},
 				{"skillTitle": "お散歩サンライト+(☆4)", "skillDesc": "Visual1.1～5.5倍アピール[メンタルが多いほど効果UP]/メンタル35%回復[超過分は思い出ゲージに変換](Link)Visual80%UP[4ターン]"},
 				{"skillTitle": "Visual30%UP/メンタルダメージ20%CUT(☆1)", "skillDesc": "[条件:メンタル95%以上][確率:20%][最大:3回]"}
 			],
@@ -302,7 +302,7 @@
 			{"appealName": "宜しくお願いします+++", "appealEffect": "思い出アピール[Lv4]/メンタル12%回復[超過分は思い出ゲージに変換]"},
 			{"appealName": "[これからも]宜しくお願いします", "appealEffect": "思い出アピール[Lv5]/メンタル25%回復[超過分は思い出ゲージに変換]"}
 		],
-		"memoryLink": ["全観客にVisual最大1.2倍アピール[メンタルが多いほど効果UP]", "全観客��Visual最大2.5倍アピール[メンタルが多いほど効果UP]"],
+		"memoryLink": ["全観客にVisual最大1.2倍アピール[メンタルが多いほど効果UP]", "全観客にVisual最大2.5倍アピール[メンタルが多いほど効果UP]"],
 		"type": "P_SSR"
 	},
 	{
@@ -1778,7 +1778,7 @@
 		"memoryAppeal": [
 			{"appealName": "真っ白になりましたね", "appealEffect": "思い出アピール[Lv1]"},
 			{"appealName": "真っ白になりましたね+", "appealEffect": "思い出アピール[Lv2]"},
-			{"appealName": "真っ白になりましたね++", "appealEffect": "思い出アピール[Lv3]/Vocal0.25倍ア���ール/Dance&Visual12%UP[2ターン]"},
+			{"appealName": "真っ白になりましたね++", "appealEffect": "思い出アピール[Lv3]/Vocal0.25倍アピールール/Dance&Visual12%UP[2ターン]"},
 			{"appealName": "真っ白になりましたね+++", "appealEffect": "思い出アピール[Lv4]/Vocal0.5倍アピール/Dance&Visual25%UP[2ターン]"},
 			{"appealName": "[雪化粧]真っ白になりましたね", "appealEffect": "思い出アピール[Lv5]/Vocal1倍アピール/Dance&Visual50%UP[2ターン]"}
 		],
@@ -3197,7 +3197,7 @@
 		"memoryAppeal": [
 			{"appealName": "進む先で待つ人へ", "appealEffect": "思い出アピール[Lv1]"},
 			{"appealName": "進む先で待つ人へ+", "appealEffect": "思い出アピール[Lv2]"},
-			{"appealName": "進む先で待��人へ++", "appealEffect": "思い出アピール[Lv3]/Visual最大0.6倍アピール[注目度が高いほど効果UP]"},
+			{"appealName": "進む先で待つ人へ++", "appealEffect": "思い出アピール[Lv3]/Visual最大0.6倍アピール[注目度が高いほど効果UP]"},
 			{"appealName": "進む先で待つ人へ+++", "appealEffect": "思い出アピール[Lv4]/Visual最大1.2倍アピール[注目度が高いほど効果UP]"},
 			{"appealName": "[誰か]進む先で待つ人へ", "appealEffect": "思い出アピール[Lv5]/Visual最大2.5倍アピール[注目度が高いほど効果UP]"}
 		],
@@ -3206,7 +3206,7 @@
 	},
 	{
 		"idol": "黛冬優子",
-		"cardName": "【オ・フ・レ・コ】黛冬優子",
+		"cardName": "【オ♡フ♡レ♡コ】黛冬優子",
 		"cardLink": "https://wikiwiki.jp/shinycolors/%E3%80%90%E3%82%AA%E3%83%BB%E3%83%95%E3%83%BB%E3%83%AC%E3%83%BB%E3%82%B3%E3%80%91%E9%BB%9B%E5%86%AC%E5%84%AA%E5%AD%90",
 		"trueEnd": {"eventName": "今、ここにある光の色は"},
 		"events": [
@@ -5834,7 +5834,7 @@
 				{"skillTitle": "Vocal15%UP(☆1)", "skillDesc": "[条件:メンタル75%以上][確率:40%][最大:1回]"}
 			],
 			"50": [
-				{"skillTitle": "微熱風鈴+(☆4)", "skillDesc": "Vocal4��アピール/注目度80%UP[4ターン](Link)Vocal3倍アピール"},
+				{"skillTitle": "微熱風鈴+(☆4)", "skillDesc": "Vocal4倍アピール/注目度80%UP[4ターン](Link)Vocal3倍アピール"},
 				{"skillTitle": "Vocal上限UP(☆3)", "skillDesc": "Vocal上限+100"}
 			]
 		},
@@ -8879,7 +8879,7 @@
 				{"liveSkillName": "ビジュアルアピールⅣ+++++", "liveSkillEffect": "Visual3倍アピール", "liveSkillLv": "80"}
 			],
 			"supportSkill": [
-				{"skillName": "アイドルの絆", "skillEffect": "プロデュー���開���時に絆+<Lv*5>", "skillLevel": ["", "2", "", "3", "", "4", "", "", "6", "", "", "", "10"]},
+				{"skillName": "アイドルの絆", "skillEffect": "プロデュース開始時に絆+<Lv*5>", "skillLevel": ["", "2", "", "3", "", "4", "", "", "6", "", "", "", "10"]},
 				{"skillName": "ビジュアルマスタリーVi", "skillEffect": "一緒にビジュアルレッスンをするとVisual+<Lv*1>", "skillLevel": ["2", "", "", "", "", "", "", "6", "", "", "12", "", ""]},
 				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率でテンションが下がらない", "skillLevel": ["2", "", "", "", "", "", "", "", "", "", "", "", ""]},
 				{"skillName": "おやすみブースト", "skillEffect": "「休む」を選択時に<Lv*3>%の確率で体力回復量+15", "skillLevel": ["", "1", "2", "", "3", "", "", "", "", "", "", "", ""]},
@@ -9253,7 +9253,7 @@
 			"liveSkill": [{"liveSkillName": "ビジュアルアピールⅣ", "liveSkillEffect": "Visual2.5倍アピール", "liveSkillLv": "初期"}],
 			"supportSkill": [
 				{"skillName": "アイドルの絆", "skillEffect": "プロデュース開始時に絆+<Lv*5>", "skillLevel": ["", "2", "", "3", "", "4", "", "", "6", "", "", "", "10"]},
-				{"skillName": "ビジュアルマスタリーSP", "skillEffect": "一緒にビジュアルレッスンをす���とSP+<Lv*1>", "skillLevel": ["2", "", "", "", "", "", "6", "", "", "10", "", "16", ""]},
+				{"skillName": "ビジュアルマスタリーSP", "skillEffect": "一緒にビジュアルレッスンをするとVisual+<Lv*1>", "skillLevel": ["2", "", "", "", "", "", "6", "", "", "10", "", "16", ""]},
 				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率でテンションが下がらない", "skillLevel": ["2", "", "", "", "", "", "", "", "", "", "", "", ""]},
 				{"skillName": "おやすみブースト", "skillEffect": "「休む」を選択時に<Lv*3>%の確率で体力回復量+15", "skillLevel": ["", "1", "", "", "2", "", "", "", "", "", "", "", ""]},
 				{"skillName": "ビジュアルマスタリー体力", "skillEffect": "一緒にビジュアルレッスンをすると体力<Lv*3>回復", "skillLevel": ["", "", "1", "", "", "", "", "3", "", "", "6", "", ""]}
@@ -13513,7 +13513,7 @@
 			"liveSkill": [{"liveSkillName": "ダンスアピールIII", "liveSkillEffect": "Dance2倍アピール", "liveSkillLv": "初期"}],
 			"supportSkill": [
 				{"skillName": "アイドルの絆", "skillEffect": "プロデュース開始時に絆+<Lv*5>", "skillLevel": ["", "1", "", "", "2", "", "4", "", "", "", "7"]},
-				{"skillName": "テンション��ス��リーVo", "skillEffect": "テンション最高時に一緒に行動すると確率でVocal+<Lv*1>", "skillLevel": ["1", "", "2", "", "", "3", "", "5", "", "7", ""]},
+				{"skillName": "テンションマスタリーVo", "skillEffect": "テンション最高時に一緒に行動すると確率でVocal+<Lv*1>", "skillLevel": ["1", "", "2", "", "", "3", "", "5", "", "7", ""]},
 				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率でテンションが下がらない", "skillLevel": ["1", "", "", "", "", "", "", "", "", "", ""]},
 				{"skillName": "おやすみブースト", "skillEffect": "「休む」を選択時に<Lv*3>%の確率で体力回復量+10", "skillLevel": ["", "1", "", "2", "", "", "", "", "4", "", ""]}
 			],
@@ -13605,7 +13605,7 @@
 			"liveSkill": [{"liveSkillName": "ボーカルアピールIII", "liveSkillEffect": "Vocal2倍アピール", "liveSkillLv": "初期"}],
 			"supportSkill": [
 				{"skillName": "ラジオマスタリーVo", "skillEffect": "一緒にラジオへ出演するとVocal+<Lv*1>", "skillLevel": ["1", "", "", "3", "", "5", "", "", "", "", ""]},
-				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率��テ��ションが下がらない", "skillLevel": ["1", "", "", "", "", "", "", "2", "", "", ""]},
+				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率でテンションが下がらない", "skillLevel": ["1", "", "", "", "", "", "", "2", "", "", ""]},
 				{"skillName": "アイドルの絆", "skillEffect": "プロデュース開始時に絆+<Lv*5>", "skillLevel": ["", "1", "", "", "2", "", "3", "", "", "", "4"]},
 				{"skillName": "おやすみブースト", "skillEffect": "「休む」を選択時に<Lv*3>%の確率で体力回復量+10", "skillLevel": ["", "1", "", "", "", "", "", "", "", "2", ""]},
 				{"skillName": "トラブルガード", "skillEffect": "レッスンかお仕事を選択する時に<Lv*3>%の確率でトラブル率-10", "skillLevel": ["", "", "1", "", "", "", "", "", "2", "", ""]}
@@ -14066,7 +14066,7 @@
 			"liveSkill": [{"liveSkillName": "ビジュアルアピールⅢ", "liveSkillEffect": "Visual2倍アピール", "liveSkillLv": "初期"}],
 			"supportSkill": [
 				{"skillName": "アイドルの絆", "skillEffect": "プロデュース開始時に絆+<Lv*5>", "skillLevel": ["", "1", "", "", "2", "", "3", "", "", "", "4"]},
-				{"skillName": "オー���ィ���ョンマスタリーSP", "skillEffect": "オーディションで1位を取るとSP+<Lv*1>", "skillLevel": ["1", "", "", "2", "", "", "", "3", "", "4", ""]},
+				{"skillName": "オーディションマスタリーSP", "skillEffect": "オーディションで1位を取るとSP+<Lv*1>", "skillLevel": ["1", "", "", "2", "", "", "", "3", "", "4", ""]},
 				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率でテンションが下がらない", "skillLevel": ["1", "", "", "", "", "", "", "", "", "", ""]},
 				{"skillName": "おやすみブースト", "skillEffect": "「休む」を選択時に<Lv*3>%の確率で体力回復量+10", "skillLevel": ["", "1", "", "", "", "", "", "", "", "", ""]},
 				{"skillName": "ビジュアルマスタリーMe", "skillEffect": "一緒にビジュアルレッスンをするとメンタル+<Lv*1>", "skillLevel": ["", "", "2", "", "", "4", "", "", "6", "", ""]}
@@ -14250,7 +14250,7 @@
 		"skill": {
 			"liveSkill": [{"liveSkillName": "ビジュアルアピールⅢ", "liveSkillEffect": "Visual2倍アピール", "liveSkillLv": "初期"}],
 			"supportSkill": [
-				{"skillName": "アイドルの絆", "skillEffect": "プロ���ュース開始時に絆+<Lv*5>", "skillLevel": ["", "1", "", "", "2", "", "4", "", "", "", "7"]},
+				{"skillName": "アイドルの絆", "skillEffect": "プロデュース開始時に絆+<Lv*5>", "skillLevel": ["", "1", "", "", "2", "", "4", "", "", "", "7"]},
 				{"skillName": "オーディションマスタリーVi", "skillEffect": "オーディションで1位を取るとVisual+<Lv*1>", "skillLevel": ["1", "", "3", "", "", "5", "", "", "9", "", ""]},
 				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率でテンションが下がらない", "skillLevel": ["1", "", "", "", "", "", "", "", "", "", ""]},
 				{"skillName": "おやすみブースト", "skillEffect": "「休む」を選択時に<Lv*3>%の確率で体力回復量+10", "skillLevel": ["", "1", "", "2", "", "", "", "", "", "6", ""]}
@@ -14298,7 +14298,7 @@
 			"supportSkill": [
 				{"skillName": "アイドルの絆", "skillEffect": "プロデュース開始時に絆+<Lv*5>", "skillLevel": ["", "1", "", "", "2", "", "4", "", "", "", "7"]},
 				{"skillName": "ビジュアルマスタリーVi", "skillEffect": "一緒にビジュアルレッスンをするとVisual+<Lv*1>", "skillLevel": ["1", "", "", "", "", "", "", "", "", "", ""]},
-				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率���テンションが下がらない", "skillLevel": ["1", "", "", "", "", "", "", "", "", "", ""]},
+				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率でテンションが下がらない", "skillLevel": ["1", "", "", "", "", "", "", "", "", "", ""]},
 				{"skillName": "おやすみブースト", "skillEffect": "「休む」を選択時に<Lv*3>%の確率で体力回復量+10", "skillLevel": ["", "1", "", "2", "", "", "", "4", "", "6", ""]},
 				{"skillName": "体力サポート", "skillEffect": "レッスンかお仕事を選択する時に<Lv*3>%の確率で体力消費量-30%", "skillLevel": ["", "", "1", "", "", "2", "", "", "4", "", ""]}
 			],
@@ -15414,7 +15414,7 @@
 			{"thisLevel": "1", "thisLevelVo": "40", "thisLevelDa": "40", "thisLevelVi": "60", "thisLevelMe": "60"},
 			{"thisLevel": "50（☆0）", "thisLevelVo": "100", "thisLevelDa": "100", "thisLevelVi": "150", "thisLevelMe": "150"},
 			{"thisLevel": "55（☆1）", "thisLevelVo": "106", "thisLevelDa": "106", "thisLevelVi": "159", "thisLevelMe": "159"},
-			{"thisLevel": "60��☆2）", "thisLevelVo": "112", "thisLevelDa": "112", "thisLevelVi": "169", "thisLevelMe": "168"},
+			{"thisLevel": "60（☆2）", "thisLevelVo": "112", "thisLevelDa": "112", "thisLevelVi": "169", "thisLevelMe": "168"},
 			{"thisLevel": "65（☆3）", "thisLevelVo": "118", "thisLevelDa": "118", "thisLevelVi": "178", "thisLevelMe": "177"},
 			{"thisLevel": "70（☆4）", "thisLevelVo": "125", "thisLevelDa": "125", "thisLevelVi": "188", "thisLevelMe": "187"}
 		],
@@ -15670,7 +15670,7 @@
 			"liveSkill": [{"liveSkillName": "ボーカルアピールIII", "liveSkillEffect": "Vocal2.0倍アピール", "liveSkillLv": "初期"}],
 			"supportSkill": [
 				{"skillName": "アイドルの絆", "skillEffect": "プロデュース開始時に絆+<Lv*5>", "skillLevel": ["", "1", "", "", "2", "", "4", "", "", "", "7"]},
-				{"skillName": "ラジオマスタリーSP", "skillEffect": "一緒��ラ��オへ出演するとSP+<Lv*1>", "skillLevel": ["1", "", "", "3", "", "5", "", "", "", "9", ""]},
+				{"skillName": "ラジオマスタリーSP", "skillEffect": "一緒にラジオへ出演するとSP+<Lv*1>", "skillLevel": ["1", "", "", "3", "", "5", "", "", "", "9", ""]},
 				{"skillName": "約束リカバー", "skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率でテンションが下がらない", "skillLevel": ["1", "", "", "", "", "", "", "", "3", "", ""]},
 				{"skillName": "おやすみブースト", "skillEffect": "「休む」を選択時に<Lv*3>%の確率で体力回復量+10", "skillLevel": ["", "1", "", "", "", "", "", "", "", "", ""]},
 				{"skillName": "トラブルガード", "skillEffect": "レッスンかお仕事を選択する時に<Lv*3>%の確率でトラブル率-10", "skillLevel": ["", "", "1", "", "", "", "", "3", "", "", ""]}
@@ -16051,7 +16051,7 @@
 			],
 			"supportSkillGainLevel": ["1", "10", "20", "30", "40", "50", "60"]
 		},
-		"idea": {"ideaText": "ダ���ス"},
+		"idea": {"ideaText": "ダンス", "ideaType": "dance"},
 		"type": "S_R"
 	},
 	{
@@ -16784,5 +16784,339 @@
 		},
 		"idea": {"ideaText": "ビジュアル", "ideaType": "visual"},
 		"type": "S_N"
+	},
+	{
+		"idol": "櫻木真乃",
+		"cardName": "【ソラを跳ね】櫻木真乃",
+		"cardLink": "https://wikiwiki.jp/shinycolors/%E3%80%90%E3%82%BD%E3%83%A9%E3%82%92%E8%B7%B3%E3%81%AD%E3%80%91%E6%AB%BB%E6%9C%A8%E7%9C%9F%E4%B9%83",
+		"trueEnd": {
+			"eventName": "たとえ何光年離れていたとしても"
+		},
+		"events": [
+			{
+				"eventName": "ささやかな",
+				"beginning": "プロデューサー「ーー真乃」",
+				"beforeSelection": "真乃「朝早い時間だったんですけれど、その時も　　　新しい鳥さんに出会えたり、うれしいことがありました」",
+				"option1": {
+					"optionDesc": "……俺も真乃を見習おうかな",
+					"optionIncreaseVo": "",
+					"optionIncreaseDa": "",
+					"optionIncreaseVi": "+20"
+				},
+				"option2": {
+					"optionDesc": "思わぬ出会いって嬉しいよな",
+					"optionIncreaseVo": "+20",
+					"optionIncreaseDa": "",
+					"optionIncreaseVi": ""
+				},
+				"option3": {
+					"optionDesc": "うん、なるほどなぁ",
+					"optionIncreaseVo": "",
+					"optionIncreaseDa": "+20",
+					"optionIncreaseVi": ""
+				},
+				"addMental": "+5",
+				"addSkillP": "+10",
+				"eventType": "3options"
+			},
+			{
+				"eventName": "あめのひ",
+				"beginning": "真乃「……プロデューサーさん、　　　あったかいお茶、淹れてきました……」",
+				"beforeSelection": "プロデューサー「うん、でも、雨の日にしかできないことか……　　　　　　　　そういうふうに考えると雨もいいかもしれないな」",
+				"option1": {
+					"optionDesc": "傘を選ぶのが楽しいとか……",
+					"optionIncreaseVo": "",
+					"optionIncreaseDa": "",
+					"optionIncreaseVi": "+20"
+				},
+				"option2": {
+					"optionDesc": "……今度、水たまり遊びをしてみるか",
+					"optionIncreaseVo": "",
+					"optionIncreaseDa": "+20",
+					"optionIncreaseVi": ""
+				},
+				"option3": {
+					"optionDesc": "片付けが捗ったり……",
+					"optionIncreaseVo": "+20",
+					"optionIncreaseDa": "",
+					"optionIncreaseVi": ""
+				},
+				"addMental": "+5",
+				"addSkillP": "+10",
+				"eventType": "3options"
+			},
+			{
+				"eventName": "そらをおよぐ鳥",
+				"beginning": "プロデューサー「ーーん？」",
+				"option1": {
+					"optionDesc": "なし",
+					"optionIncreaseVo": "+20",
+					"optionIncreaseDa": "",
+					"optionIncreaseVi": ""
+				},
+				"eventType": "0options"
+			},
+			{
+				"eventName": "ゆっくりでいい。そうきみにも",
+				"beginning": "真乃のファン「真乃ちゃんの笑顔にいつも元気をもらってます！　　　　　　　これからも頑張ってください！」",
+				"beforeSelection": "プロデューサー「真乃……」",
+				"option1": {
+					"optionDesc": "俺も真乃と同じ気持ちだったよ",
+					"optionIncreaseVo": "",
+					"optionIncreaseDa": "+10",
+					"optionIncreaseVi": "+10"
+				},
+				"option2": {
+					"optionDesc": "今回の対応、一番よかったと思う",
+					"optionIncreaseVo": "+10",
+					"optionIncreaseDa": "",
+					"optionIncreaseVi": "+10"
+				},
+				"option3": {
+					"optionDesc": "真乃があの子だったらどうかな？",
+					"optionIncreaseVo": "+10",
+					"optionIncreaseDa": "+10",
+					"optionIncreaseVi": ""
+				},
+				"addMental": "+10",
+				"addSkillP": "+10",
+				"eventType": "3options"
+			}
+		],
+		"panel": {
+			"20": [
+				{ "skillTitle": "ソラを跳ね", "skillDesc": "Visual2.5倍アピール/Vocal1.5倍アピール(Link)Vocal & Visual40%UP[5ターン]"}
+			],
+			"30": [
+				{ "skillTitle": "Vocal & Visual上限UP(☆3)", "skillDesc": "Vocal & Visual上限+100" },
+				{ "skillTitle": "Visual上限UP", "skillDesc": "Visual上限+50" }
+			],
+			"40": [
+				{ "skillTitle": "Vocal & Visual45%UP(☆2)", "skillDesc": "[条件:VisualUPが付与されている場合][確率:20%][最大:2回]" },
+				{ "skillTitle": "Visual上限UP(E4)", "skillDesc": "Visual上限+50" },
+				{ "skillTitle": "Vocal & Visual25%UP(☆1)", "skillDesc": "[条件:VocalUPが付与されている場合][確率:20%][最大:2回]" }
+			],
+			"50": [
+				{ "skillTitle": "ソラを跳ね+(☆4)", "skillDesc": "Vocal4倍アピール/Visual2倍アピール(Link)Vocal & Visual40%UP[5ターン]" },
+				{ "skillTitle": "Visual上限UP(☆1)", "skillDesc": "Visual上限+50" },
+				{ "skillTitle": "Vocal & Visual10%UP(☆2)", "skillDesc": "[条件:観客3以上][確率:50%][最大:2回]" },
+				{ "skillTitle": "Vocal上限UP(☆4)", "skillDesc": "Vocal上限+150" }
+			]
+		},
+		"memoryAppeal": [
+			{"appealName": "ふりそそぐように","appealEffect": "思い出アピール[Lv1]"},
+			{"appealName": "ふりそそぐように+","appealEffect": "思い出アピール[Lv2]"},
+			{"appealName": "ふりそそぐように++","appealEffect": "思い出アピール[Lv3]/Vocal & Visual0.2倍アピール"},
+			{"appealName": "ふりそそぐように+++","appealEffect": "思い出アピール[Lv4]/Vocal & Visual0.5倍アピール"},
+			{"appealName": "[輝き]ふりそそぐように","appealEffect": "思い出アピール[Lv5]/Vocal & Visual1倍アピール"}
+		],
+		"memoryLink": [ "全観客にVocal & Visual0.5倍アピール", "全観客にVocal & Visual1倍アピール" ],
+		"type": "P_SSR"
+	},
+	{
+		"idol": "芹沢あさひ",
+		"cardName": "【花火の夜に……】芹沢あさひ",
+		"cardLink": "https://wikiwiki.jp/shinycolors/%E3%80%90%E8%8A%B1%E7%81%AB%E3%81%AE%E5%A4%9C%E3%81%AB%E2%80%A6%E2%80%A6%E3%80%91%E8%8A%B9%E6%B2%A2%E3%81%82%E3%81%95%E3%81%B2",
+		"status": [
+			{
+				"thisLevel": "1",
+				"thisLevelVo": "38",
+				"thisLevelDa": "58",
+				"thisLevelVi": "45",
+				"thisLevelMe": "45"
+			},
+			{
+				"thisLevel": "50（☆0）",
+				"thisLevelVo": "96",
+				"thisLevelDa": "145",
+				"thisLevelVi": "112",
+				"thisLevelMe": "112"
+			},
+			{
+				"thisLevel": "55（☆1）",
+				"thisLevelVo": "102",
+				"thisLevelDa": "153",
+				"thisLevelVi": "119",
+				"thisLevelMe": "119"
+			},
+			{
+				"thisLevel": "60（☆2）",
+				"thisLevelVo": "108",
+				"thisLevelDa": "162",
+				"thisLevelVi": "126",
+				"thisLevelMe": "126"
+			},
+			{
+				"thisLevel": "65（☆3）",
+				"thisLevelVo": "114",
+				"thisLevelDa": "171",
+				"thisLevelVi": "133",
+				"thisLevelMe": "133"
+			},
+			{
+				"thisLevel": "70（☆4）",
+				"thisLevelVo": "120",
+				"thisLevelDa": "180",
+				"thisLevelVi": "140",
+				"thisLevelMe": "140"
+			}
+		],
+		"panel": {
+			"20": [
+				{
+					"skillTitle": "Dance4%UP",
+					"skillDesc": "[条件:あさひ][確率:10%][最大:1回]"
+				}
+			],
+			"30": [
+				{
+					"skillTitle": "Dance4%UP",
+					"skillDesc": "[条件:メンタル74%以下][確率:20%][最大:1回]"
+				},
+				{
+					"skillTitle": "ダンスアピールⅢ",
+					"skillDesc": "Dance2倍アピール"
+				}
+			],
+			"40": [
+				{
+					"skillTitle": "Dance20%UP(☆2)",
+					"skillDesc": "[条件:DanceUPが付与されている場合][確率:30%][最大:1回]"
+				},
+				{
+					"skillTitle": "Dance8%UP(E2)",
+					"skillDesc": "[条件:あさひ][確率:30%][最大:2回]"
+				},
+				{
+					"skillTitle": "Dance12%UP(☆1)",
+					"skillDesc": "[条件:Dance担当][確率:30%][最大:1回]"
+				}
+			],
+			"50": [
+				{
+					"skillTitle": "花火の夜に……(☆4)",
+					"skillDesc": "Dance2倍アピール/全ユニットのDance5%UP[5ターン]"
+				},
+				{
+					"skillTitle": "Dance上限UP(☆3)",
+					"skillDesc": "Dance上限+50"
+				}
+			]
+		},
+		"events": [
+			{
+				"eventName": "？？？",
+				"eventIncreaseVo": "",
+				"eventIncreaseDa": "+10",
+				"eventIncreaseVi": "",
+				"eventIncreaseMe": "+5",
+				"eventIncreaseSp": "+10"
+			},
+			{
+				"eventName": "？？？？",
+				"eventIncreaseVo": "",
+				"eventIncreaseDa": "+20",
+				"eventIncreaseVi": "+15",
+				"eventIncreaseMe": "+10",
+				"eventIncreaseSp": "+10"
+			}
+		],
+		"skill": {
+			"liveSkill": [
+				{
+					"liveSkillName": "ダンスアピールⅢ",
+					"liveSkillEffect": "Dance2倍アピール",
+					"liveSkillLv": "初期"
+				}
+			],
+			"supportSkill": [
+				{
+					"skillName": "アイドルの絆",
+					"skillEffect": "プロデュース開始時に絆+<Lv*5>",
+					"skillLevel": [
+						"",
+						"1",
+						"",
+						"",
+						"2",
+						"",
+						"3",
+						"",
+						"",
+						"",
+						"4"
+					]
+				},
+				{
+					"skillName": "ラジオマスタリーDa",
+					"skillEffect": "一緒にラジオへ出演するとDance+<Lv*1>",
+					"skillLevel": [
+						"1",
+						"",
+						"2",
+						"",
+						"",
+						"3",
+						"",
+						"4",
+						"",
+						"5",
+						""
+					]
+				},
+				{
+					"skillName": "約束リカバー",
+					"skillEffect": "「約束」を守れなかった場合に<Lv*5>%の確率でテンションが下がらない",
+					"skillLevel": [
+						"1",
+						"",
+						"",
+						"2",
+						"",
+						"",
+						"",
+						"",
+						"",
+						"",
+						""
+					]
+				},
+				{
+					"skillName": "おやすみブースト",
+					"skillEffect": "「休む」を選択時に<Lv*3>%の確率で体力回復量+15",
+					"skillLevel": [
+						"",
+						"1",
+						"",
+						"",
+						"",
+						"",
+						"",
+						"",
+						"2",
+						"",
+						""
+					]
+				}
+			],
+			"supportSkillGainLevel": [
+				"1",
+				"5",
+				"10",
+				"20",
+				"30",
+				"40",
+				"50",
+				"55",
+				"60",
+				"65",
+				"70"
+			]
+		},
+		"idea": {
+			"ideaText": "ダンス",
+			"ideaType": "dance"
+		},
+		"type": "S_SR"
 	}
 ]

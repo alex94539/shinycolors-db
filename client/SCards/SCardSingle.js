@@ -98,7 +98,7 @@ Template.SCardSingle.helpers({
         let tempStr = this.skillDesc;
         tempStr = strReplacement(tempStr);
         //console.log(tempStr);
-		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(Vo.*\d+%UP)|(Da.*\d+%UP)|(Vi.*\d+%UP)|(注目度\d+%DOWN)/)) {
+		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(Vo.*\d+%UP)|(Da.*\d+%UP)|(Vi.*\d+%UP)|(注目度\d+%DOWN)|(思い出ゲージ\d+%UP)/)) {
 			return tempStr.match(/\[.*?\]/g);
 		} 
 		else if (this.skillTitle.match(/(メンタル上限UP)|(Vocal上限UP)|(Visual上限UP)|(Dance上限UP)|(アピール)/)) {

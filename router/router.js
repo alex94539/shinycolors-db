@@ -9,6 +9,7 @@ import '../client/homePage/introduce_idol/introduce_idol.js';
 import '../client/homePage/idolunit_list/idolunit_list.js';
 import '../client/PCards/PCardSingle.js';
 import '../client/SCards/SCardSingle.js';
+import '../client/judgeTendency/judgeTendency.js';
 
 FlowRouter.route('/', {
     name: 'homePage',
@@ -60,5 +61,16 @@ FlowRouter.route('/SCardDetail/:cardName', {
 		BlazeLayout.setRoot('#mainPage_descArea');
 		BlazeLayout.render('SCardSingle', {});
 	},
+	triggersExit: [function () {}],
+});
+
+FlowRouter.route('/judgeTendency/:cardName', {
+    name: 'judgeTendency', 
+	triggersEnter: [function () {}],
+    action: function(params, queryParams){
+        DocHead.setTitle(Base64.decode(params.cardName));
+		BlazeLayout.setRoot('#mainPage_descArea');
+		BlazeLayout.render('judgeTendency', {});
+    },
 	triggersExit: [function () {}],
 });

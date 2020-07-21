@@ -41,14 +41,14 @@ Template.PCardSingle.helpers({
 	sliceSkillDesc: function () {
 		if (!Template.instance().currentPCardDetail.get()) return [];
 		console.log(this);
-		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)/)) {
+		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(思い出ゲージ\d+%UP)|(注目度\d+%DOWN)|(Vo&Da&Vi\d+%UP)/)) {
             if(this.skillDesc.match(/\[.*?\]/g).length < 3){
                 return ['', this.skillDesc.match(/\[.*?\]/g)[0], ''];
             }
             else{
                 return this.skillDesc.match(/\[.*?\]/g);
             }
-		} else if (this.skillTitle.match(/(メンタル上限UP)|(Vocal上限UP)|(Visual上限UP)|(Dance上限UP)/)) {
+		} else if (this.skillTitle.match(/(メンタル上限UP)|(Vocal上限UP)|(Visual上限UP)|(Dance上限UP)|(Vo&Da&Vi上限UP)/)) {
 			return [this.skillDesc];
 		} else {
 			
@@ -114,6 +114,7 @@ Template.PCardSingle.helpers({
 
 	cellColor: function () {
 		//console.log(this);
+        if (this.skillTitle.match(/メンタルダメージ\d+%CUT/)) return 'classVi';
 		if (this.skillTitle.match(/Vocal.*Dance/)) return 'classVoDa';
 		if (this.skillTitle.match(/Vocal.*Visual/)) return 'classVoVi';
 		if (this.skillTitle.match(/Dance.*Visual/)) return 'classDaVi';
@@ -136,7 +137,7 @@ Template.PCardSingle.helpers({
 
 
     thisCardOmoide: function(){
-		return Template.instance().currentPCardDetail.get().memoryAppeal ?? '';
+		return Template.instance().currentPCardDetail.get()?.memoryAppeal ?? '';
     },
     thisOmoideLinkSpan: function(){
         //console.log(this);
@@ -150,6 +151,10 @@ Template.PCardSingle.helpers({
         return false;
     },
 
+
+	inputTendency: function(){
+		return true;
+	}
 });
 
 Template.PCardSingle.events({
@@ -159,11 +164,18 @@ Template.PCardSingle.events({
 		instance.currentPCardPicCount.set(nextIndex);
 		instance.find('#thisCardPicLoading').style.display = 'block';
 		instance.find('#thisCardBigPic').style.background = 'rgba(0,0,0,0.5)';
+		instance.find('#thisCardBigPic').style['z-index'] = 40;
 	},
 	'load img'(event, instance){
 		event.preventDefault();
 		instance.find('#thisCardPicLoading').style.display = 'none';
 		instance.find('#thisCardBigPic').style.background = 'transparent';
+	},
+	'submit #thisCardSubmitForm'(event, instance){
+		event.preventDefault();
+
+		const vi = event.target.ViTendency.checked;
+		console.log(vi);
 	}
 }); 
 

@@ -2,9 +2,9 @@
 	<div id="thisIdolCardName">
 		<h2 class="thisIdolCardName">{{thisCardName}}</h2>
 	</div>
-	<div id="thisCardBigPic" style="height: 320px; width: 568px;">
+	<div id="thisCardBigPic" style="height: 320px; width: 568px; position: relative;">
         <img src="/bigPic/{{thisCardImage}}" alt="" height="320" width="568" id="thisPCardImage" style="position: absolute; z-index: 20;"/>
-        <div id="thisCardPicLoading" style="top: 50%; left: 50%; height: 50px; width: 50px; display: block; position: absolute; z-index: 25;"></div>
+        <div id="thisCardPicLoading" style="top: 50%; left: 50%; height: 50px; width: 50px; display: block; position: relative; z-index: 25;"></div>
 	</div>
 	<div id="thisCardDesc">
 		<h3>事件</h3>
@@ -101,7 +101,33 @@
             </table>
         </div>
         {{/if}}
-
+        {{#if inputTendency}}
+        <h3>暫時性表單 請參考下方技能盤並選擇此卡傾向</h3>
+        <div>
+            <form action="" style="border: solid 1px;" id="thisCardSubmitForm">
+                <h4>屬性傾向</h4>
+                <input type="checkbox" name="VoTendency" id="VoTendency"> <label for="VoTendency">Vo傾向</label>
+                <input type="checkbox" name="DaTendency" id="DaTendency"> <label for="DaTendency">Da傾向</label>
+                <input type="checkbox" name="ViTendency" id="ViTendency"> <label for="ViTendency">Vi傾向</label>
+                <input type="checkbox" name="MeTendency" id="MeTendency"> <label for="MeTendency">Me傾向</label>
+                <br>
+                <h4>技能傾向</h4>
+                <input type="checkbox" name="selfHarm" id="selfHarm"> <label for="selfHarm">自殘炮</label>
+                <input type="checkbox" name="lowHP" id="lowHP"> <label for="lowHP">壓血炮</label>
+                <input type="checkbox" name="highHP" id="highHP"> <label for="highHP">滿血炮</label>
+                <input type="checkbox" name="heal" id="heal"> <label for="heal">回血</label>
+                <input type="checkbox" name="omoideCharge" id="omoideCharge"> <label for="omoideCharge">回憶裝填</label>
+                <input type="checkbox" name="decInterest" id="decInterest"> <label for="decInterest">興味降低</label>
+                <input type="checkbox" name="incFocus" id="incFocus"> <label for="incFocus">注目度提升</label>
+                <input type="checkbox" name="reactionDodge" id="reactionDodge"> <label for="reactionDodge">反應迴避</label>
+                <input type="checkbox" name="damageDown" id="damageDown"> <label for="damageDown">減傷</label>
+                <input type="checkbox" name="meOverflow" id="meOverflow"> <label for="meOverFlow">回血超量裝填</label>
+                <br>
+                <br>
+                <input type="submit" value="送出">
+            </form>
+        </div>
+        {{/if}}
 		<h3>技能盤</h3>
 		<div id="thisCardSkillPanel">
 			<table class="skillPanel">

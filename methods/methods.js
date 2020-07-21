@@ -36,4 +36,9 @@ Meteor.methods({
 	getSCardSingleDetail({cardName}) {
 		return idolCardsDetail.find({cardName: cardName, type: /S/}).fetch();
 	},
+
+	//judgeTendency
+	getCardDetail({cardName}){
+		return idolCardsDetail.find({cardName: cardName}).fetch();
+	}
 });
