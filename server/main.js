@@ -6,6 +6,7 @@ import { insertInitData } from '../fileToDBScript/init.js';
 import '../methods/methods.js';
 import './tendencyJudge/tendencyJudge.js';
 import './autoUpdateDBByFile/autoUpdateDBByFile.js';
+import './http/generateSitemap.js';
 //import '../fileToDBScript/autoUpdateDBByFile.js';
 
 Meteor.startup(() => {

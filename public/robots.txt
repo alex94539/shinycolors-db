@@ -1,0 +1,8 @@
+User-agent: Baiduspider
+Disallow: /*
+
+User-agent: *
+Allow: /*
+
+
+sitemap: https://shinycolors.nctu.me/sitemap.xml
