@@ -21,7 +21,7 @@ Template.SCardSingle.onCreated(function() {
 
 		Meteor.call('getSCardSingleDetail', {cardName: this.currentSCard.get()}, (err, result) => {
 			if (!result.length) {
-				return;
+				FlowRouter.go('noSuchCards');
 			}
 			this.currentSCardDetail.set(result[0]);
 			console.log(result);

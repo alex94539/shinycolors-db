@@ -8,3 +8,6 @@ disallow: /*
 user-agent: Yahoo! Slurp
 allow: /*
 Crawl-delay: 10
+
+user-agent: Discord Bot
+allow: /*

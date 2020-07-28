@@ -1,6 +1,6 @@
 <template name="judgeTendency">
     <div>
-        <h3>表單</h3>
+        <h2>{{thisCardName}}</h2>
         <div id="thisCardTendency">
             <form action="" style="border: solid 1px;" id="thisCardSubmitForm">
                 <h4>屬性傾向</h4>
@@ -69,7 +69,14 @@
                 <input type="checkbox" name="commentOmoideCharge" id="commentOmoideCharge"> <label for="commentOmoideCharge">回憶裝填</label>
 
                 <br>
-
+                <h4>卡片類別</h4>
+                <input type="checkbox" name="typeProduce" id="typeProduce" disabled> <label for="typeProduce">Produce</label>
+                <input type="checkbox" name="typeSupport" id="typeSupport" disabled> <label for="typeSupport">Support</label>
+                <h4>卡片稀有度</h4>
+                <input type="checkbox" name="raritySSR" id="raritySSR" disabled> <label for="raritySSR">SSR</label>
+                <input type="checkbox" name="raritySR" id="raritySR" disabled> <label for="raritySSR" >SR</label>
+                <input type="checkbox" name="rarityR" id="rarityR" disabled> <label for="rarityR">R</label>
+                <input type="checkbox" name="rarityN" id="rarityN" disabled> <label for="rarityN">N</label>
                 <!--input type="checkbox" name="selfHarm" id="selfHarm"> <label for="selfHarm">自殘炮</label>
                 <input type="checkbox" name="lowHP" id="lowHP"> <label for="lowHP">壓血炮</label>
                 <input type="checkbox" name="highHP" id="highHP"> <label for="highHP">滿血炮</label>
@@ -82,7 +89,7 @@
                 <input type="checkbox" name="meOverflow" id="meOverflow"> <label for="meOverFlow">回血超量裝填</label-->
                 <br>
                 <br>
-                <input type="submit" value="送出">
+                <input type="submit" value="送出" style="height: 50px; width: 100px;">
             </form>
         </div>
         <h3>技能盤</h3>

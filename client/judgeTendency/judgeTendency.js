@@ -1,11 +1,15 @@
 import { Meteor } from 'meteor/meteor';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { Base64 } from 'js-base64';
 
 import './judgeTendency.html';
 
 Template.judgeTendency.onCreated(function(){
+    this.currentCard = new ReactiveVar();
+    this.currentCardDetail = new ReactiveVar();
     Tracker.autorun(() => {
-        this.currentCard = new ReactiveVar();
-        this.currentCardDetail = new ReactiveVar();
+        
         FlowRouter.watchPathChange();
         if(FlowRouter.getRouteName() !== 'judgeTendency') {
             Blaze.remove(this.view);
@@ -14,30 +18,34 @@ Template.judgeTendency.onCreated(function(){
 		const card = Base64.decode(FlowRouter.current().params.cardName);
 		console.log(card);
         this.currentCard.set(card);
-
-        Meteor.call('getCardDetail',{cardName: this.currentCard.get()},  (err, result) => {
-            if(!result.length){
-
+        Meteor.call('checkThisCardIsJudged', {cardName: this.currentCard.get()}, (err, result) => {
+            if(result){
+                Meteor.call('getNextCardToJudge', [], (err, result) => {
+                    const path = FlowRouter.path("judgeTendency", {cardName: Base64.encodeURI(result.cardName), uuidAuth: result.uuidAuth});
+                    FlowRouter.go(path);
+                });
             }
-            this.currentCardDetail.set(result[0]);
-            console.log(result);
+        });
 
+        Meteor.call('getCardDetail',{cardName: this.currentCard.get(), uuidAuth: FlowRouter.current().params.uuidAuth},  (err, result) => {
+            if(!result){
+                FlowRouter.go('rejected');
+            }
+            console.log(result[0]);
+            this.currentCardDetail.set(result[0]);
+            typeToggleCheckBox(result[0].type, this);
             result[0].panel[20].forEach(element => {
-                console.log('autorun', element);
                 toggleCheckBox(element, this);
             });
             result[0].panel[30].forEach(element => {
-                console.log('autorun', element);
                 toggleCheckBox(element, this);
             });
             if(result[0].type.match(/_N$/)) return;
             result[0].panel[40].forEach(element => {
-                console.log('autorun', element);
                 toggleCheckBox(element, this);
             });
             if(result[0].type.match(/_R$/)) return;
             result[0].panel[50].forEach(element => {
-                console.log('autorun', element);
                 toggleCheckBox(element, this);
             });
         });
@@ -53,10 +61,13 @@ Template.judgeTendency.onRendered(function() {
 });
 
 Template.judgeTendency.helpers({
+    thisCardName: function(){
+        return Template.instance().currentCardDetail.get()?.cardName ?? '';
+    },
 	sliceSkillDesc: function () {
 		if (!Template.instance().currentCardDetail.get()) return [];
 		//console.log(this);
-		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(思い出ゲージ\d+%UP)|(注目度\d+%DOWN)|(Vo&Da&Vi\d+%UP)/)) {
+		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(思い出ゲージ\d+%UP)|(注目度\d+%DOWN)|(Vo&Da&Vi\d+%UP)|(Vocal&Dance&Visual\d+%UP)/)) {
             if(this.skillDesc.match(/\[.*?\]/g).length < 3){
                 return ['', this.skillDesc.match(/\[.*?\]/g)[0], ''];
             }
@@ -142,7 +153,6 @@ Template.judgeTendency.helpers({
         if (this.skillTitle.match(/メンタル/)) return 'classMe'
 	},
 	SRColSpan: function(){
-        console.log(Template.instance().currentCardDetail.get().type);
         if (Template.instance().currentCardDetail.get() && (Template.instance().currentCardDetail.get().type === 'P_SR' || Template.instance().currentCardDetail.get().type === 'S_SR')) {
 			return true;
         }
@@ -175,15 +185,42 @@ Template.judgeTendency.helpers({
 
 Template.judgeTendency.events({
 	'submit #thisCardSubmitForm'(event, instance){
-		event.preventDefault();
+        event.preventDefault();
+        
+        let formObj = {};
 
-		const vi = event.target.ViTendency.checked;
-		console.log(vi);
+        instance.findAll('input:checkbox').forEach(element => {
+            formObj[element.id] = element.checked;
+        });
+        formObj.idol = instance.currentCardDetail.get().idol;
+        formObj.cardName = instance.currentCard.get();
+        formObj.uuidAuth = FlowRouter.current().params.uuidAuth;
+
+        console.log(formObj);
+
+        Meteor.call('insertJudgeResultToDB', {judgedObj: formObj}, (err, result) => {
+            if(result){
+                const keepJudging = confirm('是否要繼續前往下一張卡片?');
+                if(keepJudging){
+                    Meteor.call('getNextCardToJudge', [], (err, result) => {
+                        BlazeLayout.reset();
+                        BlazeLayout.render()
+                        FlowRouter.setParams({cardName: Base64.encodeURI(result.cardName), uuidAuth: result.uuidAuth})
+                        
+                    });
+                }
+                else{
+                    FlowRouter.go('homePage');
+                }
+            }
+            else{
+                FlowRouter.go('rejected');
+            }
+        })
 	}
 });
 
 function toggleCheckBox(element, instance){
-    console.log(element, instance);
     if(element.skillDesc.match(/Excellent(\d\.\d|\d)/)){
         instance.find('#skillExcellentAppeal').checked = true;
     }
@@ -196,13 +233,13 @@ function toggleCheckBox(element, instance){
     if(element.skillDesc.match(/一気に満足させる/)){
         instance.find('#skillChanceFulfill').checked = true;
     }
-    if(element.skillDesc.match(/メンタルが多いほど効果UP/)){
+    if(element.skillDesc.match(/メンタルが多いほど効果UP|メンタルが多い程効果UP/)){
         instance.find('#skillHighMeHurt').checked = true;
     }
-    if(element.skillDesc.match(/メンタルが少ないほど効果UP/)){
+    if(element.skillDesc.match(/メンタルが少ないほど効果UP|メンタルが少ない程効果UP/)){
         instance.find('#skillLowMeHurt').checked = true;
     }
-    if(element.skillDesc.match(/思い出ゲージが多いほど効果UP/)){
+    if(element.skillDesc.match(/思い出ゲージが多いほど効果UP|思い出ゲージが多い程効果UP/)){
         instance.find('#skillHighOmoideHurt').checked = true;
     }
     if(element.skillDesc.match(/注目度が高いほど効果UP|注目度が高い程効果UP/)){
@@ -212,13 +249,13 @@ function toggleCheckBox(element, instance){
         instance.find('#skillLowFocusHurt').checked = true;
     }
 
-    if(element.skillTitle.match(/Vocal\d+%UP/)){
+    if(element.skillTitle.match(/Vocal.*\d+%UP|Vo.*\d+%UP/)){
         instance.find('#skillVoUp').checked = true;
     }
-    if(element.skillTitle.match(/Dance\d+%UP/)){
+    if(element.skillTitle.match(/Dance.*\d+%UP|Da.*\d+%UP/)){
         instance.find('#skillDaUp').checked = true;
     }
-    if(element.skillTitle.match(/Visual\d+%UP/)){
+    if(element.skillTitle.match(/Visual.*\d+%UP|Vi.*\d+%UP/)){
         instance.find('#skillViUp').checked = true;
     }
 
@@ -281,5 +318,26 @@ function toggleCheckBox(element, instance){
     }
     if(element.skillDesc.match(/必ず最後にアピール/)){
         instance.find('#skillLastAppeal').checked = true;
+    }
+}
+
+function typeToggleCheckBox(data, instance){
+    if(data.match(/^P_/)){
+        instance.find('#typeProduce').checked = true;
+    }
+    if(data.match(/^S_/)){
+        instance.find('#typeSupport').checked = true;
+    }
+    if(data.match(/_SSR$/)){
+        instance.find('#raritySSR').checked = true;
+    }
+    if(data.match(/_SR$/)){
+        instance.find('#raritySR').checked = true;
+    }
+    if(data.match(/_R$/)){
+        instance.find('#rarityR').checked = true;
+    }
+    if(data.match(/_N$/)){
+        instance.find('#rarityN').checked = true;
     }
 }

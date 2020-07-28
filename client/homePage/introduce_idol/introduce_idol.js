@@ -22,7 +22,8 @@ Template.introduce_idol.onCreated(function() {
 
         this.thisIdol.set(FlowRouter.current().params.idolName);
         this.thisIdolPicType.set(0);
-
+        console.log(this);
+        //this.document.title = FlowRouter.current().params.idolName;
         Meteor.call('getIdolDetail', {name: FlowRouter.current().params.idolName}, (err, result) => {
 			//console.log(result[0]);
 			this.thisIdolDetail.set(result[0]);

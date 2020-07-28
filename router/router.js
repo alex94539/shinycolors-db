@@ -2,6 +2,8 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { DocHead } from 'meteor/kadira:dochead';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { Base64 } from 'js-base64';
+import { Meteor } from 'meteor/meteor';
+
     
 
 import '../client/homePage/introduce_unit/introduce_unit.js';
@@ -10,14 +12,27 @@ import '../client/homePage/idolunit_list/idolunit_list.js';
 import '../client/PCards/PCardSingle.js';
 import '../client/SCards/SCardSingle.js';
 import '../client/judgeTendency/judgeTendency.js';
+import '../client/otherPages/otherPages.js';
+import '../client/PCardsOverview/PCardsOverview.js';
+import '../client/SCardsOverview/SCardsOverview.js';
 
 FlowRouter.route('/', {
     name: 'homePage',
-    triggersEnter: [],
+    triggersEnter: [function() {
+		DocHead.addMeta({property: 'og:site_name', content: 'shinycolors-db'});
+        DocHead.addMeta({property: 'og:type' , content: 'website'});
+        DocHead.addMeta({property: 'og:title', content: 'shinycolors-db'});
+        DocHead.addMeta({property: 'og:description', content: 'A DataBase for Shinycolors developed by Euphokumiko.'});
+        DocHead.addMeta({property: 'og:url', content: 'http://shinycolors.nctu.me'});
+	}],
     action: function(params, queryParams) {
-        DocHead.setTitle('ShinyColors');
+		DocHead.setTitle('ShinyColors');
+		
         //BlazeLayout.render('idolunit_list', {});
-    }
+	},
+	triggersExit: [function() {
+		DocHead.removeDocHeadAddedTags();
+	}]
 });
 
 FlowRouter.route('/unit/:unitName', {
@@ -28,7 +43,9 @@ FlowRouter.route('/unit/:unitName', {
         BlazeLayout.setRoot('#mainPage_descArea');
         BlazeLayout.render('introduce_unit', {});
     },
-    triggersExit: [function() {}],
+    triggersExit: [function() {
+		DocHead.removeDocHeadAddedTags();
+	}],
 });
 
 FlowRouter.route('/idol/:idolName', {
@@ -39,7 +56,9 @@ FlowRouter.route('/idol/:idolName', {
         BlazeLayout.setRoot("#mainPage_descArea");
         BlazeLayout.render("introduce_idol", {});
     },
-    triggersExit: [function() {}],
+    triggersExit: [function() {
+		DocHead.removeDocHeadAddedTags();
+	}],
 });
 
 FlowRouter.route('/PCardDetail/:cardName', {
@@ -50,7 +69,9 @@ FlowRouter.route('/PCardDetail/:cardName', {
 		BlazeLayout.setRoot('#mainPage_descArea');
 		BlazeLayout.render('PCardSingle', {});
 	},
-	triggersExit: [function () {}],
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
 });
 
 FlowRouter.route('/SCardDetail/:cardName', {
@@ -61,10 +82,49 @@ FlowRouter.route('/SCardDetail/:cardName', {
 		BlazeLayout.setRoot('#mainPage_descArea');
 		BlazeLayout.render('SCardSingle', {});
 	},
-	triggersExit: [function () {}],
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
 });
 
-FlowRouter.route('/judgeTendency/:cardName', {
+FlowRouter.route('/PCardsOverview', {
+    name: 'PCardsOverview',
+	triggersEnter: [function () {}],
+	action: function (params, queryParams) {
+		BlazeLayout.setRoot('#mainPage_descArea');
+		BlazeLayout.render('PCardsOverview', {});
+	},
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
+});
+
+FlowRouter.route('/SCardsOverview', {
+    name: 'SCardsOverview',
+	triggersEnter: [function () {}],
+	action: function (params, queryParams) {
+		BlazeLayout.setRoot('#mainPage_descArea');
+		BlazeLayout.render('SCardsOverview', {});
+	},
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
+});
+
+FlowRouter.route('/judgeTendency', {
+	triggersEnter: [function () {}],
+    action: function(params, queryParams){
+        Meteor.call('getNextCardToJudge', [], (err, result) => {
+            const path = FlowRouter.path("judgeTendency", {cardName: Base64.encodeURI(result.cardName), uuidAuth: result.uuidAuth});
+            FlowRouter.go(path);
+        });
+    },
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
+});
+
+FlowRouter.route('/judgeTendency/:cardName/:uuidAuth', {
     name: 'judgeTendency', 
 	triggersEnter: [function () {}],
     action: function(params, queryParams){
@@ -72,5 +132,31 @@ FlowRouter.route('/judgeTendency/:cardName', {
 		BlazeLayout.setRoot('#mainPage_descArea');
 		BlazeLayout.render('judgeTendency', {});
     },
-	triggersExit: [function () {}],
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
 });
+
+FlowRouter.route('/noSuchCards', {
+    name: 'noSuchCards', 
+	triggersEnter: [function () {}],
+    action: function(params, queryParams){
+		BlazeLayout.setRoot('#mainPage_descArea');
+		BlazeLayout.render('noSuchCards', {});
+    },
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
+});
+
+FlowRouter.route('/rejected', {
+    name: 'rejected', 
+	triggersEnter: [function () {}],
+    action: function(params, queryParams){
+		BlazeLayout.setRoot('#mainPage_descArea');
+		BlazeLayout.render('403Error', {});
+    },
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
+})

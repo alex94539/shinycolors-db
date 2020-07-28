@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.7.6",
+    "fs": "0.0.1-security",
     "jquery": "^3.4.1",
     "js-base64": "^2.6.3",
-    "meteor-node-stubs": "^1.0.0"
+    "meteor-node-stubs": "^1.0.0",
+    "moment": "^2.27.0",
+    "uuid": "^8.2.0"
   },
   "meteor": {
     "mainModule": {

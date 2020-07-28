@@ -23,7 +23,7 @@ Template.PCardSingle.onCreated(function(){
 
         Meteor.call('getPCardSingleDetail',{cardName: this.currentPCard.get()},  (err, result) => {
             if(!result.length){
-
+				FlowRouter.go('noSuchCards');
             }
             this.currentPCardDetail.set(result[0]);
             console.log(result);
@@ -41,7 +41,7 @@ Template.PCardSingle.helpers({
 	sliceSkillDesc: function () {
 		if (!Template.instance().currentPCardDetail.get()) return [];
 		console.log(this);
-		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(思い出ゲージ\d+%UP)|(注目度\d+%DOWN)|(Vo&Da&Vi\d+%UP)/)) {
+		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(思い出ゲージ\d+%UP)|(注目度\d+%DOWN)|(Vo&Da&Vi\d+%UP)|(Vocal&Dance&Visual\d+%UP)/)) {
             if(this.skillDesc.match(/\[.*?\]/g).length < 3){
                 return ['', this.skillDesc.match(/\[.*?\]/g)[0], ''];
             }
