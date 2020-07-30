@@ -3,7 +3,7 @@ import { check } from 'meteor/check';
 import { idolCardsDetail as idolCardsDetailDB } from '../../db/db.js';
 
 
-const idolCardsDetailFile = require('../../fileToDBScript/idolCardsDetail.json');
+const idolCardsDetailFile = require('../../imports/jsons/idolCardsDetail.json');
 
 
 

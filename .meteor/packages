@@ -25,4 +25,4 @@ kadira:flow-router
 kadira:blaze-layout
 kadira:dochead
 webapp
-tarang:ssl
+server-render

@@ -1,12 +1,15 @@
 import { Meteor } from 'meteor/meteor';
 
 import { init } from '../db/db.js';
-import { insertInitData } from '../fileToDBScript/init.js';
+import { insertInitData } from '../imports/init.js';
 
-import '../methods/methods.js';
-import './tendencyJudge/tendencyJudge.js';
-import './autoUpdateDBByFile/autoUpdateDBByFile.js';
+import './imports/methods/methods.js';
+import './imports/tendencyJudge.js';
+import './onServerStart/autoUpdateDBByFile.js';
+import './onServerStart/webMetaTag.js';
+
 import './http/generateSitemap.js';
+
 //import '../fileToDBScript/autoUpdateDBByFile.js';
 
 Meteor.startup(() => {
@@ -15,13 +18,5 @@ Meteor.startup(() => {
         insertInitData();
     }
     console.log(Meteor.release);
-    /*
-    SSLProxy({
-        port: 5555,
-        ssl: {
-            key: Assets.getText('privkey.pem'),
-            cert: Assets.getText('cert.pem')
-        }
-    })
-    */
+    
 });

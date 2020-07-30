@@ -1,12 +1,12 @@
 import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, init } from '../db/db.js';
 
 
-const initbigPic = require('./bigPic.json');
-const initidolCards = require('./idolCards.json');
-const initidolCardsDetail = require('./idolCardsDetail.json');
-const initidolDetail = require('./idolDetail.json');
-const initidols = require('./idols.json');
-const initunits = require('./units.json');
+const initbigPic = require('./jsons/bigPic.json');
+const initidolCards = require('./jsons/idolCards.json');
+const initidolCardsDetail = require('./jsons/idolCardsDetail.json');
+const initidolDetail = require('./jsons/idolDetail.json');
+const initidols = require('./jsons/idols.json');
+const initunits = require('./jsons/units.json');
 
 export function insertInitData(){
     init.insert({initialized: true});

@@ -19,14 +19,9 @@ import '../client/SCardsOverview/SCardsOverview.js';
 FlowRouter.route('/', {
     name: 'homePage',
     triggersEnter: [function() {
-		DocHead.addMeta({property: 'og:site_name', content: 'shinycolors-db'});
-        DocHead.addMeta({property: 'og:type' , content: 'website'});
-        DocHead.addMeta({property: 'og:title', content: 'shinycolors-db'});
-        DocHead.addMeta({property: 'og:description', content: 'A DataBase for Shinycolors developed by Euphokumiko.'});
-        DocHead.addMeta({property: 'og:url', content: 'http://shinycolors.nctu.me'});
+		
 	}],
     action: function(params, queryParams) {
-		DocHead.setTitle('ShinyColors');
 		
         //BlazeLayout.render('idolunit_list', {});
 	},

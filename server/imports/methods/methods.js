@@ -3,7 +3,7 @@ import { check } from 'meteor/check';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, tendencyJudge, tendency } from '../db/db.js';
+import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, tendencyJudge, tendency } from '../../../db/db.js';
 import { judgeObjStructure } from './checkJudgeObjStructure.js';
 import { filterObjStructure } from './checkFilterObjStructure.js';
 
