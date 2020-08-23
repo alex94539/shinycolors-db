@@ -265,7 +265,7 @@ function toggleCheckBox(element, instance){
     if(element.skillDesc.match(/思い出ゲージ\d+%DOWN/) || element.skillTitle.match(/思い出ゲージ\d+%DOWN/)){
         instance.find('#skillOmoiGaugeDown').checked = true;
     }
-    if(element.skillDesc.match(/メンタル\d+%回復/) || element.skillTitle.match(/メンタルダメージ\d+%回復/)){
+    if(element.skillDesc.match(/メンタル\d+%回復/) || element.skillTitle.match(/メンタルダメージ\d+%回復/) || element.skillTitle.match(/メンタル\d+%回復/)){
         instance.find('#skillMeInc').checked = true;
     }
     if(element.skillDesc.match(/自身のメンタルを\d+%減らす/)){

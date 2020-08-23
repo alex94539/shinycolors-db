@@ -17,6 +17,4 @@ Meteor.startup(() => {
     if(!init.find().fetch().length){
         insertInitData();
     }
-    console.log(Meteor.release);
-    
 });

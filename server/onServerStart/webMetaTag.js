@@ -4,8 +4,9 @@ import { Base64 } from 'js-base64';
 import { bigPic } from '../../db/db.js';
 
 onPageLoad((sink) => {
-    console.log(sink.request.url.pathname);
+    console.log(sink.request.url.pathname, sink.request.headers['x-forwarded-for']);
     const pathName = sink.request.url.pathname;
+    
     if(pathName.match(/PCardDetail/)){
         const cardName = Base64.decode(pathName.split('/')[2]);
         const picReg = new RegExp(cardName.replace('【', '').replace('】', ' ') + `+.png`);
@@ -17,6 +18,7 @@ onPageLoad((sink) => {
         sink.appendToHead(createMetaTag('og:image:url', `https://shinycolors.nctu.me/bigPic/${cardPic.uuid}`));
         sink.appendToHead(createMetaTag('og:site_name', `shinycolors-db`));
         sink.appendToHead(createMetaTag('og:description', cardName));
+        sink.appendToHead(createMetaTag('og:type', 'website'));
 
     }
     if(pathName.match(/SCardDetail/)){

@@ -1,4 +1,4 @@
-export const filterObjStructure = { 
+export const filterObjStructure_produce = { 
     "VoTendency": Boolean, 
     "DaTendency": Boolean, 
     "ViTendency": Boolean, 

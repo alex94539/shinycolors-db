@@ -1,4 +1,4 @@
-export const judgeObjStructure = { 
+export const judgeObjStructure_produce = { 
     "VoTendency": Boolean, 
     "DaTendency": Boolean, 
     "ViTendency": Boolean, 
