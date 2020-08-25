@@ -1,4 +1,4 @@
-import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, init } from '../db/db.js';
+import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, init, produceEvents } from '../db/db.js';
 
 
 const initbigPic = require('./jsons/bigPic.json');
@@ -7,6 +7,7 @@ const initidolCardsDetail = require('./jsons/idolCardsDetail.json');
 const initidolDetail = require('./jsons/idolDetail.json');
 const initidols = require('./jsons/idols.json');
 const initunits = require('./jsons/units.json');
+const initproduceEvents = require('./jsons/produceEvents.json');
 
 export function insertInitData(){
     init.insert({initialized: true});
@@ -27,5 +28,8 @@ export function insertInitData(){
     });
     initunits.forEach(element => {
         units.insert(element)
+    });
+    initproduceEvents.forEach(element => {
+        produceEvents.insert(element);
     });
 }
