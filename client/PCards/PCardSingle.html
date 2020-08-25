@@ -1,233 +1,478 @@
 <template name="PCardSingle">
-	<div id="thisIdolCardName">
-		<h2 class="thisIdolCardName">{{thisCardName}}</h2>
-	</div>
-	<div id="thisCardBigPic" style="height: 320px; width: 568px; position: relative;">
-        <img src="/bigPic/{{thisCardImage}}" alt="" height="320" width="568" id="thisPCardImage" style="position: absolute; z-index: 20;"/>
-        <div id="thisCardPicLoading" style="top: 50%; left: 50%; height: 50px; width: 50px; display: block; position: relative; z-index: 25;"></div>
-	</div>
-	<div id="thisCardDesc">
-		<h3>事件</h3>
-		{{#each thisCardIdolEvents}}
-		<div id="thisCardEvents">
-            <h4>{{eventName}}</h4>
-            {{#if (event3Option eventType)}}
-            <table class="eventsTable">
-                <tbody>
-                    <tr>
-                        <th class="classth">開場白</th>
-                        <td colspan="5">{{beginning}}</td>
-                    </tr>
-                    <tr>
-                        <th class="classth">選擇前</th>
-                        <td colspan="5">{{beforeSelection}}</td>
-                    </tr>
-                    <tr>    
-                        <th class="classth">選項</th>
-                        <th class="classVo">Vo</th>
-                        <th class="classDa">Da</th>
-                        <th class="classVi">Vi</th>
-                        <th class="classMe">Me</th>
-                        <th class="classSP">SP</th>
-                    </tr>
-                    <tr>
-                        <th class="classth">{{option1.optionDesc}}</th>
-                        <td>{{option1.optionIncreaseVo}}</td>
-                        <td>{{option1.optionIncreaseDa}}</td>
-                        <td>{{option1.optionIncreaseVi}}</td>
-                        <td rowspan="3">
-                            {{addMental}}
-                        </td>
-                        <td rowspan="3">
-                            {{addSkillP}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="classth">{{option2.optionDesc}}</th>
-                        <td>{{option2.optionIncreaseVo}}</td>
-                        <td>{{option2.optionIncreaseDa}}</td>
-                        <td>{{option2.optionIncreaseVi}}</td>
-                    </tr>
-                    <tr>
-                        <th class="classth">{{option3.optionDesc}}</th>
-                        <td>{{option3.optionIncreaseVo}}</td>
-                        <td>{{option3.optionIncreaseDa}}</td>
-                        <td>{{option3.optionIncreaseVi}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            {{/if}}
-            {{#if (event0Option eventType)}}
-            <table class="eventsTable">
-                <tbody>
-                    <tr>
-                        <th class="classth">開場白</th>
-                        <td colspan="5">{{beginning}}</td>
-                    </tr>
-                    <tr>
-                        <th class="classth">選項</th>
-                        <th class="classVo">Vo</th>
-                        <th class="classDa">Da</th>
-                        <th class="classVi">Vi</th>
-                        <th class="classMe">Me</th>
-                        <th class="classSP">SP</th>
-                    </tr>
-                    <tr>
-                        <th class="classth">無</th>
-                        <td>{{option1.optionIncreaseVo}}</td>
-                        <td>{{option1.optionIncreaseDa}}</td>
-                        <td>{{option1.optionIncreaseVi}}</td>
-                        <td>{{addMental}}</td>
-                        <td>{{addSkillP}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            {{/if}}
-		</div>
-        {{/each}}
-        
-        {{#if thisCardTrueEnd}}
-        <h3>True End</h3>
-        <div id="thisCardTrueEnd">
-            <table>
-                <tbody>
-                    <tr>
-                        <th>W.I.N.G優勝且至少為Rank A</th>
-                    </tr>
-                    <tr>
-                        <td>{{thisCardTrueEnd}}</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div id="thisIdolCardName">
+        <h2 class="thisIdolCardName">{{thisCardName}}</h2>
+    </div>
+    <div id="thisCardBigPic" style="height: 320px; width: 568px; position: relative;">
+        <img src="/bigPic/{{thisCardImage}}" alt="" height="320" width="568" id="thisPCardImage"
+            style="position: absolute; z-index: 20;" />
+        <div id="thisCardPicLoading"
+            style="top: 50%; left: 50%; height: 50px; width: 50px; display: block; position: relative; z-index: 25;">
         </div>
-        {{/if}}
-        {{#if inputTendency}}
-        <!--h3>暫時性表單 請參考下方技能盤並選擇此卡傾向</h3>
-        <div>
-            <form action="" style="border: solid 1px;" id="thisCardSubmitForm">
-                <h4>屬性傾向</h4>
-                <input type="checkbox" name="VoTendency" id="VoTendency"> <label for="VoTendency">Vo傾向</label>
-                <input type="checkbox" name="DaTendency" id="DaTendency"> <label for="DaTendency">Da傾向</label>
-                <input type="checkbox" name="ViTendency" id="ViTendency"> <label for="ViTendency">Vi傾向</label>
-                <input type="checkbox" name="MeTendency" id="MeTendency"> <label for="MeTendency">Me傾向</label>
+    </div>
+    <div id="thisCardDesc">
+        <button type="button" class="collapsible" id="cardIdolEvent">展開卡片事件</button>
+        <div class="content" id="cardIdolEventContent">
+            <h3>卡片事件</h3>
+            {{#each thisCardIdolEvents}}
+            <div class="thisCardEvents">
+                <h4>{{eventName}}</h4>
+                {{#if (event3Option eventType)}}
+                <table class="eventsTable">
+                    <tbody>
+                        <tr>
+                            <th class="classth">開場白</th>
+                            <td colspan="5">{{beginning}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">選擇前</th>
+                            <td colspan="5">{{beforeSelection}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">選項</th>
+                            <th class="classVo">Vo</th>
+                            <th class="classDa">Da</th>
+                            <th class="classVi">Vi</th>
+                            <th class="classMe">Me</th>
+                            <th class="classSP">SP</th>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option1.optionDesc}}</th>
+                            <td>{{option1.optionIncreaseVo}}</td>
+                            <td>{{option1.optionIncreaseDa}}</td>
+                            <td>{{option1.optionIncreaseVi}}</td>
+                            <td rowspan="3">
+                                {{addMental}}
+                            </td>
+                            <td rowspan="3">
+                                {{addSkillP}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option2.optionDesc}}</th>
+                            <td>{{option2.optionIncreaseVo}}</td>
+                            <td>{{option2.optionIncreaseDa}}</td>
+                            <td>{{option2.optionIncreaseVi}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option3.optionDesc}}</th>
+                            <td>{{option3.optionIncreaseVo}}</td>
+                            <td>{{option3.optionIncreaseDa}}</td>
+                            <td>{{option3.optionIncreaseVi}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {{/if}}
+                {{#if (event0Option eventType)}}
+                <table class="eventsTable">
+                    <tbody>
+                        <tr>
+                            <th class="classth">開場白</th>
+                            <td colspan="5">{{beginning}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">選項</th>
+                            <th class="classVo">Vo</th>
+                            <th class="classDa">Da</th>
+                            <th class="classVi">Vi</th>
+                            <th class="classMe">Me</th>
+                            <th class="classSP">SP</th>
+                        </tr>
+                        <tr>
+                            <th class="classth">無</th>
+                            <td>{{option1.optionIncreaseVo}}</td>
+                            <td>{{option1.optionIncreaseDa}}</td>
+                            <td>{{option1.optionIncreaseVi}}</td>
+                            <td>{{addMental}}</td>
+                            <td>{{addSkillP}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {{/if}}
+            </div>
+            {{/each}}
+
+            {{#if thisCardTrueEnd}}
+            <h3>True End</h3>
+            <div id="thisCardTrueEnd">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>W.I.N.G優勝且至少為Rank A</th>
+                        </tr>
+                        <tr>
+                            <td>{{thisCardTrueEnd}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {{/if}}
+        </div>
+        <button type="button" class="collapsible" id="idolEvents">展開偶像對話</button>
+        <div class="content" id="idolEventsContent">
+            {{#if thisIdolProduceEvents.wing.length}}
+            <button type="button" id="wingEvents">展開W.I.N.G事件</button>
+            <div class="content" id="wingEventsContent">
+                {{#each thisIdolProduceEvents.wing}}
+                {{#if thisIdolEvents this}}
+                {{#if event3Option this}}
+                <table class="eventsTable">
+                    <tbody><!--Use triple bracket here for html tag return-->
+                        <tr>
+                            <td>開場白</td>
+                            <td colspan="5">{{{replaceNewLineBegin beginning}}}</td>
+                        </tr>
+                        <tr>
+                            <td>選擇前</td>
+                            <td colspan="5">{{{replaceNewLineSelect beforeSelection}}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">選項</th>
+                            <th class="classVo">Vo</th>
+                            <th class="classDa">Da</th>
+                            <th class="classVi">Vi</th>
+                            <th class="classMe">Me</th>
+                            <th class="classSP">SP</th>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option1.optionDesc}}</th>
+                            <td>{{option1.optionIncreaseVo}}</td>
+                            <td>{{option1.optionIncreaseDa}}</td>
+                            <td>{{option1.optionIncreaseVi}}</td>
+                            <td rowspan="3">
+                                {{addMental}}
+                            </td>
+                            <td rowspan="3">
+                                {{addSkillP}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option2.optionDesc}}</th>
+                            <td>{{option2.optionIncreaseVo}}</td>
+                            <td>{{option2.optionIncreaseDa}}</td>
+                            <td>{{option2.optionIncreaseVi}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option3.optionDesc}}</th>
+                            <td>{{option3.optionIncreaseVo}}</td>
+                            <td>{{option3.optionIncreaseDa}}</td>
+                            <td>{{option3.optionIncreaseVi}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {{/if}}
+                {{#if event0Option this}}
+                <table class="eventsTable">
+                    <tbody>
+                        <tr>
+                            <th class="classth">開場白</th>
+                            <td colspan="5">{{beginning}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">選項</th>
+                            <th class="classVo">Vo</th>
+                            <th class="classDa">Da</th>
+                            <th class="classVi">Vi</th>
+                            <th class="classMe">Me</th>
+                            <th class="classSP">SP</th>
+                        </tr>
+                        <tr>
+                            <th class="classth">無</th>
+                            <td>{{option1.optionIncreaseVo}}</td>
+                            <td>{{option1.optionIncreaseDa}}</td>
+                            <td>{{option1.optionIncreaseVi}}</td>
+                            <td>{{addMental}}</td>
+                            <td>{{addSkillP}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {{/if}}
+                {{/if}}
                 <br>
-                <h4>技能傾向</h4>
-                <input type="checkbox" name="selfHarm" id="selfHarm"> <label for="selfHarm">自殘炮</label>
-                <input type="checkbox" name="lowHP" id="lowHP"> <label for="lowHP">壓血炮</label>
-                <input type="checkbox" name="highHP" id="highHP"> <label for="highHP">滿血炮</label>
-                <input type="checkbox" name="heal" id="heal"> <label for="heal">回血</label>
-                <input type="checkbox" name="omoideCharge" id="omoideCharge"> <label for="omoideCharge">回憶裝填</label>
-                <input type="checkbox" name="decInterest" id="decInterest"> <label for="decInterest">興味降低</label>
-                <input type="checkbox" name="incFocus" id="incFocus"> <label for="incFocus">注目度提升</label>
-                <input type="checkbox" name="reactionDodge" id="reactionDodge"> <label for="reactionDodge">反應迴避</label>
-                <input type="checkbox" name="damageDown" id="damageDown"> <label for="damageDown">減傷</label>
-                <input type="checkbox" name="meOverflow" id="meOverflow"> <label for="meOverFlow">回血超量裝填</label>
+                {{/each}}
+            </div>
+            <br>
+            {{/if}}
+            {{#if thisIdolProduceEvents.fan.length}}
+            <button type="button" id="fanEvents">展開Fan感謝祭事件</button>
+            <div class="content" id="fanEventsContent">
+                {{#each thisIdolProduceEvents.fan}}
+                {{#if thisIdolEvents this}}
+                {{#if event3Option this}}
+                <table class="eventsTable">
+                    <tbody><!--Use triple bracket here for html tag return-->
+                        <tr>
+                            <td>開場白</td>
+                            <td colspan="5">{{{replaceNewLineBegin beginning}}}</td>
+                        </tr>
+                        <tr>
+                            <td>選擇前</td>
+                            <td colspan="5">{{{replaceNewLineSelect beforeSelection}}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">選項</th>
+                            <th class="classVo">Vo</th>
+                            <th class="classDa">Da</th>
+                            <th class="classVi">Vi</th>
+                            <th class="classMe">Me</th>
+                            <th class="classSP">SP</th>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option1.optionDesc}}</th>
+                            <td>{{option1.optionIncreaseVo}}</td>
+                            <td>{{option1.optionIncreaseDa}}</td>
+                            <td>{{option1.optionIncreaseVi}}</td>
+                            <td rowspan="3">
+                                {{addMental}}
+                            </td>
+                            <td rowspan="3">
+                                {{addSkillP}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option2.optionDesc}}</th>
+                            <td>{{option2.optionIncreaseVo}}</td>
+                            <td>{{option2.optionIncreaseDa}}</td>
+                            <td>{{option2.optionIncreaseVi}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option3.optionDesc}}</th>
+                            <td>{{option3.optionIncreaseVo}}</td>
+                            <td>{{option3.optionIncreaseDa}}</td>
+                            <td>{{option3.optionIncreaseVi}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {{/if}}
+                {{#if event0Option this}}
+                <table class="eventsTable">
+                    <tbody>
+                        <tr>
+                            <td>開場白</td>
+                            <td colspan="5">{{{replaceNewLineBegin beginning}}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">選項</th>
+                            <th class="classVo">Vo</th>
+                            <th class="classDa">Da</th>
+                            <th class="classVi">Vi</th>
+                            <th class="classMe">Me</th>
+                            <th class="classSP">SP</th>
+                        </tr>
+                        <tr>
+                            <th class="classth">無</th>
+                            <td>{{option1.optionIncreaseVo}}</td>
+                            <td>{{option1.optionIncreaseDa}}</td>
+                            <td>{{option1.optionIncreaseVi}}</td>
+                            <td>{{addMental}}</td>
+                            <td>{{addSkillP}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {{/if}}
+                {{/if}}
                 <br>
+                {{/each}}
+            </div>
+            <br>
+            {{/if}}
+            {{#if thisIdolProduceEvents.grad.length}}
+            <button type="button" id="gradEvents">展開G.R.A.D事件</button>
+            <div class="content" id="gradEventsContent">
+                {{#each thisIdolProduceEvents.grad}}
+                {{#if thisIdolEvents this}}
+                {{#if event3Option this}}
+                <table class="eventsTable">
+                    <tbody><!--Use triple bracket here for html tag return-->
+                        <tr>
+                            <td>開場白</td>
+                            <td colspan="5">{{{replaceNewLineBegin beginning}}}</td>
+                        </tr>
+                        <tr>
+                            <td>選擇前</td>
+                            <td colspan="5">{{{replaceNewLineSelect beforeSelection}}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">選項</th>
+                            <th class="classVo">Vo</th>
+                            <th class="classDa">Da</th>
+                            <th class="classVi">Vi</th>
+                            <th class="classMe">Me</th>
+                            <th class="classSP">SP</th>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option1.optionDesc}}</th>
+                            <td>{{option1.optionIncreaseVo}}</td>
+                            <td>{{option1.optionIncreaseDa}}</td>
+                            <td>{{option1.optionIncreaseVi}}</td>
+                            <td rowspan="3">
+                                {{addMental}}
+                            </td>
+                            <td rowspan="3">
+                                {{addSkillP}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option2.optionDesc}}</th>
+                            <td>{{option2.optionIncreaseVo}}</td>
+                            <td>{{option2.optionIncreaseDa}}</td>
+                            <td>{{option2.optionIncreaseVi}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">{{option3.optionDesc}}</th>
+                            <td>{{option3.optionIncreaseVo}}</td>
+                            <td>{{option3.optionIncreaseDa}}</td>
+                            <td>{{option3.optionIncreaseVi}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {{/if}}
+                {{#if event0Option this}}
+                <table class="eventsTable">
+                    <tbody>
+                        <tr>
+                            <td>開場白</td>
+                            <td colspan="5">{{{replaceNewLineBegin beginning}}}</td>
+                        </tr>
+                        <tr>
+                            <th class="classth">選項</th>
+                            <th class="classVo">Vo</th>
+                            <th class="classDa">Da</th>
+                            <th class="classVi">Vi</th>
+                            <th class="classMe">Me</th>
+                            <th class="classSP">SP</th>
+                        </tr>
+                        <tr>
+                            <th class="classth">無</th>
+                            <td>{{option1.optionIncreaseVo}}</td>
+                            <td>{{option1.optionIncreaseDa}}</td>
+                            <td>{{option1.optionIncreaseVi}}</td>
+                            <td>{{addMental}}</td>
+                            <td>{{addSkillP}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {{/if}}
+                {{/if}}
                 <br>
-                <input type="submit" value="送出">
-            </form>
-        </div-->
-        {{/if}}
-		<h3>技能盤</h3>
-		<div id="thisCardSkillPanel">
-			<table class="skillPanel">
-				<thead>
-					<tr>
-						<th>技能點</th>
-						<th colspan="8">盤子</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th rowspan="2" style="width: 4%;" class="classSP">20SP</th>
-						<td rowspan="2" colspan="3" style="width: 30%;"></td>
-						{{#each thisCardSkill20}}
-						<td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">{{skillTitle}}</td>
-						{{/each}}
-						<td rowspan="2" colspan="3" style="width: 30%;"></td>
-					</tr>
-					<tr>
-						{{#each thisCardSkill20}}
-						<td colspan="2">
-							<div class="minHeight">
+                {{/each}}
+            </div>
+            <br>
+            {{/if}}
+        </div>
+        <button type="button" class="collapsible" id="idolMorningCommu">展開晨間對話</button>
+        <div class="content" id="idolMorningCommuContent">
+
+        </div>
+
+        <button type="button" class="collapsible" id="idolAudiCommu">展開試鏡對話</button>
+        <div class="content" id="idolAudiCommuContent">
+
+        </div>
+
+        <h3>技能盤</h3>
+        <div id="thisCardSkillPanel">
+            <table class="skillPanel">
+                <thead>
+                    <tr>
+                        <th>技能點</th>
+                        <th colspan="8">盤子</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th rowspan="2" style="width: 4%;" class="classSP">20SP</th>
+                        <td rowspan="2" colspan="3" style="width: 30%;"></td>
+                        {{#each thisCardSkill20}}
+                        <td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">
+                            {{skillTitle}}</td>
+                        {{/each}}
+                        <td rowspan="2" colspan="3" style="width: 30%;"></td>
+                    </tr>
+                    <tr>
+                        {{#each thisCardSkill20}}
+                        <td colspan="2">
+                            <div class="minHeight">
                                 {{#each sliceSkillDesc skillDesc}}
-							    <div class="skillDesc">{{this}}</div>
-							    {{/each}}
+                                <div class="skillDesc">{{this}}</div>
+                                {{/each}}
                             </div>
-						</td>
-						{{/each}}
-					</tr>
-					<tr>
-						<th rowspan="2" style="width: 4%;" class="classSP">30SP</th>
-						<td rowspan="2" colspan="2" style="width: 20%;"></td>
-						{{#each thisCardSkill30}}
-						<td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">{{skillTitle}}</td>
-						{{/each}}
-						<td rowspan="2" colspan="2" style="width: 20%;"></td>
-					</tr>
-					<tr>
-						{{#each thisCardSkill30}}
-						<td colspan="2">
-							<div class="minHeight">
+                        </td>
+                        {{/each}}
+                    </tr>
+                    <tr>
+                        <th rowspan="2" style="width: 4%;" class="classSP">30SP</th>
+                        <td rowspan="2" colspan="2" style="width: 20%;"></td>
+                        {{#each thisCardSkill30}}
+                        <td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">
+                            {{skillTitle}}</td>
+                        {{/each}}
+                        <td rowspan="2" colspan="2" style="width: 20%;"></td>
+                    </tr>
+                    <tr>
+                        {{#each thisCardSkill30}}
+                        <td colspan="2">
+                            <div class="minHeight">
                                 {{#each sliceSkillDesc skillDesc}}
-							    <div class="skillDesc">{{this}}</div>
-							    {{/each}}
+                                <div class="skillDesc">{{this}}</div>
+                                {{/each}}
                             </div>
-						</td>
-						{{/each}}
+                        </td>
+                        {{/each}}
                     </tr>
                     {{#if has40SPSkill}}
-					<tr>
-						<th rowspan="2" style="width: 4%;" class="classSP">40SP</th>
-						<td rowspan="2" style="width: 10%;"></td>
-						{{#each thisCardSkill40}}
-						<td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">{{skillTitle}}</td>
-						{{/each}}
-						<td rowspan="2" style="width: 10%;"></td>
-					</tr>
-					<tr>
-						{{#each thisCardSkill40}}
-						<td colspan="2">
-							<div class="minHeight">
-                                {{#each sliceSkillDesc skillDesc}}
-							    <div class="skillDesc">{{this}}</div>
-							    {{/each}}
-                            </div>
-						</td>
-						{{/each}}
-					</tr>
-                    {{/if}}
-                    {{#if has50SPSkill}}
-					<tr>
-                        <th rowspan="2" style="width: 4%;" class="classSP">50SP</th>
-                        {{#if SRColSpan}}
-						<td rowspan="2" colspan="2" style="width: 20%;"></td>
-                        {{/if}}
-
-						{{#each thisCardSkill50}}
-						<td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">{{skillTitle}}</td>
+                    <tr>
+                        <th rowspan="2" style="width: 4%;" class="classSP">40SP</th>
+                        <td rowspan="2" style="width: 10%;"></td>
+                        {{#each thisCardSkill40}}
+                        <td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">
+                            {{skillTitle}}</td>
                         {{/each}}
-
-                        {{#if SRColSpan}}
-						<td rowspan="2" colspan="2" style="width: 20%;"></td>
-                        {{/if}}
-					</tr>
-					<tr>
-                        
-						{{#each thisCardSkill50}}
-						<td colspan="2">
-							<div class="minHeight">
+                        <td rowspan="2" style="width: 10%;"></td>
+                    </tr>
+                    <tr>
+                        {{#each thisCardSkill40}}
+                        <td colspan="2">
+                            <div class="minHeight">
                                 {{#each sliceSkillDesc skillDesc}}
-							    <div class="skillDesc">{{this}}</div>
-							    {{/each}}
+                                <div class="skillDesc">{{this}}</div>
+                                {{/each}}
                             </div>
-						</td>
+                        </td>
                         {{/each}}
-                        
                     </tr>
                     {{/if}}
-				</tbody>
-			</table>
+                    {{#if has50SPSkill}}
+                    <tr>
+                        <th rowspan="2" style="width: 4%;" class="classSP">50SP</th>
+                        {{#if SRColSpan}}
+                        <td rowspan="2" colspan="2" style="width: 20%;"></td>
+                        {{/if}}
+
+                        {{#each thisCardSkill50}}
+                        <td colspan="2" style="width: 20%; text-align: center;" class="{{cellColor skillTitle}}">
+                            {{skillTitle}}</td>
+                        {{/each}}
+
+                        {{#if SRColSpan}}
+                        <td rowspan="2" colspan="2" style="width: 20%;"></td>
+                        {{/if}}
+                    </tr>
+                    <tr>
+
+                        {{#each thisCardSkill50}}
+                        <td colspan="2">
+                            <div class="minHeight">
+                                {{#each sliceSkillDesc skillDesc}}
+                                <div class="skillDesc">{{this}}</div>
+                                {{/each}}
+                            </div>
+                        </td>
+                        {{/each}}
+
+                    </tr>
+                    {{/if}}
+                </tbody>
+            </table>
         </div>
         <h3>回憶綻放</h3>
         <div id="thisCardOmoide">
@@ -254,5 +499,5 @@
                 </tbody>
             </table>
         </div>
-	</div>
+    </div>
 </template>

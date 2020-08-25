@@ -3,7 +3,7 @@ import { check } from 'meteor/check';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, tendencyJudge, tendency } from '../../../db/db.js';
+import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, tendencyJudge, tendency, produceEvents } from '../../../db/db.js';
 import { judgeObjStructure_produce } from './checkJudgeObjStructure.js';
 import { filterObjStructure_produce } from './checkFilterObjStructure.js';
 
@@ -36,7 +36,9 @@ Meteor.methods({
 		console.log(cardName);
 		return idolCardsDetail.find({cardName: cardName, type: /P/}).fetch();
 	},
-
+	getThisIdolProduceEvents({thisIdol}){
+		return produceEvents.findOne({idol: thisIdol});
+	},
 	//SCardSingle
 	getSCardSingleDetail({cardName}) {
 		return idolCardsDetail.find({cardName: cardName, type: /S/}).fetch();

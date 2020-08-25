@@ -16,6 +16,8 @@ export const tendency = new Mongo.Collection('tendency');
 //tendency Judge
 export const tendencyJudge = new Mongo.Collection('tendencyJudge');
 
+//produce Event
+export const produceEvents = new Mongo.Collection('produceEvents');
+
 //first time start up
 export const init = new Mongo.Collection('init');
-

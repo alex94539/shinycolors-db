@@ -11,7 +11,8 @@ Template.PCardSingle.onCreated(function(){
         this.currentPCard = new ReactiveVar();
         this.currentPCardDetail = new ReactiveVar();
         this.currentPCardPicArr = new ReactiveVar();
-        this.currentPCardPicCount = new ReactiveVar(1);
+		this.currentPCardPicCount = new ReactiveVar(1);
+		this.currentIdolProduceEvents = new ReactiveVar([]);
         FlowRouter.watchPathChange();
         if(FlowRouter.getRouteName() !== 'PCardDetail') {
             Blaze.remove(this.view);
@@ -34,13 +35,19 @@ Template.PCardSingle.onCreated(function(){
 			this.currentPCardPicArr.set(result);
 			this.currentPCardPicCount.set(1);
 		});
+
+		let thisIdol = card.match(/【.*】(.*)/)[1];
+		Meteor.call('getThisIdolProduceEvents', {thisIdol: thisIdol}, (err, result) => {
+			console.log(result);
+			this.currentIdolProduceEvents.set(result);
+		});
     });
 });
 
 Template.PCardSingle.helpers({
 	sliceSkillDesc: function () {
 		if (!Template.instance().currentPCardDetail.get()) return [];
-		console.log(this);
+		//console.log(this);
 		if (this.skillTitle.match(/(Visual\d+%UP)|(Vocal\d+%UP)|(Dance\d+%UP)|(メンタルダメージ\d+%CUT)|(メンタル\d+%回復)|(思い出ゲージ\d+%UP)|(注目度\d+%DOWN)|(Vo&Da&Vi\d+%UP)|(Vocal&Dance&Visual\d+%UP)/)) {
             if(this.skillDesc.match(/\[.*?\]/g).length < 3){
                 return ['', this.skillDesc.match(/\[.*?\]/g)[0], ''];
@@ -150,10 +157,23 @@ Template.PCardSingle.helpers({
         if (this.appealName.match(/.*[^+]$/)) return Template.instance().currentPCardDetail.get().memoryLink[0];
         return false;
     },
+	thisIdolProduceEvents: function(){
+		return Template.instance().currentIdolProduceEvents.get();
+	},
 
-
-	inputTendency: function(){
-		return true;
+	thisIdolEvents: function(){
+		if(this.eventType !== "noChange"){
+			return true;
+		}
+		else{
+			return false;
+		}
+	},
+	replaceNewLineBegin: function(){
+		return this.beginning.replace('\n', '<br>')
+	},
+	replaceNewLineSelect: function(){
+		return this.beforeSelection.replace('\n', '<br>')
 	}
 });
 
@@ -176,6 +196,76 @@ Template.PCardSingle.events({
 
 		const vi = event.target.ViTendency.checked;
 		console.log(vi);
+	},
+	'click #cardIdolEvent'(event, instance){
+		event.preventDefault();
+
+		if(instance.find('#cardIdolEventContent').style.display === "block"){
+			instance.find('#cardIdolEventContent').style.display = "none";
+		}
+		else{
+			instance.find('#cardIdolEventContent').style.display = "block";
+		}
+	},
+	'click #idolEvents'(event, instance){
+		event.preventDefault();
+
+		if(instance.find('#idolEventsContent').style.display === "block"){
+			instance.find('#idolEventsContent').style.display = "none";
+		}
+		else{
+			instance.find('#idolEventsContent').style.display = "block";
+		}
+	},
+	'click #wingEvents'(event, instance){
+		event.preventDefault();
+
+		if(instance.find('#wingEventsContent').style.display === "block"){
+			instance.find('#wingEventsContent').style.display = "none";
+		}
+		else{
+			instance.find('#wingEventsContent').style.display = "block";
+		}
+	},
+	'click #fanEvents'(event, instance){
+		event.preventDefault();
+
+		if(instance.find('#fanEventsContent').style.display === "block"){
+			instance.find('#fanEventsContent').style.display = "none";
+		}
+		else{
+			instance.find('#fanEventsContent').style.display = "block";
+		}
+	},
+	'click #gradEvents'(event, instance){
+		event.preventDefault();
+
+		if(instance.find('#gradEventsContent').style.display === "block"){
+			instance.find('#gradEventsContent').style.display = "none";
+		}
+		else{
+			instance.find('#gradEventsContent').style.display = "block";
+		}
+	},
+	'click #idolMorningCommu'(event, instance){
+		event.preventDefault();
+
+		if(instance.find('#idolMorningCommuContent').style.display === "block"){
+			instance.find('#idolMorningCommuContent').style.display = "none";
+		}
+		else{
+			instance.find('#idolMorningCommuContent').style.display = "block";
+		}
+	},
+	'click #idolAudiCommu'(event, instance){
+		event.preventDefault();
+
+		if(instance.find('#idolAudiCommuContent').style.display === "block"){
+			instance.find('#idolAudiCommuContent').style.display = "none";
+		}
+		else{
+			instance.find('#idolAudiCommuContent').style.display = "block";
+		}
 	}
 }); 
 
