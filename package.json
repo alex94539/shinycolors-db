@@ -8,13 +8,13 @@
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
   "dependencies": {
-    "@babel/runtime": "^7.7.6",
+    "@babel/runtime": "^7.11.2",
     "fs": "0.0.1-security",
     "jquery": "^3.4.1",
-    "js-base64": "^2.6.3",
-    "meteor-node-stubs": "^1.0.0",
+    "js-base64": "^2.6.4",
+    "meteor-node-stubs": "^1.0.1",
     "moment": "^2.27.0",
-    "uuid": "^8.2.0"
+    "uuid": "^8.3.0"
   },
   "meteor": {
     "mainModule": {

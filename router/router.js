@@ -154,4 +154,4 @@ FlowRouter.route('/rejected', {
 	triggersExit: [function () {
 		DocHead.removeDocHeadAddedTags();
 	}],
-})
+});

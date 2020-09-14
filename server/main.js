@@ -14,7 +14,6 @@ import './http/generateSitemap.js';
 
 //import '../fileToDBScript/autoUpdateDBByFile.js';
 
-const path = "C:/Users/KousakaReina/Desktop";
 
 Meteor.startup(() => {
     // code to run on server at startup
