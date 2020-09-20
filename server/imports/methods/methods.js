@@ -10,11 +10,15 @@ import { filterObjStructure_produce } from './checkFilterObjStructure.js';
 
 Meteor.methods({
 	getIdols() {
-		//console.log(idols.find({}));
-		return idols.find({}).fetch();
+		const idolsData = idols.find({}).fetch();
+		idolsData.forEach(element => {
+			delete element._id;
+		});
+		return idolsData;
 	},
 	getUnits() {
 		return units.find({}).fetch();
+		
 	},
 	getIdolDetail({name}) {
 		//if (name.match('\$')) return [];
@@ -99,7 +103,7 @@ Meteor.methods({
 		tendency.insert(judgedObj);
 		return true;
 	},
-	produceCardFilterQuery({queryObj}){
+	produceCardFilterQuery({queryObj, idols}){
 		/*
 		try {
 			check(queryObj, filterObjStructure);
@@ -109,6 +113,6 @@ Meteor.methods({
 			}
 		}
 		*/
-		return tendency.find({...queryObj, typeProduce: true}).fetch();
+		return tendency.find({...queryObj, typeProduce: true, $or: idols}).fetch();
 	}
 });

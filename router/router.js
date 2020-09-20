@@ -111,7 +111,8 @@ FlowRouter.route('/judgeTendency', {
     action: function(params, queryParams){
         Meteor.call('getNextCardToJudge', [], (err, result) => {
             const path = FlowRouter.path("judgeTendency", {cardName: Base64.encodeURI(result.cardName), uuidAuth: result.uuidAuth});
-            FlowRouter.go(path);
+			FlowRouter.go(path);
+			delete path;
         });
     },
 	triggersExit: [function () {

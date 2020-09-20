@@ -60,13 +60,13 @@
             <input type="checkbox" name="skillFirstAppeal" id="skillFirstAppeal"> <label for="skillFirstAppeal">必ず最初にアピール</label>
             <input type="checkbox" name="skillLastAppeal" id="skillLastAppeal"> <label for="skillLastAppeal">必ず最後にアピール</label>
             <br>
-            <h4>其他標註</h4>
+            <!--h4>其他標註</h4>
             <input type="checkbox" name="commentSelfHarm" id="commentSelfHarm"> <label for="commentSelfHarm">自殘炮</label>
             <input type="checkbox" name="commentLowHPSkill" id="commentLowHPSkill"> <label for="commentLowHPSkill">壓血隊</label>
             <input type="checkbox" name="commentHighHPSkill" id="commentHighHPSkill"> <label for="commentHighHPSkill">滿血隊</label>
             <input type="checkbox" name="commentOmoideCharge" id="commentOmoideCharge"> <label for="commentOmoideCharge">回憶裝填</label>
 
-            <br>
+            <br-->
             
             <h4>卡片稀有度</h4>
             <input type="checkbox" name="raritySSR" id="raritySSR"> <label for="raritySSR">SSR</label>
@@ -76,6 +76,17 @@
             
             <br>
             <br>
+            <h4>偶像</h4>
+            {{#each units}}
+            <input type="checkbox" name={{jap}} id={{jap}} class="unitClass"> <label for={{jap}}>{{use}}</label>
+            <br>
+            {{#each idols use}}
+            <input type="checkbox" name={{name}} id={{name}}> <label for={{name}}>{{name}}</label>
+            {{/each}}
+            <br>
+            <br>
+            {{/each}}
+
             <input type="submit" value="送出">  
         </form>
     </div>

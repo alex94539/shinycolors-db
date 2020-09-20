@@ -15,9 +15,9 @@ Template.body.onCreated(function() {
     Tracker.autorun(() => {
         FlowRouter.watchPathChange();
 
-        DocHead.addMeta({name: 'description', content: 'A DataBase for Shinycolors developed by Euphokumiko.'});
+        //DocHead.addMeta({name: 'description', content: 'A DataBase for Shinycolors developed by Euphokumiko.'});
         
-        DocHead.addMeta({itemprop: 'name', content: 'A DataBase for Shinycolors developed by Euphokumiko.'});
+        //DocHead.addMeta({itemprop: 'name', content: 'A DataBase for Shinycolors developed by Euphokumiko.'});
     });
 });
 

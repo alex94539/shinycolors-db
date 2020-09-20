@@ -4,6 +4,8 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
+import moment from 'moment';
+
 import './idolunit_list.html';
 
 
@@ -11,12 +13,28 @@ Template.idolunit_list.onCreated(function () {
 	this.baseData = new ReactiveDict();
 	this.baseData.set('units', []);
 
-	Meteor.call('getUnits', [], (err, result) => {
-		this.baseData.set('units', result);
-	});
-	Meteor.call('getIdols', [], (err, result) => {
-		this.baseData.set('idols', result);
-	});
+	if(!localStorage.getItem('units')){
+		Meteor.call('getUnits', [], (err, result) => {
+			this.baseData.set('units', result);
+			localStorage.setItem('units', JSON.stringify(result));
+		});
+	}
+	else{
+		let localUnits = JSON.parse(localStorage.getItem('units'));
+		this.baseData.set('units', localUnits);
+	}
+	
+	if(!localStorage.getItem('idols')){
+		Meteor.call('getIdols', [], (err, result) => {
+			this.baseData.set('idols', result);
+			localStorage.setItem('idols', JSON.stringify(result));
+		});
+	}
+	else{
+		let localIdols = JSON.parse(localStorage.getItem('idols'));
+		this.baseData.set('idols', localIdols);
+	}
+	
 });
 
 Template.idolunit_list.helpers({
@@ -52,3 +70,4 @@ Template.idolunit_list.events({
 		FlowRouter.go(`/idol/${this.name}`);
 	},
 });
+

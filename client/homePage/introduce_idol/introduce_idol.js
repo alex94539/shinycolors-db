@@ -22,16 +22,32 @@ Template.introduce_idol.onCreated(function() {
 
         this.thisIdol.set(FlowRouter.current().params.idolName);
         this.thisIdolPicType.set(0);
-        console.log(this);
+        //console.log(this);
         //this.document.title = FlowRouter.current().params.idolName;
-        Meteor.call('getIdolDetail', {name: FlowRouter.current().params.idolName}, (err, result) => {
-			//console.log(result[0]);
-			this.thisIdolDetail.set(result[0]);
-		});
-        Meteor.call('getThisIdolCard', {name: FlowRouter.current().params.idolName}, (err, result) => {
-			this.thisIdolCards.set(result[0]);
-			//console.log(result);
-		});
+        if(!localStorage.getItem(FlowRouter.current().params.idolName)){
+            Meteor.call('getIdolDetail', {name: FlowRouter.current().params.idolName}, (err, result) => {
+                //console.log(result[0]);
+                this.thisIdolDetail.set(result[0]);
+                localStorage.setItem(FlowRouter.current().params.idolName, JSON.stringify(result[0]));
+            });
+        }
+        else{
+            let thisLocalIdol = JSON.parse(localStorage.getItem(FlowRouter.current().params.idolName));
+            this.thisIdolDetail.set(thisLocalIdol);
+        }
+        
+        if(!localStorage.getItem(`${FlowRouter.current().params.idolName}Cards`)){
+            Meteor.call('getThisIdolCard', {name: FlowRouter.current().params.idolName}, (err, result) => {
+                this.thisIdolCards.set(result[0]);
+                localStorage.setItem(`${FlowRouter.current().params.idolName}Cards`, JSON.stringify(result[0]));
+                //console.log(result);
+            });
+        }
+        else{
+            let thisLocalIdolCards = JSON.parse(localStorage.getItem(`${FlowRouter.current().params.idolName}Cards`));
+            this.thisIdolCards.set(thisLocalIdolCards);
+        }
+        
     });
 });
 
