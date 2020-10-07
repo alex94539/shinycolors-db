@@ -11,7 +11,7 @@ Template.PCardsOverview.onCreated(function(){
     this.currentFilterResult = new ReactiveVar([]);
 	this.baseData = new ReactiveDict();
     this.checkStatus = new ReactiveDict();
-    
+    this.resultIsNull = new ReactiveVar(false);
 
     Meteor.call('produceCardFilterQuery', {queryObj: {}}, (err, result) => {
         this.currentFilterResult.set(result);
@@ -90,9 +90,14 @@ Template.PCardsOverview.events({
         if(!queryIdolsArr.length){
             instance.baseData.get('idols').forEach(element => {
                 queryIdolsArr.push({idol: element.name});
-            })
+            });
         }
         Meteor.call('produceCardFilterQuery', {queryObj: formObj, idols: queryIdolsArr}, (err, result) => {
+            if(!result.length){
+                alert('查無結果');
+                return;
+            }
+            
             instance.currentFilterResult.set(result);
 
             instance.find('#thisFilterForm').style.display = 'none';
@@ -115,5 +120,19 @@ Template.PCardsOverview.events({
             instance.checkStatus.set(this.use, false);
         }
         
+    },
+    'click #resetForm'(event, instance){
+        instance.findAll('input:checkbox').forEach(element => {
+            element.checked = false;
+        });
+    },
+    'click #newQuery'(event, instance){
+        instance.currentFilterResult.set([]);
+        instance.findAll('input:checkbox').forEach(element => {
+            element.checked = false;
+        });
+
+        instance.find('#thisFilterForm').style.display = 'block';
+        instance.find('#thisFilterCards').style.display = 'none';
     }
 });

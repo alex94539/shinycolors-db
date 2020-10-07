@@ -15,6 +15,7 @@ import '../client/judgeTendency/judgeTendency.js';
 import '../client/otherPages/otherPages.js';
 import '../client/PCardsOverview/PCardsOverview.js';
 import '../client/SCardsOverview/SCardsOverview.js';
+import '../client/judgeTendencyS/judgeTendencyS.js'
 
 FlowRouter.route('/', {
     name: 'homePage',
@@ -127,6 +128,33 @@ FlowRouter.route('/judgeTendency/:cardName/:uuidAuth', {
         DocHead.setTitle(Base64.decode(params.cardName));
 		BlazeLayout.setRoot('#mainPage_descArea');
 		BlazeLayout.render('judgeTendency', {});
+    },
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
+});
+
+FlowRouter.route('/judgeTendencyS', {
+	triggersEnter: [function () {}],
+    action: function(params, queryParams){
+        Meteor.call('getNextCardToJudgeS', [], (err, result) => {
+            const path = FlowRouter.path("judgeTendencyS", {cardName: Base64.encodeURI(result.cardName), uuidAuth: result.uuidAuth});
+			FlowRouter.go(path);
+			delete path;
+        });
+    },
+	triggersExit: [function () {
+		DocHead.removeDocHeadAddedTags();
+	}],
+});
+
+FlowRouter.route('/judgeTendencyS/:cardName/:uuidAuth', {
+    name: 'judgeTendencyS', 
+	triggersEnter: [function () {}],
+    action: function(params, queryParams){
+        DocHead.setTitle(Base64.decode(params.cardName));
+		BlazeLayout.setRoot('#mainPage_descArea');
+		BlazeLayout.render('judgeTendencyS', {});
     },
 	triggersExit: [function () {
 		DocHead.removeDocHeadAddedTags();

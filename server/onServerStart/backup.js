@@ -1,10 +1,24 @@
 import fs from 'fs';
+import moment from 'moment';
 
-import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, init, produceEvents, tendency, tendencyJudge } from '../../db/db.js';
+import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, init, produceEvents, tendency, tendencyJudge, backupTime } from '../../db/db.js';
 
-const path = "C:/Users/KousakaReina/Desktop";
+const path = "/var/SCDB/";
 
-export function backup() {
+export async function backup() {
+    const lastBackupObj = backupTime.find({}, {sort: {_id: -1}, limit: 1}).fetch();
+    const lastBackupUnix = !lastBackupObj.length ? 0 : lastBackupObj[0].time;
+    const currentTime = moment().format('YYYYMMDDHHmmss'), 
+          currentUnix = moment().unix();
+          //lastBackupUnix = moment(Number(lastBackupTime)).format('YYYYMMDDHHmmss').unix();
+    console.log(lastBackupUnix, currentUnix);
+
+    //return;
+    //console.log(`%c ${moment().unix()} - ${moment(Number(lastBackupTime)).format('YYYYMMDDHHmmss')}`, 'background: orange; color: green');
+    if(Number(currentUnix) - Number(lastBackupUnix) < 43200){
+        return;
+    }
+    console.log('%c start backup DB at ' + currentTime, 'background: orange; color: green');
     let idolData = idols.find().fetch();
     let unitsData = units.find().fetch();
     let idolDetailData = idolDetail.find().fetch();
@@ -43,13 +57,21 @@ export function backup() {
         delete element._id;
     });
 
-    fs.writeFileSync(path + '/idols.json', JSON.stringify(idolData));
-    fs.writeFileSync(path + '/units.json', JSON.stringify(unitsData));
-    fs.writeFileSync(path + '/idolDetail.json', JSON.stringify(idolDetailData));
-    fs.writeFileSync(path + '/idolCards.json', JSON.stringify(idolCardsData));
-    fs.writeFileSync(path + '/idolCardsDetail.json', JSON.stringify(idolCardsDetailData));
-    fs.writeFileSync(path + '/bigPic.json', JSON.stringify(bigPicData));
-    fs.writeFileSync(path + '/produceEvents.json', JSON.stringify(produceEventsData));
-    fs.writeFileSync(path + '/tendency.json', JSON.stringify(tendencyData));
-    fs.writeFileSync(path + '/tendencyJudge.json', JSON.stringify(tenJudgeData));
+    const thisBackupDir = path + currentTime; 
+
+    fs.mkdir(thisBackupDir, async function(){
+        fs.writeFileSync(thisBackupDir + '/idols.json', JSON.stringify(idolData));
+        fs.writeFileSync(thisBackupDir + '/units.json', JSON.stringify(unitsData));
+        fs.writeFileSync(thisBackupDir + '/idolDetail.json', JSON.stringify(idolDetailData));
+        fs.writeFileSync(thisBackupDir + '/idolCards.json', JSON.stringify(idolCardsData));
+        fs.writeFileSync(thisBackupDir + '/idolCardsDetail.json', JSON.stringify(idolCardsDetailData));
+        fs.writeFileSync(thisBackupDir + '/bigPic.json', JSON.stringify(bigPicData));
+        fs.writeFileSync(thisBackupDir + '/produceEvents.json', JSON.stringify(produceEventsData));
+        fs.writeFileSync(thisBackupDir + '/tendency.json', JSON.stringify(tendencyData));
+        fs.writeFileSync(thisBackupDir + '/tendencyJudge.json', JSON.stringify(tenJudgeData));
+
+        backupTime.insert({type: 'autoBackup', time: currentUnix});
+    });
+
+    
 }

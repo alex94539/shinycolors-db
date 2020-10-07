@@ -21,3 +21,6 @@ export const produceEvents = new Mongo.Collection('produceEvents');
 
 //first time start up
 export const init = new Mongo.Collection('init');
+
+//db last backup time
+export const backupTime = new Mongo.Collection('backupTime');

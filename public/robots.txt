@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /*
 
-sitemap: https://shinycolors.nctu.me/sitemap.xml
+sitemap: https://shinycolors.moe/sitemap.xml

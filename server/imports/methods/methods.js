@@ -17,8 +17,11 @@ Meteor.methods({
 		return idolsData;
 	},
 	getUnits() {
-		return units.find({}).fetch();
-		
+		const unitsData = units.find({}).fetch();
+		unitsData.forEach(element => {
+			delete element._id;
+		})
+		return unitsData;
 	},
 	getIdolDetail({name}) {
 		//if (name.match('\$')) return [];
@@ -37,15 +40,23 @@ Meteor.methods({
 	
 	//PCardSingle
 	getPCardSingleDetail({cardName}) {
-		console.log(cardName);
-		return idolCardsDetail.find({cardName: cardName, type: /P/}).fetch();
+		//console.log(cardName);
+		const queryResult = idolCardsDetail.find({cardName: cardName, type: /P/}).fetch();
+		queryResult.forEach(element => {
+			delete element._id;
+		});
+		return queryResult;
 	},
 	getThisIdolProduceEvents({thisIdol}){
 		return produceEvents.findOne({idol: thisIdol});
 	},
 	//SCardSingle
 	getSCardSingleDetail({cardName}) {
-		return idolCardsDetail.find({cardName: cardName, type: /S/}).fetch();
+		const queryResult = idolCardsDetail.find({cardName: cardName, type: /S/}).fetch();
+		queryResult.forEach(element => {
+			delete element._id;
+		});
+		return queryResult;
 	},
 
 	//judgeTendency
@@ -60,6 +71,12 @@ Meteor.methods({
 	},
 	getNextCardToJudge(){
 		const toJudge = tendencyJudge.findOne({isJudged: false, lastActive: null, type: /P_/});
+		const thisuuid = uuidv4();
+		tendencyJudge.update({_id: toJudge._id}, {$set: {lastActive: new Date(), uuidAuth: thisuuid}});
+		return {...toJudge, uuidAuth: thisuuid};
+	},
+	getNextCardToJudgeS(){
+		const toJudge = tendencyJudge.findOne({isJudged: false, lastActive: null, type: /S_/});
 		const thisuuid = uuidv4();
 		tendencyJudge.update({_id: toJudge._id}, {$set: {lastActive: new Date(), uuidAuth: thisuuid}});
 		return {...toJudge, uuidAuth: thisuuid};

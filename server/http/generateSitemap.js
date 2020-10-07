@@ -27,7 +27,7 @@ function createCardURLTag(element){
 }
 
 function createLocTag(element){
-    let locData = 'https://shinycolors.nctu.me/';
+    let locData = 'https://shinycolors.moe/';
     if(element.type.match(/P_/)){
         locData += 'PCardDetail/';
     }

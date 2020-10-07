@@ -15,7 +15,8 @@
 		"interest": "音楽鑑賞、綺麗な景色を探すこと、占い",
 		"skill": "料理、スケジュール管理",
 		"CV": "近藤 玲奈",
-		"nick": "hiori"
+		"nick": "hiori",
+		"hirameki": "Vi"
 	},
 	{
 		"name": "櫻木真乃",
@@ -33,7 +34,8 @@
 		"interest": "お出かけ、公園で日向ぼっこ",
 		"skill": "鳥に好かれる",
 		"CV": "関根 瞳",
-		"nick": "mano"
+		"nick": "mano",
+		"hirameki": "Vo"
 	},
 	{
 		"name": "八宮めぐる",
@@ -51,7 +53,8 @@
 		"interest": "人と話すこと、体を動かすこと",
 		"skill": "スポーツ全般",
 		"CV": "峯田 茉優",
-		"nick": "meguru"
+		"nick": "meguru",
+		"hirameki": "Da"
 	},
 	{
 		"name": "田中摩美々",
@@ -69,7 +72,8 @@
 		"interest": "放浪、人をからかう",
 		"skill": "自分で髪を切る",
 		"CV": "菅沼 千紗",
-		"nick": "mamimi"
+		"nick": "mamimi",
+		"hirameki": "Vi"
 	},
 	{
 		"name": "幽谷霧子",
@@ -87,7 +91,8 @@
 		"interest": "かわいいもの全般の収集、手芸、献血",
 		"skill": "包帯を綺麗に巻く、足音を立てない、りんごの皮むき",
 		"CV": "結名 美月",
-		"nick": "kiriko"
+		"nick": "kiriko",
+		"hirameki": "Vo"
 	},
 	{
 		"name": "月岡恋鐘",
@@ -105,7 +110,8 @@
 		"interest": "うちの手料理、何でも絶品たい！",
 		"skill": "そっくりな似顔絵ば描けるたい！",
 		"CV": "礒部 花凜",
-		"nick": "kogane"
+		"nick": "kogane",
+		"hirameki": "Me"
 	},
 	{
 		"name": "三峰結華",
@@ -123,7 +129,8 @@
 		"interest": "アイドルライブ鑑賞、カメラ、ゲーム、アニメ、読書",
 		"skill": "勉強、推しに一早く認知されること",
 		"CV": "成海  瑠奈",
-		"nick": "yuika"
+		"nick": "yuika",
+		"hirameki": "Da"
 	},
 	{
 		"name": "白瀬咲耶",
@@ -141,7 +148,8 @@
 		"interest": "色々な所に出かける",
 		"skill": "自分を最大限カッコ良く見せる立ち振舞い",
 		"CV": "八巻 アンナ",
-		"nick": "sakuya"
+		"nick": "sakuya",
+		"hirameki": "Vi"
 	},
 	{
 		"name": "杜野凛世",
@@ -159,7 +167,8 @@
 		"interest": "少女漫画、芸道全般",
 		"skill": "折り紙、百人一首",
 		"CV": "丸岡 和佳奈",
-		"nick": "rinze"
+		"nick": "rinze",
+		"hirameki": "Da"
 	},
 	{
 		"name": "園田智代子",
@@ -177,7 +186,8 @@
 		"interest": "スイーツ店巡り",
 		"skill": "たくさん食べられること",
 		"CV": "白石 晴香",
-		"nick": "chiyoko"
+		"nick": "chiyoko",
+		"hirameki": "Me"
 	},
 	{
 		"name": "小宮果穂",
@@ -195,7 +205,8 @@
 		"interest": "日曜日朝の子供向け番組を見る事グッズ集め",
 		"skill": "好きな番組の決め台詞を数多く覚えている",
 		"CV": "河野 ひより",
-		"nick": "kaho"
+		"nick": "kaho",
+		"hirameki": "Vo"
 	},
 	{
 		"name": "西城樹里",
@@ -213,7 +224,8 @@
 		"interest": "洋楽、ゲーム",
 		"skill": "スポーツ全般、(中2までは)バスケ",
 		"CV": "永井 真里子",
-		"nick": "juri"
+		"nick": "juri",
+		"hirameki": "Da"
 	},
 	{
 		"name": "有栖川夏葉",
@@ -231,7 +243,8 @@
 		"interest": "トレーニング、ストレッチ",
 		"skill": "トータルコーディネート",
 		"CV": "涼本 あきほ",
-		"nick": "natsuha"
+		"nick": "natsuha",
+		"hirameki": "Me"
 	},
 	{
 		"name": "大崎甘奈",
@@ -249,7 +262,8 @@
 		"interest": "ショッピング、ネイル、自撮り",
 		"skill": "早起き、倹約",
 		"CV": "黒木 ほの香",
-		"nick": "amana"
+		"nick": "amana",
+		"hirameki": "Vi"
 	},
 	{
 		"name": "桑山千雪",
@@ -267,7 +281,8 @@
 		"interest": "雑貨作り",
 		"skill": "裁縫、道案内",
 		"CV": "芝崎 典子",
-		"nick": "chiyuki"
+		"nick": "chiyuki",
+		"hirameki": "Vo"
 	},
 	{
 		"name": "大崎甜花",
@@ -285,7 +300,8 @@
 		"interest": "お昼寝、ネットサーフィン、アニメ、ゲーム",
 		"skill": "特に無い",
 		"CV": "前川 涼子",
-		"nick": "tenka"
+		"nick": "tenka",
+		"hirameki": "Vi"
 	},
 	{
 		"name": "黛冬優子",
@@ -303,7 +319,8 @@
 		"interest": "お友達とおしゃべり♪",
 		"skill": "みんなと仲良くなること♪",
 		"CV": "幸村 恵理",
-		"nick": "fuyuko"
+		"nick": "fuyuko",
+		"hirameki": "Vo"
 	},
 	{
 		"name": "芹沢あさひ",
@@ -321,7 +338,8 @@
 		"interest": "人間観察、人に話しかけること",
 		"skill": "記憶力がいい",
 		"CV": "田中 有紀",
-		"nick": "asahi"
+		"nick": "asahi",
+		"hirameki": "Da"
 	},
 	{
 		"name": "和泉愛依",
@@ -339,7 +357,8 @@
 		"interest": "友達と遊ぶ、最近の曲を聞く",
 		"skill": "何時間でも電話できること",
 		"CV": "北原 沙弥香",
-		"nick": "mei"
+		"nick": "mei",
+		"hirameki": "Me"
 	},
 	{
 		"name": "市川雛菜",
@@ -357,7 +376,8 @@
 		"interest": "なんでもそれなりに好き～",
 		"skill": "なんでもそれなりにできる～",
 		"CV": "岡咲美保",
-		"nick": "hinana"
+		"nick": "hinana",
+		"hirameki": "Da"
 	},
 	{
 		"name": "浅倉透",
@@ -375,7 +395,8 @@
 		"interest": "映画やドラマを見ること",
 		"skill": "人の顔を覚えること",
 		"CV": "和久井 優",
-		"nick": "toru"
+		"nick": "toru",
+		"hirameki": "Vi"
 	},
 	{
 		"name": "樋口円香",
@@ -393,7 +414,8 @@
 		"interest": "別にないです",
 		"skill": "別にないです",
 		"CV": "土屋李央",
-		"nick": "madoka"
+		"nick": "madoka",
+		"hirameki": "Vo"
 	},
 	{
 		"name": "福丸小糸",
@@ -411,6 +433,7 @@
 		"interest": "読書",
 		"skill": "勉強",
 		"CV": "田嶌紗蘭",
-		"nick": "koito"
+		"nick": "koito",
+		"hirameki": "Me"
 	}
 ]

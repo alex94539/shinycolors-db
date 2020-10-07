@@ -1,5 +1,6 @@
-import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, init, produceEvents, tendency, tendencyJudge } from '../db/db.js';
+import { idols, units, idolDetail, idolCards, idolCardsDetail, bigPic, init, produceEvents, tendency, tendencyJudge, backupTime } from '../db/db.js';
 
+import moment from 'moment';
 
 const initbigPic = require('./jsons/bigPic.json');
 const initidolCards = require('./jsons/idolCards.json');
@@ -40,5 +41,5 @@ export function insertInitData(){
         tendencyJudge.insert(element);
     });
     init.insert({initialized: true});
-
+    backupTime.insert({type: 'autoBackup', time: moment().format('YYYYMMDDhhmmss')})
 }

@@ -1,3 +1,126 @@
-<template name="SCardOverview">
-    
+<template name="SCardsOverview">
+    <div id="thisFilterForm" style="display: block;">
+        <form action="" style="border: solid 1px;" id="thisCardSubmitForm">
+            <h4>屬性傾向</h4> <!--input type="button" value="展開選單" id="unfoldProp"-->
+            <div id="overviewPropTendency">
+                <input type="checkbox" name="VoTendency" id="VoTendency"> <label for="VoTendency">Vo傾向</label>
+                <input type="checkbox" name="DaTendency" id="DaTendency"> <label for="DaTendency">Da傾向</label>
+                <input type="checkbox" name="ViTendency" id="ViTendency"> <label for="ViTendency">Vi傾向</label>
+                <input type="checkbox" name="MeTendency" id="MeTendency"> <label for="MeTendency">Me傾向</label>
+            </div>
+            <br>
+            <h4>技能傾向</h4> <!--input type="button" value="展開選單" id="unfoldSkill"-->
+            <div id="overviewSkillTendency">
+                <input type="checkbox" name="skillExcellentAppeal" id="skillExcellentAppeal"> <label for="skillExcellentAppeal">Excellent アピール</label>
+                <input type="checkbox" name="skillAppealAll" id="skillAppealAll"> <label for="skillAppealAll">全観客にアピール</label>
+                <br>
+                <input type="checkbox" name="skillIgnoreDefense" id="skillIgnoreDefense"> <label for="skillIgnoreDefense">興味無視</label>
+                <br>
+                <input type="checkbox" name="skillChanceFulfill" id="skillChanceFulfill"> <label for="skillChanceFulfill">一気に満足させる</label>
+                <br>
+                <input type="checkbox" name="skillHighMeHurt" id="skillHighMeHurt"> <label for="skillHighMeHurt">メンタルが多いほど効果UP</label>
+                <input type="checkbox" name="skillLowMeHurt" id="skillLowMeHurt"> <label for="skillLowMeHurt">メンタルが少ないほど効果UP</label>
+                <br>
+                <input type="checkbox" name="skillHighOmoideHurt" id="skillHighOmoideHurt"> <label for="skillHighOmoideHurt">思い出ゲージが多いほど効果UP</label>
+                <br>
+                <input type="checkbox" name="skillHighFocusHurt" id="skillHighFocusHurt"> <label for="skillHighFocusHurt">注目度が高い程効果UP</label>
+                <input type="checkbox" name="skillLowFocusHurt" id="skillLowFocusHurt"> <label for="skillLowFocusHurt">注目度が低い程効果UP</label>
+                <br>
+                <input type="checkbox" name="skillVoUp" id="skillVoUp"> <label for="skillVoUp">Vocal UP</label>
+                <input type="checkbox" name="skillDaUp" id="skillDaUp"> <label for="skillDaUp">Dance UP</label>
+                <input type="checkbox" name="skillViUp" id="skillViUp"> <label for="skillViUp">Visual UP</label>
+                <br>
+                <input type="checkbox" name="skillOmoiGaugeUp" id="skillOmoiGaugeUp"> <label for="skillOmoiGaugeUp">思い出ゲージ Up</label>
+                <input type="checkbox" name="skillOmoiGaugeDown" id="skillOmoiGaugeDown"> <label for="skillOmoiGaugeDown">思い出ゲージ Down</label>
+                <br>
+                <input type="checkbox" name="skillMeInc" id="skillMeInc"> <label for="skillMeInc">メンタル回復</label>
+                <br>
+                <input type="checkbox" name="skillMeDec" id="skillMeDec"> <label for="skillMeDec">自身のメンタル減らす</label>
+                <br>
+                <input type="checkbox" name="skillResurrect" id="skillResurrect"> <label for="skillResurrect">リザレクション効果付与</label>
+                <input type="checkbox" name="skillRelax" id="skillRelax"> <label for="skillRelax">リラックス効果付与</label>
+                <input type="checkbox" name="skillMelancholy" id="skillMelancholy"> <label for="skillMelancholy">メランコリー効果付与</label>
+                <br>
+                <input type="checkbox" name="skillMeDamageCUT" id="skillMeDamageCut"> <label for="skillMeDamageCut">メンタルダメージCUT</label>
+                <input type="checkbox" name="skillMeDamageUp" id="skillMeDamageUp"> <label for="skillMeDamageUp">メンタルダメージUP</label>
+                <br>
+                <input type="checkbox" name="skillFocusUp" id="skillFocusUp"> <label for="skillFocusUp">注目度UP</label>
+                <input type="checkbox" name="skillFocusDown" id="skillFocusDown"> <label for="skillFocusDown">注目度DOWN</label>
+                <br>
+                <input type="checkbox" name="skillReactionDodgeUp" id="skillReactionDodgeUp"> <label for="skillReactionDodgeUp">リアクション回避率UP</label>
+                <br>
+                <input type="checkbox" name="skillGiveStatusOnDodge" id="skillGiveStatusOnDodge"> <label for="skillGiveStatusOnDodge">回避時ステータス効果付与</label>
+                <br>
+                <input type="checkbox" name="skillInterestUp" id="skillInterestUp"> <label for="skillInterestUp">興味UP</label>
+                <input type="checkbox" name="skillInterestDown" id="skillInterestDown"> <label for="skillInterestDown">興味DOWN</label>
+                <br>
+                <input type="checkbox" name="skillAffectDown" id="skillAffectDown"> <label for="skillAffectDown">影響力DOWN</label>
+                <br>
+                <input type="checkbox" name="skillUntilDamaged" id="skillUntilDamaged"> <label for="skillUntilDamaged">ダメージ受けるまで</label>
+                <br>
+                <input type="checkbox" name="skillOnPerfect" id="skillOnPerfect"> <label for="skillOnPerfect">PERFECTなら効果UP</label>
+                <br>
+                <input type="checkbox" name="skillFirstAppeal" id="skillFirstAppeal"> <label for="skillFirstAppeal">必ず最初にアピール</label>
+                <input type="checkbox" name="skillLastAppeal" id="skillLastAppeal"> <label for="skillLastAppeal">必ず最後にアピール</label>
+                <br>
+            </div>
+            
+            <!--h4>其他標註</h4>
+            <input type="checkbox" name="commentSelfHarm" id="commentSelfHarm"> <label for="commentSelfHarm">自殘炮</label>
+            <input type="checkbox" name="commentLowHPSkill" id="commentLowHPSkill"> <label for="commentLowHPSkill">壓血隊</label>
+            <input type="checkbox" name="commentHighHPSkill" id="commentHighHPSkill"> <label for="commentHighHPSkill">滿血隊</label>
+            <input type="checkbox" name="commentOmoideCharge" id="commentOmoideCharge"> <label for="commentOmoideCharge">回憶裝填</label>
+
+            <br-->
+            
+            <h4>卡片稀有度</h4>
+            <div id="overviewRarity">
+                <input type="checkbox" name="raritySSR" id="raritySSR"> <label for="raritySSR">SSR</label>
+                <input type="checkbox" name="raritySR" id="raritySR"> <label for="raritySSR">SR</label>
+                <input type="checkbox" name="rarityR" id="rarityR"> <label for="rarityR">R</label>
+                <input type="checkbox" name="rarityN" id="rarityN"> <label for="rarityN">N</label>
+            </div>
+            
+            <br>
+            <br>
+            <h4>偶像</h4>
+            <div id="overviewIdols">
+                {{#each units}}
+                <input type="checkbox" name={{jap}} id={{jap}} class="unitClass"> <label for={{jap}}>{{use}}</label>
+                <br>
+                {{#each idols use}}
+                <input type="checkbox" name={{name}} id={{name}}> <label for={{name}}>{{name}}</label>
+                {{/each}}
+                <br>
+                <br>
+                {{/each}}
+            </div>
+            <br>
+            <h4>Idea Note</h4>
+            <div id="overviewNote">
+                <input type="checkbox" name="noteVocal" id="noteVocal"> <label for="noteVocal">Vocal</label>
+                <input type="checkbox" name="noteDance" id="noteDance"> <label for="noteDance">Dance</label>
+                <input type="checkbox" name="noteVisual" id="noteVisual"> <label for="noteVisual">Visual</label>
+                <input type="checkbox" name="noteTalk" id="noteTalk"> <label for="noteTalk">Talk</label>
+                <input type="checkbox" name="noteAppeal" id="noteAppeal"> <label for="noteAppeal">Appeal</label>
+            </div>
+            <h4>ひらめき</h4>
+            <div id="overviewHira">
+
+            </div>
+
+            <input type="submit" value="送出">  
+            <input type="button" value="重設" id="resetForm">
+        </form>
+    </div>
+    <div id="thisFilterCards" style="display: none;">
+        <ul>
+            {{#each thisFilterResult}}
+            <li>
+                <a href="/{{thisResultType}}/{{thisResultLink}}">{{cardName}}</a>
+            </li>
+            {{/each}}
+        </ul>
+        <input type="button" value="重新查詢" id="newQuery">
+    </div>
 </template>
