@@ -5,9 +5,14 @@ import { Base64 } from 'js-base64';
 
 import './judgeTendencyS.html';
 
+const supportSkill = require('../../imports/jsons/supportSkill.json');
+const idolDetail = require('../../imports/jsons/idolDetail.json');
+
 Template.judgeTendencyS.onCreated(function(){
     this.currentCard = new ReactiveVar();
     this.currentCardDetail = new ReactiveVar();
+    this.supportSkill = new ReactiveVar(supportSkill);
+    this.currentCount = new ReactiveVar(0);
     Tracker.autorun(() => {
         
         FlowRouter.watchPathChange();
@@ -34,7 +39,8 @@ Template.judgeTendencyS.onCreated(function(){
             console.log(result[0]);
             this.currentCardDetail.set(result[0]);
             typeToggleCheckBox(result[0].type, this);
-            ideaToggleCheckBox(result[0].idea.ideaType, this)
+            ideaToggleCheckBox(result[0].idea.ideaType, this);
+            hiramekiToggleCheckBox(result[0].idol, this);
             result[0].panel[20].forEach(element => {
                 toggleCheckBox(element, this);
             });
@@ -55,9 +61,40 @@ Template.judgeTendencyS.onCreated(function(){
     });
 });
 
-Template.judgeTendencyS.onRendered(function() {
+Template.judgeTendencyS.onRendered(function(instance) {
     Tracker.autorun(() => {
-        
+        let thisCardSkill = this.currentCardDetail.get()?.skill?.supportSkill ?? [];
+        setTimeout(() => {
+            thisCardSkill.forEach((element, index) => {
+                supportSkill.mainSkill.forEach(ele => {
+                    if(element.skillName.match(ele.skillName)){
+                        this.find(`#mainSkill${index}`).value = ele.skillName;
+                        if(ele.type == 'noOption'){
+                            this.find(`#subOption${index}`).disabled = true;
+                        }
+                    }
+                });
+            });
+        }, 2000);
+        setTimeout(() => {
+            thisCardSkill.forEach((element, index) => {
+                for(let k = supportSkill.subOption.length - 1; k >= 0; k--){
+                    if(element.skillName.match(supportSkill.subOption[k].optionabbr)){
+                        this.find(`#subOption${index}`).value = supportSkill.subOption[k].optionabbr;
+                    }
+                }
+            });
+        }, 3000);
+        /*
+        thisCardSkill.forEach((element, index) => {
+            supportSkill.mainSkill.forEach(ele => {
+                if(element.skillName.match(ele.skillName)){
+                    //console.log(`#mainSkill${index}`, this.find(`#mainSkill${index}`))
+                    //this.$(`#mailSkill${index}`).value = ele.skillName;
+                }
+            });
+        });
+        */
     });
 });
 
@@ -86,7 +123,7 @@ Template.judgeTendencyS.helpers({
 			return [...(temp[1].split('/')), temp[temp.length - 1]];
         }
         else{
-            return 
+            return;
         }
 	},
 	thisCardIdolEvents: function () {
@@ -108,8 +145,8 @@ Template.judgeTendencyS.helpers({
 	thisCardSkill50: function () {
 		return Template.instance().currentCardDetail.get()?.panel[50] ?? [];
     },
-    thisCardTrueEnd: function(){
-        return Template.instance().currentCardDetail.get()?.trueEnd.eventName ?? false;
+    thisCardSupSkill: function () {
+        return Template.instance().currentCardDetail.get()?.skill?.supportSkill ?? [];
     },
 
 	has40SPSkill: function () {
@@ -161,21 +198,41 @@ Template.judgeTendencyS.helpers({
             return false;
         }
     },
-
-
-    
-
-
-	inputTendency: function(){
-		return true;
-	}
+    supportSkills: function(par) {
+        let supSkills = Template.instance().supportSkill.get()?.mainSkill;
+        let cardSkills = Template.instance().currentCardDetail.get()?.skill?.supportSkill;
+        if(!supSkills){
+            return [];
+        }
+        else{
+            /*
+            supSkills.forEach(element => {
+                if(element.skillName.match(cardSkills[par].skillName)){
+                    element.selected = 'selected';
+                }
+            });
+            */
+            return supSkills;
+        }
+        
+        //return Template.instance().supportSkill.get()?.mainSkill ?? [];
+    },
+    subOptions: function(par){
+        return Template.instance().supportSkill.get()?.subOption ?? [];
+    },
+    thisSkill: function(par){
+        //console.log(par)
+    },
+    thisCardLiveSkill: function(){
+        return Template.instance().currentCardDetail.get()?.skill.liveSkill ?? [];
+    }
 });
 
 Template.judgeTendencyS.events({
 	'submit #thisCardSubmitForm'(event, instance){
         event.preventDefault();
-        
-        let formObj = {};
+        let flag = false;
+        let formObj = new Object();
 
         instance.findAll('input:checkbox').forEach(element => {
             formObj[element.id] = element.checked;
@@ -184,8 +241,23 @@ Template.judgeTendencyS.events({
         formObj.cardName = instance.currentCard.get();
         formObj.uuidAuth = FlowRouter.current().params.uuidAuth;
 
-        console.log(formObj);
+        for(let k = 0; k < instance.currentCardDetail.get().skill.supportSkill.length; k++){
+            let thisSkill = instance.find(`#mainSkill${k}`).value;
+            let subOption = instance.find(`#subOption${k}`).value;
 
+            if(thisSkill == '' /*|| subOption == '--請選擇--'*/){
+                alert('技能選項錯誤');
+                flag = true;
+                break;
+            }
+            formObj[`support${thisSkill + subOption}`] = true;
+        }
+
+        if(flag) {
+            return;
+        }
+        console.log(formObj);
+        /*
         Meteor.call('insertJudgeResultToDB', {judgedObj: formObj}, (err, result) => {
             if(result){
                 const keepJudging = confirm('是否要繼續前往下一張卡片?');
@@ -204,8 +276,14 @@ Template.judgeTendencyS.events({
             else{
                 FlowRouter.go('rejected');
             }
-        })
-	}
+        });
+        */
+    },
+    'change .mainSkill'(event, instance){
+        event.preventDefault();
+        //console.log(event)
+        toggleDisabled(instance, event.target.value, event.currentTarget.id)
+    }
 });
 
 function toggleCheckBox(element, instance){
@@ -331,7 +409,6 @@ function typeToggleCheckBox(data, instance){
 }
 
 function ideaToggleCheckBox(type, instance){
-    console.log(type);
     switch (type){
         case 'vocal':
             instance.find('#noteVocal').checked = true;
@@ -355,4 +432,43 @@ function ideaToggleCheckBox(type, instance){
             
     }
 
+}
+
+function hiramekiToggleCheckBox(idolName, instance){
+    idolDetail.forEach(element => {
+        if(idolName.match(element.name)){
+            switch(element.hirameki){
+                case 'Vo':
+                    instance.find('#hiramekiVo').checked = true;
+                    break;
+                case 'Da':
+                    instance.find('#hiramekiDa').checked = true;
+                    break;
+                case 'Vi':
+                    instance.find('#hiramekiVi').checked = true;
+                    break;
+                case 'Me':
+                    instance.find('#hiramekiMe').checked = true;
+                    break;
+                default: 
+                    alert('此卡資料發生問題');
+            }
+        }
+    });
+}
+
+function toggleDisabled(instance, option, elementID){
+    supportSkill.mainSkill.forEach(element => {
+        if(option.match(element.skillName)){
+            let toChange = elementID.replace(/mainSkill/, 'subOption');
+            //console.log(toChange, element)
+            if(element.type == 'noOption'){
+                instance.find(`#${toChange}`).disabled = true;
+                instance.find(`#${toChange}`).selectedIndex = 0;
+            }
+            else{
+                instance.find(`#${toChange}`).disabled = false;
+            }
+        }
+    })
 }

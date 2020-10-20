@@ -1,6 +1,11 @@
 import { check } from 'meteor/check';
 
-import { tendencyJudge, idolCardsDetail as idolCardsDetailDB, idolCards as idolCardsDB, idolDetail as idolDetailDB, init } from '../../db/db.js';
+import { tendencyJudge, 
+    idolCardsDetail as idolCardsDetailDB, 
+    idolCards as idolCardsDB, 
+    idolDetail as idolDetailDB, 
+    init 
+} from '../../db/db.js';
 
 
 const idolCardsDetailFile = require('../../imports/jsons/idolCardsDetail.json');

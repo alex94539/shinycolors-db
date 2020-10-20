@@ -1,0 +1,1013 @@
+[
+    {
+        "name": "櫻木真乃",
+        "morningEvents": [
+            {
+                "beginning": "真乃「緊張してきちゃいました……失敗しちゃうかもしれません\n　　 ほわぁ……」",
+                "beforeSelection": "P（何か緊張をほぐせるような言葉を……）",
+                "tensionUp": "失敗したっていい！",
+                "tensionKeep": "必ず成功できる！",
+                "tensionDown": "そんな弱気じゃダメだ！"
+            },
+            {
+                "beginning": "真乃「ほわっ……す、すごい緊張感です……」",
+                "beforeSelection": "P（審査員の迫力に、のまれている……このままだとまずい）",
+                "tensionUp": "審査員は鳥だと思えばいい",
+                "tensionKeep": "審査員は敵じゃない",
+                "tensionDown": "審査員に負けるな！"
+            },
+            {
+                "beginning": "真乃「プ、プロデューサーさんっ　私の衣装……おかしなところはありませんか？」",
+                "beforeSelection": "P（衣装か。問題ないように見えるが……）",
+                "tensionUp": "どこに出しても恥ずかしくないぞ",
+                "tensionKeep": "どこから見てもアイドルだぞ",
+                "tensionDown": "大事なのは中身だ"
+            },
+            {
+                "beginning": "真乃「もう少しで本番……だ、台本は……衣装も大丈夫かな……」",
+                "beforeSelection": "P（事前にレッスンしているからバッチリだけど、少し緊張しているな）",
+                "tensionUp": "座ったらどうだ",
+                "tensionKeep": "甘いものでもどうだ？",
+                "tensionDown": "頑張ってこい！"
+            },
+            {
+                "beginning": "真乃「プロデューサーさん……何かアドバイスを……」",
+                "beforeSelection": "P（俺にアドバイスできることは……）",
+                "tensionUp": "今の真乃なら大丈夫だ",
+                "tensionKeep": "レッスンを思い出せ",
+                "tensionDown": "元気よく頑張ろう！"
+            },
+            {
+                "beginning": "真乃「他のオーディション参加者さんたち、みんな上手そうです」",
+                "beforeSelection": "P（ほかの参加者に気圧されているようだ……）",
+                "tensionUp": "真乃が一番だぞ",
+                "tensionKeep": "まわりなんか気にするな",
+                "tensionDown": "今は集中しろ"
+            }
+        ]
+    },
+    {
+        "name": "風野灯織",
+        "morningEvents": [
+            {
+                "beginning": "灯織「なんだか、髪が跳ねてるよううな……」",
+                "beforeSelection": "P（前髪が気になるみたいだな……）",
+                "tensionUp": "スタイリストさんに見てもらうか？",
+                "tensionKeep": "くしを使うか？",
+                "tensionDown": "気にしなくても大丈夫だ"
+            },
+            {
+                "beginning": "灯織「プロデューサー、どうしたら、審査員の方に向けて効果的にアピールできると思いますか？」",
+                "beforeSelection": "P「うーん、そうだな……」",
+                "tensionUp": "いつもどおりが1番だよ",
+                "tensionKeep": "笑顔を大事にしよう",
+                "tensionDown": "ミステリアスに黙る"
+            },
+            {
+                "beginning": "灯織「ふう……もうすぐ始まりますね　結果を出せるように、頑張らないと……」",
+                "beforeSelection": "P（肩に力が入ってるみたいだな　何か声をかけてやろう……）",
+                "tensionUp": "1度深呼吸してみよう",
+                "tensionKeep": "落ち着いていけ",
+                "tensionDown": "水でも飲もう"
+            },
+            {
+                "beginning": "灯織「今日は占いの運勢が悪くて……」",
+                "beforeSelection": "P（不安を取り除いてあげたいけど……どう答えよう？）",
+                "tensionUp": "灯織自身を信じろ",
+                "tensionKeep": "占いなんて信じるな",
+                "tensionDown": "きっとなんとかなるさ"
+            },
+            {
+                "beginning": "灯織「今日は積極的にアピールしていこうと考えているんです」",
+                "beforeSelection": "P「うーん、そうだな……」",
+                "tensionUp": "どんどんアピールしよう！",
+                "tensionKeep": "適度にアピールしよう",
+                "tensionDown": "一世一代のアピールをしよう！"
+            },
+            {
+                "beginning": "灯織「……ふぅ。プロデューサー　もうすぐ本番です。何か1言お願いします」",
+                "beforeSelection": "P（今の灯織は、かなりリラックスできてるみたいだし……なんて声をかけようか？）",
+                "tensionUp": "この調子でいこう！",
+                "tensionKeep": "必ず勝つ！",
+                "tensionDown": "落ち着いていこう！"
+            }
+        ]
+    },
+    {
+        "name": "八宮めぐる",
+        "morningEvents": [
+            {
+                "beginning": "めぐる「本番前ってドキドキするなー……ねえ、プロデューサー。わたし、上手くできるかなぁ？」",
+                "beforeSelection": "P「そうだな……。緊張しそうになったら、審査員のことを……」",
+                "tensionUp": "友達だと思え！",
+                "tensionKeep": "俺だと思え！",
+                "tensionDown": "野菜だと思え！"
+            },
+            {
+                "beginning": "めぐる「ねえ、プロデューサー！　わたしの衣装、変なところはないかな？」",
+                "beforeSelection": "P（めぐるの衣装は……）",
+                "tensionUp": "大丈夫だ！",
+                "tensionKeep": "ちゃんとしてるぞ！",
+                "tensionDown": "問題ないぞ！"
+            },
+            {
+                "beginning": "めぐる「そろそろ時間だねっ！よーし、い、行ってくるよー！」",
+                "beforeSelection": "P（明るく振る舞っているが、少し緊張してるみたいだな……)",
+                "tensionUp": "楽しんでこい！",
+                "tensionKeep": "考えすぎるな",
+                "tensionDown": "落ち着いていこう"
+            },
+            {
+                "beginning": "めぐる「よーしっ、準備はバッチリOK！プロデューサー、最後に一言くれたら嬉しいな！」",
+                "beforeSelection": "P（気合も準備も充分だ！なんて言おうか？）",
+                "tensionUp": "みんなも見守っているからな！",
+                "tensionKeep": "最後の最後まで気を抜くな",
+                "tensionDown": "気楽にいこう"
+            },
+            {
+                "beginning": "めぐる「プロデューサーのためにも、絶対受かってくるよ！」",
+                "beforeSelection": "P（かなり気合が入っているようだ）",
+                "tensionUp": "期待してるぞ！",
+                "tensionKeep": "約束だぞ！",
+                "tensionDown": "結果なんか気にするな！"
+            },
+            {
+                "beginning": "めぐる「前に出すぎないように気をつけて、音を聴いて……\n　　　あっ、マイクももっとしっかり持たなくちゃ！」",
+                "beforeSelection": "P（色々なことを気にしすぎているな……）",
+                "tensionUp": "笑顔を忘れてるぞ！",
+                "tensionKeep": "楽しむことを忘れるな！",
+                "tensionDown": "ひとつのことに集中しよう！"
+            }
+        ]
+    },
+    {
+        "name": "月岡恋鐘",
+        "morningEvents": [
+            {
+                "beginning": "恋鐘「よーっし！やるからには全力でやるけんね！」",
+                "beforeSelection": "P（今日の恋鐘はやる気に満ちているな…）",
+                "tensionUp": "思いっきりいけ",
+                "tensionKeep": "落ち着いていこう",
+                "tensionDown": "失敗しないようにな"
+            },
+            {
+                "beginning": "恋鐘「うわー、やっぱりみんな、気合入っとるねー……うちも負けられんばい……！」",
+                "beforeSelection": "P（確かに、空気がピリピリしてるな 恋鐘も少し緊張しているみたいだ……）",
+                "tensionUp": "必ず合格できるぞ",
+                "tensionKeep": "大丈夫そうか？",
+                "tensionDown": "いいアイドルがそろっているな"
+            },
+            {
+                "beginning": "恋鐘「プロデューサー、今日の衣装、露出が多いというか……ちょっと派手じゃなか？」",
+                "beforeSelection": "P（恋鐘は衣装の露出が少し気になっているようだな）",
+                "tensionUp": "なんでも着こなすところを見てもらおう",
+                "tensionKeep": "良く似合っているぞ",
+                "tensionDown": "我慢しよう"
+            },
+            {
+                "beginning": "恋鐘「今回はうちのすごいとこをアピールしようと思うんよ！どこをアピールすればよか？」",
+                "beforeSelection": "P（恋鐘のアピールポイントか……）",
+                "tensionUp": "ポジティブなところ",
+                "tensionKeep": "自分の特技",
+                "tensionDown": "セクシーさ、とか？"
+            },
+            {
+                "beginning": "恋鐘「うち、いっつもよかとこで失敗してしまうんやけど今回はカンペキにせんとね！」",
+                "beforeSelection": "P（今日はずいぶんと息巻いているな 何かいいアドバイスはないか……）",
+                "tensionUp": "恋鐘なら絶対上手くいく",
+                "tensionKeep": "",
+                "tensionDown": ""
+            },
+            {
+                "beginning": "恋鐘「ここの振り付けは……よし、タイミングも……よし　うん！今日もいい感じたい～」",
+                "beforeSelection": "P（最後の確認中みたいだな　しっかりアドバイスして恋鐘らしさをさらに引き出すぞ）",
+                "tensionUp": "失敗を恐れず全力でいこう",
+                "tensionKeep": "",
+                "tensionDown": ""
+            }
+        ]
+    },
+    {
+        "name": "田中摩美々",
+        "morningEvents": [
+            {
+                "beginning": "摩美々「うーん……あんまり、気分が乗らないんですよねー」",
+                "beforeSelection": "P（集中できてないな 気分を盛り上げるには……）",
+                "tensionUp": "ずっと見てるからな",
+                "tensionKeep": "案外楽しいかもしれないぞ？",
+                "tensionDown": "摩美々のためになる"
+            },
+            {
+                "beginning": "摩美々「これからオーディションですケドー なんかもう、疲れちゃいましたぁ……」",
+                "beforeSelection": "P（冗談ではなさそうだ 気負っているのか……？）",
+                "tensionUp": "大丈夫。信じてるぞ",
+                "tensionKeep": "できることをすればいい",
+                "tensionDown": "休むにはまだ早いぞ"
+            },
+            {
+                "beginning": "摩美々「今日のオーディションってー、結構規模が大きいですねー……まぁ、なんとかなるとは思いますケド」",
+                "beforeSelection": "P（少し不安そうだな　摩美々を元気づけるには）",
+                "tensionUp": "摩美々を信じてる",
+                "tensionKeep": "油断は禁物だ！",
+                "tensionDown": "何事も経験だ"
+            },
+            {
+                "beginning": "摩美々「オーディション会場、着いちゃいましたねー……\n　　　 仕方がないのでー、ほどほどに受けてくることにしまぁす」",
+                "beforeSelection": "P（このままじゃだめだ 摩美々のやる気を引き出さないと……！）",
+                "tensionUp": "真面目にやらないとダメだ",
+                "tensionKeep": "頑張ってこい！",
+                "tensionDown": "絶対に受かる"
+            },
+            {
+                "beginning": "摩美々「テキトーにパパーっとすませちゃいますねー」",
+                "beforeSelection": "P（いつもの調子だが……なんて声をかけよう？）",
+                "tensionUp": "摩美々はそれで後悔しないんだな？",
+                "tensionKeep": "真剣に挑むべきだ",
+                "tensionDown": "摩美々がいいなら、そうすればいい"
+            },
+            {
+                "beginning": "摩美々「すごいですねー、みんな気合い入ってますよー」",
+                "beforeSelection": "P（ほぼいつも通りに見えるが……少し、緊張もしているか？　それなら）",
+                "tensionUp": "まわりは気にするな",
+                "tensionKeep": "輝きは摩美々が一番",
+                "tensionDown": "元気に行こう！"
+            }
+        ]
+    },
+    {
+        "name": "白瀬咲耶",
+        "morningEvents": [
+            {
+                "beginning": "咲耶「もうすぐ出番だね…………私らしくないな、少し緊張してしまっているようだ……」",
+                "beforeSelection": "P(咲耶にしては珍しいな……こういう時は……)",
+                "tensionUp": "考えなくていい",
+                "tensionKeep": "咲耶を信頼してるぞ",
+                "tensionDown": "大丈夫だ！"
+            },
+            {
+                "beginning": "咲耶「プロデューサー、審査員の方々を楽しませるには、どうするべきだろう？」",
+                "beforeSelection": "P(審査員を楽しませる方法か……)",
+                "tensionUp": "審査員を見る",
+                "tensionKeep": "完璧にこなす",
+                "tensionDown": "視線を意識しない"
+            },
+            {
+                "beginning": "咲耶「フフッ、私の出番はまだだろうか 早くパフォーマンスをしたくてウズウズしてしまっているよ」",
+                "beforeSelection": "P(いいテンションだ、こんな時にかける言葉は……)",
+                "tensionUp": "楽しめそうだな！",
+                "tensionKeep": "楽しませよう！",
+                "tensionDown": "全力でいけ！"
+            },
+            {
+                "beginning": "咲耶「フフ……もうすぐ私の番だね 今日も頑張ってくるよ」",
+                "beforeSelection": "P(咲耶……いつもより少し笑顔が固いな 何か緊張をほぐせるような言葉は……)",
+                "tensionUp": "楽しもう",
+                "tensionKeep": "笑おう",
+                "tensionDown": "落ち着こう"
+            },
+            {
+                "beginning": "咲耶「プロデューサー、\n今からステージに挑む私に、何かアドバイスはないかな？」",
+                "beforeSelection": "P(そうだな、今の咲耶に言うとしたら……)",
+                "tensionUp": "いつもの咲耶で",
+                "tensionKeep": "俺も見ている",
+                "tensionDown": "観客がいると思って"
+            },
+            {
+                "beginning": "",
+                "beforeSelection": "P「衣装か？ ……うん、どこも問題ないぞ」",
+                "tensionUp": "でも、足りないものがある",
+                "tensionKeep": "最高だ！",
+                "tensionDown": "似合ってる"
+            }
+        ]
+    },
+    {
+        "name": "三峰結華",
+        "morningEvents": [
+            {
+                "beginning": "結華「おぉっ、すごい緊張感……！ まさしくオーディション本番っ！ て感じだね……！」",
+                "beforeSelection": "P（会場の熱気に感化されてるみたいだな…… 張り切ってくれるか、緊張してしまうか…...）",
+                "tensionUp": "結華の魅力で会場を飲み込め！",
+                "tensionKeep": "リハーサルだと思えばいい",
+                "tensionDown": "いつもの結華なら大丈夫だろ？"
+            },
+            {
+                "beginning": "結華「Ｐたーん。このオーディションが上手くいったら、三峰、ご褒美がほしいなぁ？」",
+                "beforeSelection": "P（こんな時でも相変わらずだなぁ、どうしようか……）",
+                "tensionUp": "まずは目の前のオーディションだ",
+                "tensionKeep": "勝ってから話そうか",
+                "tensionDown": "希望を聞いてから考えたい"
+            },
+            {
+                "beginning": "結華「やだ……どうしよう楽しくなってきちゃった……！」",
+                "beforeSelection": "P（緊張……というより興奮してるな。テンションが高い…………どう言葉をかけようか）",
+                "tensionUp": "その嬉しさをぶつけるんだ！",
+                "tensionKeep": "審査員を気にしすぎるなよ",
+                "tensionDown": "緊張してないか？"
+            },
+            {
+                "beginning": "結華「今日の三峰は一味違うよ……！　いつもより燃えてる感じがする……！」",
+                "beforeSelection": "P（よし、この勢いを後押ししよう！）",
+                "tensionUp": "ステージが華やかになるな",
+                "tensionKeep": "結華の全力、見せつけてやれ！",
+                "tensionDown": "省エネはここだけ封印だな"
+            },
+            {
+                "beginning": "結華「三峰、このオーディションに合格したら、ほしかったアクセ買いに行くんだ…！」",
+                "beforeSelection": "P「また変なフラグのようなものを…」",
+                "tensionUp": "そんなこと言ってると買いに行けなくなるぞ",
+                "tensionKeep": "いいぞ、その意気だ！",
+                "tensionDown": "今はちゃんと集中しような"
+            },
+            {
+                "beginning": "結華「あの子たちみんなライバルなんだよね…… でも！ 今の三峰なら大丈夫かな？」",
+                "beforeSelection": "P（何も言わなくても平気そうだけど…… 一言ぐらいかけておきたい）",
+                "tensionUp": "絶対勝てるさ！",
+                "tensionKeep": "競り勝ってこい！",
+                "tensionDown": "今だけはファンじゃないよな？"
+            }
+        ]
+    },
+    {
+        "name": "幽谷霧子",
+        "morningEvents": [
+            {
+                "beginning": "霧子\nほ、包帯も……結び直さなきゃ……」",
+                "beforeSelection": "プロデューサー\n（身だしなみは問題ないよな……）",
+                "tensionUp": "綺麗に巻けてるぞ",
+                "tensionKeep": "大丈夫、落ち着けばパーフェクトだ",
+                "tensionDown": "もっと自信持ってもいいんだぞ"
+            },
+            {
+                "beginning": "霧子\n笑顔でしょうか……？」",
+                "beforeSelection": "プロデューサー\nうまくいかないみたいだな)」",
+                "tensionUp": "ちょっとだけ笑顔が硬いかもな",
+                "tensionKeep": "大丈夫、可愛いぞ",
+                "tensionDown": "笑顔はいいけど無理しなくていい"
+            },
+            {
+                "beginning": "霧子\nみんなで……笑顔になれないのでしょうか……」",
+                "beforeSelection": "プロデューサー\n（緊張と不安で、マイナスのことばかり考えてるな）",
+                "tensionUp": "だったら負けた人も笑顔にすればいい",
+                "tensionKeep": "霧子を応援しているファンもいるんだ",
+                "tensionDown": "それがオーディションだ"
+            },
+            {
+                "beginning": "霧子\n具合の悪くなる人が……いるかもしれません……",
+                "beforeSelection": "プロデューサー\n（ライバルの心配までしてるのか……）",
+                "tensionUp": "俺も気を配るよ",
+                "tensionKeep": "霧子は優しいな",
+                "tensionDown": "霧子は心配性だな"
+            },
+            {
+                "beginning": "霧子\nきょ、曲の振り……と……飛んでしまいました……」",
+                "beforeSelection": "プロデューサー\n（本番前に緊張しすぎたのか……）",
+                "tensionUp": "落ち着いて深呼吸だ",
+                "tensionKeep": "困ったらアドリブだ",
+                "tensionDown": "たしかこんな振りでよかったはず"
+            },
+            {
+                "beginning": "霧子\n「他の参加者のみなさん……とても素晴らしいですね……」",
+                "beforeSelection": "プロデューサー\n（参加者のパフォーマンスが気になるみたいだな）",
+                "tensionUp": "たくさん練習してここまで来たんだぞ",
+                "tensionKeep": "霧子も負けてないぞ",
+                "tensionDown": "不安か？"
+            }
+        ]
+    },
+    {
+        "name": "小宮果穂",
+        "morningEvents": [
+            {
+                "beginning": "わぁっ……！舞台の見えないところってこんなふうになってるんですねー。",
+                "beforeSelection": "（見慣れない舞台袖に、落ち着かないみたいだな……）",
+                "tensionUp": "楽しんでいこう",
+                "tensionKeep": "いつも通りやろう",
+                "tensionDown": "落ち着いていこう"
+            },
+            {
+                "beginning": "見てください、プロデューサーさんっ！",
+                "beforeSelection": "(他のアイドルが気になるみたいだな)",
+                "tensionUp": "あとで一緒に挨拶に行こうか",
+                "tensionKeep": "気にしなくてもいい",
+                "tensionDown": "果穂が一番だよ"
+            },
+            {
+                "beginning": "果穂\nプロデューサーさんっ！ アドバイスをください！」",
+                "beforeSelection": "プロデューサー\n(そうだな……)",
+                "tensionUp": "正義のヒーローなら大丈夫だ",
+                "tensionKeep": "俺がついてる",
+                "tensionDown": "他の人のことなんて気にするな"
+            },
+            {
+                "beginning": "果穂\n「プロデューサーさん！最後の笑顔チェック、お願いしますっ！」",
+                "beforeSelection": "プロデューサー\n(よし、それなら……)",
+                "tensionUp": "最高の笑顔だ",
+                "tensionKeep": "ステージ上の果穂が一番",
+                "tensionDown": "肩の力を抜こう"
+            }
+        ]
+    },
+    {
+        "name": "園田智代子",
+        "morningEvents": [
+            {
+                "beginning": "智代子「きっ、緊張した時は、深呼吸ですよねっ！いきますよー！\nすぅー……はぁー……！」",
+                "beforeSelection": "（まだまだ固いな……）",
+                "tensionUp": "一緒に深呼吸する",
+                "tensionKeep": "わっ！",
+                "tensionDown": "みんなが、智代子を応援しているぞ"
+            },
+            {
+                "beginning": "智代子「大丈夫、大丈夫……いつも通りやればへっちゃら……\nチョコアイドルはヤワじゃない。大丈夫……！」",
+                "beforeSelection": "（不安になってるみたいだな）",
+                "tensionUp": "絶対に大丈夫だって信じてるからな",
+                "tensionKeep": "智代子の武器は笑顔だよ",
+                "tensionDown": "これまでの努力は、無駄じゃないからな"
+            },
+            {
+                "beginning": "智代子「どうしよう……！みんな可愛いし、オーラあるし、\n個性がまぶしい……！」",
+                "beforeSelection": "（弱気になっているな……元気づけないと）",
+                "tensionUp": "チョコを渡す",
+                "tensionKeep": "智代子も十分個性がある",
+                "tensionDown": "そのままでいい"
+            },
+            {
+                "beginning": "智代子「チョコアイドルをたくさんの人に知ってもらうためには、\nこのチャンス、絶対に逃がせないと思うんです……！」",
+                "beforeSelection": "（かなり張り切ってるな）",
+                "tensionUp": "その熱意を表現してこい",
+                "tensionKeep": "上手く見せ場を作るんだ",
+                "tensionDown": "誰よりも強く願えば、掴めるさ"
+            }
+        ]
+    },
+    {
+        "name": "西城樹里",
+        "morningEvents": [
+            {
+                "beginning": "樹里「な、なあプロデューサー……\nアタシ、キャラ作ったりしなくていーんだよな……？」",
+                "beforeSelection": "プロデューサー「（本番前の緊張で\n気にしなくていいところまで気にしてしまっているな）」",
+                "tensionUp": "素顔の樹里でいい",
+                "tensionKeep": "樹里、1回深呼吸だ",
+                "tensionDown": "自分の個性を出せば良い"
+            },
+            {
+                "beginning": "樹里「ほかの奴らはすげーよな……堂々としてて\nアタシなんかよりずっと可愛いし、アイドルって感じだ……」",
+                "beforeSelection": "プロデューサー「（どうやら他の参加者の様子が気になって\n不安になってるようだ……不安を和らげないと）」",
+                "tensionUp": "樹里らしくいけばいい",
+                "tensionKeep": "自分に自信を持て",
+                "tensionDown": "樹里が一番輝いてるよ"
+            },
+            {
+                "beginning": "樹里「何か最近調子が良くてさ\nオーディション受けんのが、すげーワクワクするんだよな」",
+                "beforeSelection": "プロデューサー「いいぞ、樹里。　その意気だ……」",
+                "tensionUp": "全力で楽しんでこい",
+                "tensionKeep": "努力の成果を見せてやろう",
+                "tensionDown": "気を抜かないようにな"
+            },
+            {
+                "beginning": "樹里「な、なぁ……アタシの衣装、変じゃねーよな？\nやっぱこの格好で人前に出るのは恥ずかしいっつーか……」",
+                "beforeSelection": "プロデューサー「（慣れないアイドル衣装を着て人前に出ることに\n不安を感じているようだ･････なんとか励ましてあげよう）」",
+                "tensionUp": "良く似合っているよ",
+                "tensionKeep": "大丈夫だ。俺を信じろ",
+                "tensionDown": "ギャップがいい感じだ"
+            },
+            {
+                "beginning": "樹里「思えば、こういうアイドルっぽい衣装にも慣れてきたな\nプロデューサー……今日のアタシは……ど、どうだ？」",
+                "beforeSelection": "プロデューサー「ああ、そうだな……」",
+                "tensionUp": "最高に格好いいぞ",
+                "tensionKeep": "衣装が様になってきた",
+                "tensionDown": "可愛いと思うぞ"
+            }
+        ]
+    },
+    {
+        "name": "杜野凛世",
+        "morningEvents": [
+            {
+                "beginning": "凛世「そろそろ……\n凛世の出番でしょうか……」",
+                "beforeSelection": "プロデューサー「（いつもより動きが硬いな……\n少し緊張をほぐそう……）」",
+                "tensionUp": "一緒に深呼吸しよう",
+                "tensionKeep": "結果を気にするな",
+                "tensionDown": "審査員をかぼちゃと思え！"
+            },
+            {
+                "beginning": "凛世「……」",
+                "beforeSelection": "プロデューサー「（何を感じているんだろう……声をかけてみるか）」",
+                "tensionUp": "俺も楽しみにしているぞ",
+                "tensionKeep": "いつも通りでいいんだぞ",
+                "tensionDown": "思ったようにやってこい"
+            },
+            {
+                "beginning": "凛世「プロデューサーさま……\nもうすぐ、凛世の……出番でございますね……」",
+                "beforeSelection": "プロデューサー「（何か言って欲しそうだな……）」",
+                "tensionUp": "信じてるぞ",
+                "tensionKeep": "客席は味方だぞ",
+                "tensionDown": "悔いの残らないように"
+            },
+            {
+                "beginning": "",
+                "beforeSelection": "プロデューサー「（凛世、ずっとうつむいてるな……励ましてあげられたらいいんだが……）」",
+                "tensionUp": "今日は、何のために頑張るんだ？",
+                "tensionKeep": "一緒に頑張った成果を見せような",
+                "tensionDown": "トップアイドルを目指そうな"
+            },
+            {
+                "beginning": "凛世「……」",
+                "beforeSelection": "プロデューサー「（凛世、ずっと俺の隣にいるけど……\n……何か、声をかけるべきかな）」",
+                "tensionUp": "不安なことがあれば話してほしい",
+                "tensionKeep": "舞台に俺はいないぞ",
+                "tensionDown": "今日はキマってるな"
+            },
+            {
+                "beginning": "凛世「プロデューサーさま……もう少しだけ……\n準備をしたく思います……」",
+                "beforeSelection": "プロデューサー「（……ちょっと汗ばんでる……\nいつもよりも、熱が入っているようだな）」",
+                "tensionUp": "俺も、熱くなってきた",
+                "tensionKeep": "気合は充分みたいだな",
+                "tensionDown": "汗がきれいだ"
+            }
+        ]
+    },
+    {
+        "name": "有栖川夏葉",
+        "morningEvents": [
+            {
+                "beginning": "夏葉「オーディションの空気って不思議よね\n独特の雰囲気で……」",
+                "beforeSelection": "プロデューサー「(重い空気に、夏葉も少し緊張しているみたいだ……)」",
+                "tensionUp": "緊張を楽しもう！",
+                "tensionKeep": "夏葉なら大丈夫",
+                "tensionDown": "まずは落ち着こう"
+            },
+            {
+                "beginning": "夏葉「衣装は……これで大丈夫かしら……」",
+                "beforeSelection": "プロデューサー「(自分の姿を一生懸命、見直している\n衣装のチェックをしているようだ……)」",
+                "tensionUp": "後ろも大丈夫だ",
+                "tensionKeep": "いつも感心するよ",
+                "tensionDown": "もう充分だ"
+            },
+            {
+                "beginning": "夏葉「プロデューサー。なんとしても勝ちたいの！」",
+                "beforeSelection": "プロデューサー「そうだな……」",
+                "tensionUp": "全部だ",
+                "tensionKeep": "笑顔だ",
+                "tensionDown": "余裕を持て"
+            },
+            {
+                "beginning": "夏葉「いち、にっ……と……あら、表情が硬いわよ？\n私のこと、心配してくれてるのかしら？」",
+                "beforeSelection": "プロデューサー（夏葉は余裕そうだな……どう答えよう……）",
+                "tensionUp": "夏葉なら心配ない",
+                "tensionKeep": "いつだって心配はしているさ",
+                "tensionDown": "油断大敵だ"
+            },
+            {
+                "beginning": "夏葉「……いつ、にっ……ふぅ\nこんなところかしら」",
+                "beforeSelection": "プロデューサー（ストレッチをして集中しているみたいだ\nそろそろ、声をかけようか……）",
+                "tensionUp": "準備完了だな！",
+                "tensionKeep": "調子はよさそうだな",
+                "tensionDown": "大丈夫そうか？"
+            },
+            {
+                "beginning": "夏葉「ふぅ……この緊張感は気持ちいいものね……」",
+                "beforeSelection": "プロデューサー（堂々としていて頼もしいな……\nよし、気合を入れてやる気を高めるぞ）",
+                "tensionUp": "今回も全力で勝ちに行こう！",
+                "tensionKeep": "いい表情だ",
+                "tensionDown": "リラックスしよう"
+            }
+        ]
+    },
+    {
+        "name": "大崎甘奈",
+        "morningEvents": [
+            {
+                "beginning": "甘奈「プロデューサーさん、今日の甘奈、どうかな？」",
+                "beforeSelection": "プロデューサー（……そうだな）",
+                "tensionUp": "少し髪がハネてる",
+                "tensionKeep": "調子はよさそうだな",
+                "tensionDown": "超イケてるよ！"
+            },
+            {
+                "beginning": "甘奈「レッスンの成果出し切れるかな？……ちょっぴり不安かも」",
+                "beforeSelection": "プロデューサー（よし、何か言葉をかけて、甘奈の不安を拭い去ろう……）",
+                "tensionUp": "ちょっとステップしてみよう！",
+                "tensionKeep": "自分を信じれば大丈夫だ",
+                "tensionDown": "少しくらい不安な方がいい"
+            },
+            {
+                "beginning": "甘奈「ファンのみんなのためにも負けられないな……」",
+                "beforeSelection": "プロデューサー（いつもより少し力んでいるようだな……よし、ここは……）",
+                "tensionUp": "これを見てくれ",
+                "tensionKeep": "その気持ちがあれば大丈夫だ！",
+                "tensionDown": "少し力を抜こう"
+            },
+            {
+                "beginning": "甘奈「わー、ちょっとドキドキしてきたかも！」",
+                "beforeSelection": "プロデューサー（緊張してるみたいだな……\nなにか声をかけてあげよう）",
+                "tensionUp": "いつも通り\n明るく行こう！",
+                "tensionKeep": "何とかなる！",
+                "tensionDown": "流れに任せよう"
+            },
+            {
+                "beginning": "甘奈「ねぇねぇ、プロデューサーさん」",
+                "beforeSelection": "プロデューサー（アドバイスを求めているようだ ここはビシッと……）",
+                "tensionUp": "決めポーズ前でジャンプしてみよう",
+                "tensionKeep": "特別なことはしないで大丈夫",
+                "tensionDown": "ガンガンアゲていこう"
+            },
+            {
+                "beginning": "甘奈「プロデューサーさんっ！\n今日の甘奈の衣装の感じかわいくない？」",
+                "beforeSelection": "プロデューサー（衣装か、どれどれ……）",
+                "tensionUp": "特に髪飾りのワンポイントがいい",
+                "tensionKeep": "",
+                "tensionDown": ""
+            }
+        ]
+    },
+    {
+        "name": "大崎甜花",
+        "morningEvents": [
+            {
+                "beginning": "甜花「い、いつも通り……いつも通りに頑張れば……大丈夫……」",
+                "beforeSelection": "（ちょっと気負いすぎてるな……少しでも、気持ちを落ち着かせられる言葉は……）",
+                "tensionUp": "笑ってみよう",
+                "tensionKeep": "楽しめばいいんだ",
+                "tensionDown": "難しく考えすぎるな"
+            },
+            {
+                "beginning": "甜花「みんな、すごそう……\n甜花､なんでこんなとこ……いるんだろ……」",
+                "beforeSelection": "プロデューサー「（甜花、雰囲気に呑まれてるようだな……\nこういうときは……）」",
+                "tensionUp": "甜花だけにできるステージがあるんだ",
+                "tensionKeep": "甜花は甜花なりに頑張ろう",
+                "tensionDown": "甜花も十分すごいぞ"
+            },
+            {
+                "beginning": "甜花「今日は……みんなに迷惑をかけないようにしないと……」",
+                "beforeSelection": "（甜花も頑張ろうとしてるんだな\nそれなら……",
+                "tensionUp": "今の甜花ならできるはずだ",
+                "tensionKeep": "困ったときには頼ってくれ",
+                "tensionDown": "俺は必要なさそうだな"
+            },
+            {
+                "beginning": "甜花「えっと、最初のステップの後は……\nあ、あれ、どうするんだっけ……ん？」",
+                "beforeSelection": "（甜花、だいぶ緊張してるみたいだな……）",
+                "tensionUp": "一緒に思い出してみよう",
+                "tensionKeep": "とりあえず深呼吸をしてみよう",
+                "tensionDown": "今までのレッスンを思い出すんだ"
+            },
+            {
+                "beginning": "甜花「うん……大丈夫、大丈夫……\nプロデューサーさん……甜花のこと、見ててね……」",
+                "beforeSelection": "（少しずつ自信がでてきたみたいだな\n後押しをしてやれる言葉は……）",
+                "tensionUp": "ファンのみんなにも見てもらおう！",
+                "tensionKeep": "目に焼き付けておくよ",
+                "tensionDown": "ファイトだ！"
+            }
+        ]
+    },
+    {
+        "name": "桑山千雪",
+        "morningEvents": [
+            {
+                "beginning": "千雪「審査員のみなさんにも、ちゃんと笑顔になってほしいんです\nでも、それって難しいことですよね……」",
+                "beforeSelection": "プロデューサー「（何か、アドバイスをしてあげたほうがいいかな）」",
+                "tensionUp": "千雪も楽しめばうまくいく",
+                "tensionKeep": "あまり考えすぎないようにな",
+                "tensionDown": "雰囲気に呑まれなければ大丈夫"
+            },
+            {
+                "beginning": "千雪「オーディションって、ステージ本番と違いますよね\nだから、気持ちの作り方が難しくて……」",
+                "beforeSelection": "プロデューサー「（オーディションについての心構えか……）」",
+                "tensionUp": "どっちも、自分とファンのためになる",
+                "tensionKeep": "ステージ本番だと思っていいぞ",
+                "tensionDown": "自分の気持ちを大事に"
+            },
+            {
+                "beginning": "千雪「大丈夫、……きっと、大丈夫」",
+                "beforeSelection": "プロデューサー「（千雪……お守りを持って、真剣な顔だ……）」",
+                "tensionUp": "一緒にここまで来れたな",
+                "tensionKeep": "きっと千雪を守ってくれるよ",
+                "tensionDown": "可愛いな"
+            },
+            {
+                "beginning": "千雪「ええと、このときはこうして……よし♪」",
+                "beforeSelection": "プロデューサー（最後の確認をしてるみたいだな）",
+                "tensionUp": "笑顔、忘れてないな",
+                "tensionKeep": "はやく審査員に見せたいな",
+                "tensionDown": "完璧だぞ"
+            },
+            {
+                "beginning": "千雪「なんだか、緊張しちゃいますね……\n人と話すのは、苦手じゃないはずなのに……」",
+                "beforeSelection": "プロデューサー「（千雪の緊張を解いてあげなきゃな）」",
+                "tensionUp": "いつも通りの千雪で行こう",
+                "tensionKeep": "にらめっこでもしよう",
+                "tensionDown": "お店での経験を思い出そう"
+            },
+            {
+                "beginning": "千雪「プロデューサーさん？\n……ふふ、プロデューサーさんが緊張してるみたい」",
+                "beforeSelection": "プロデューサー「（千雪、本番前なのに落ち着いてる……頼もしいな）」",
+                "tensionUp": "千雪には負けられないな",
+                "tensionKeep": "千雪には敵わないなぁ",
+                "tensionDown": "いや、何でも頼ってくれ"
+            }
+        ]
+    },
+    {
+        "name": "芹沢あさひ",
+        "morningEvents": [
+            {
+                "beginning": "あさひ「……」",
+                "beforeSelection": "プロデューサー（あさひ、どうしたんだろうか）",
+                "tensionUp": "わっ！",
+                "tensionKeep": "……",
+                "tensionDown": "大丈夫か"
+            },
+            {
+                "beginning": "あさひ「ここでこうすれば……よし、いけそうっす！」",
+                "beforeSelection": "プロデューサー（何かをつかんだみたいだ）",
+                "tensionUp": "早く試したいな",
+                "tensionKeep": "何を思いついたんだ",
+                "tensionDown": "急に新しいことはしない方が"
+            },
+            {
+                "beginning": "あさひ「うわぁ～、周り、みんな見たことある人ばっかっす～」",
+                "beforeSelection": "プロデューサー（周りにプレッシャーを感じなければいいが）",
+                "tensionUp": "楽しみだな",
+                "tensionKeep": "あさひなら大丈夫だ",
+                "tensionDown": "集中しよう"
+            },
+            {
+                "beginning": "あさひ「わたし、どっすか？」",
+                "beforeSelection": "プロデューサー（唐突な質問だな）",
+                "tensionUp": "ワクワクが伝わってくる",
+                "tensionKeep": "みなぎってるな",
+                "tensionDown": "気になるところはないぞ"
+            },
+            {
+                "beginning": "あさひ「プロデューサーさん、わたし、今日はなんかいつもよりいい感じなんす！」",
+                "beforeSelection": "プロデューサー（気分が乗っているみたいだ）",
+                "tensionUp": "たくさん練習したもんな",
+                "tensionKeep": "勝てそうだな",
+                "tensionDown": "いつも通りで大丈夫だ"
+            },
+            {
+                "beginning": "あさひ「う～、ちょっとドキドキしてきたっす！」",
+                "beforeSelection": "プロデューサー（緊張しているのかな？）",
+                "tensionUp": "ワクワクしている証拠じゃないか",
+                "tensionKeep": "緊張とは珍しいな",
+                "tensionDown": "深呼吸しよう"
+            }
+        ]
+    },
+    {
+        "name": "黛冬優子",
+        "morningEvents": [
+            {
+                "beginning": "冬優子「わあ、あの子、すごく可愛いです……あっちの子は、スタイルいい……！」",
+                "beforeSelection": "プロデューサー（他のアイドルが気になってるみたいだな……）",
+                "tensionUp": "他人のことは気にするな",
+                "tensionKeep": "冬優子だって負けてない",
+                "tensionDown": "冬優子も可愛いぞ"
+            },
+            {
+                "beginning": "冬優子「ふゆの出番、もうすぐみたいです……！出番前のアドバイス、お願いします……！」",
+                "beforeSelection": "プロデューサー（アドバイスか……）",
+                "tensionUp": "審査員を見つめよう",
+                "tensionKeep": "ライバルにも注目だ",
+                "tensionDown": "自分のことだけ考えよう"
+            },
+            {
+                "beginning": "冬優子「どうしちゃったの、ふゆ……本番前に緊張するなんて、情けないわね、ほんと……」",
+                "beforeSelection": "プロデューサー（少し身体が震えているな……）",
+                "tensionUp": "冬優子らしくないぞ",
+                "tensionKeep": "リラックスしよう",
+                "tensionDown": "そんな時もある"
+            },
+            {
+                "beginning": "冬優子「ねえ！　今日のふゆも可愛いでしょ？答えはわかってることだけど……念のため聞いてあげる！」",
+                "beforeSelection": "プロデューサー（今の冬優子、か……）",
+                "tensionUp": "少し後ろ毛が跳ねてるぞ",
+                "tensionKeep": "もちろん、今日も決まってる",
+                "tensionDown": "いつも通りだぞ"
+            },
+            {
+                "beginning": "冬優子「審査員さんって、怖い方なんでしょうか……？うう、緊張しちゃいます～……」",
+                "beforeSelection": "プロデューサー（審査員が気になるみたいだな……）",
+                "tensionUp": "楽しいことを考えよう",
+                "tensionKeep": "深呼吸をしよう",
+                "tensionDown": "緊張は見抜かれるぞ"
+            },
+            {
+                "beginning": "冬優子「ねえ、あんた！ちょっとテンション上がるようなこと言いなさいよ！」",
+                "beforeSelection": "プロデューサー（テンションが上がる言葉か……）",
+                "tensionUp": "今日も冬優子は最高だ",
+                "tensionKeep": "いつも通りやろう",
+                "tensionDown": "油断するなよ"
+            }
+        ]
+    },
+    {
+        "name": "和泉愛依",
+        "morningEvents": [
+            {
+                "beginning": "「うっわあの人、テレビでよく見る人じゃん……！」",
+                "beforeSelection": "「（愛依、少し腰がひけちゃってるな）」",
+                "tensionUp": "あの人、結構優しいらしいぞ",
+                "tensionKeep": "意識し過ぎないようにな",
+                "tensionDown": "気にするな"
+            },
+            {
+                "beginning": "「んんっ！」",
+                "beforeSelection": "「のどの調子が悪いのか？」",
+                "tensionUp": "軽く声出し、しとくか",
+                "tensionKeep": "のど飴、いるか",
+                "tensionDown": "カラオケで歌いすぎたりしたか"
+            },
+            {
+                "beginning": "「プロデューサー、今日のステージ、なんかまぶしくない？」",
+                "beforeSelection": "(照明が気になるみたいだ)",
+                "tensionUp": "じっと見て、慣らそう",
+                "tensionKeep": "調整、頼んでみる",
+                "tensionDown": "変わらないと思うけど"
+            },
+            {
+                "beginning": "「ここ、前にも来たことあるとこだよね」",
+                "beforeSelection": "（会場を気にしているようだ……）",
+                "tensionUp": "もう慣れたもんだろう",
+                "tensionKeep": "ここ、いい会場だよな",
+                "tensionDown": "余裕だな"
+            },
+            {
+                "beginning": "「プロデューサー、今日のうち、キマってるっしょ？」",
+                "beforeSelection": "（そうだな……）",
+                "tensionUp": "写メっとくか",
+                "tensionKeep": "いつもキマってるよ",
+                "tensionDown": "特にどの辺りだ？"
+            }
+        ]
+    },
+    {
+        "name": "浅倉透",
+        "morningEvents": [
+            {
+                "beginning": "「なんか、落ち着かなくて――」",
+                "beforeSelection": "「(……珍しいな、透)」",
+                "tensionUp": "飲み物でも取ってこようか？",
+                "tensionKeep": "程よい緊張が結果を出したりもするぞ",
+                "tensionDown": "大丈夫だ!"
+            },
+            {
+                "beginning": "「どう いけてる、今日？」",
+                "beforeSelection": "「(そうだな―――)」",
+                "tensionUp": "すごく素敵だ、透",
+                "tensionKeep": "自身がある顔してるぞ",
+                "tensionDown": "輝くばかりだ"
+            },
+            {
+                "beginning": "「ステージの袖って緊張感あるね」",
+                "beforeSelection": "「(ああ、緊張してるのかーー)」",
+                "tensionUp": "俺も緊張してるよ",
+                "tensionKeep": "固くならなくていい",
+                "tensionDown": "深呼吸しよう"
+            },
+            {
+                "beginning": "透「――え、なんかみんなマネージャーとかと手握ってる」",
+                "beforeSelection": "プロデューサー「……あぁ、まぁ本番前は緊張もマックスだろうからな――」",
+                "tensionUp": "透も握るか？",
+                "tensionKeep": "透は大丈夫か？",
+                "tensionDown": "気にしなくていい"
+            },
+            {
+                "beginning": "透「なんかさ、スポーツだとコーチの言葉とかあるじゃん、こういう時」",
+                "beforeSelection": "プロデューサー「(――ああ……)」",
+                "tensionUp": "応援してる それだけだ",
+                "tensionKeep": "頑張れ、透！",
+                "tensionDown": "透は透らしくやればいい"
+            },
+            {
+                "beginning": "透「なんか言って 言ってほしい、プロデューサー」",
+                "beforeSelection": "プロデューサー「（……透――――）」",
+                "tensionUp": "ひとりじゃないぞ 俺も一緒だ",
+                "tensionKeep": "頑張れ",
+                "tensionDown": "信じてくれ 透のこと"
+            }
+        ]
+    },
+    {
+        "name": "樋口円香",
+        "morningEvents": [
+            {
+                "beginning": "円香\n「何か飲み物をもらえませんか」",
+                "beforeSelection": "プロデューサー\n（用意したのは……）",
+                "tensionUp": "ミネラルウォーター",
+                "tensionKeep": "ジュース",
+                "tensionDown": "ウーロン茶"
+            },
+            {
+                "beginning": "円香\n「……ふぅ」",
+                "beforeSelection": "プロデューサー\n（緊張しているのかな？　何かできることは……）",
+                "tensionUp": "そっとしておく",
+                "tensionKeep": "応援する",
+                "tensionDown": "飴をあげる"
+            },
+            {
+                "beginning": "円香\n「そろそろ出番のようなので　いってきます」",
+                "beforeSelection": "プロデューサー\n（なんて声をかけよう……）",
+                "tensionUp": "いってらっしゃい",
+                "tensionKeep": "いつも通りで！",
+                "tensionDown": "見ているぞ！"
+            },
+            {
+                "beginning": "円香\n「審査員は、具体的にどんな部分を見ているんですか」",
+                "beforeSelection": "プロデューサー\n（なんて答えようか……？）",
+                "tensionUp": "視線や指先",
+                "tensionKeep": "オーラ",
+                "tensionDown": "センス"
+            },
+            {
+                "beginning": "円香\n「……？　ねぇ、ちょっと」",
+                "beforeSelection": "プロデューサー\n「（急に声をかけられた……」",
+                "tensionUp": "どうした？",
+                "tensionKeep": "な、なんだ？",
+                "tensionDown": "ん？"
+            },
+            {
+                "beginning": "円香\n「…………」",
+                "beforeSelection": "プロデューサー\n「（なんとなく調子が悪そうだな……」",
+                "tensionUp": "無理できるか",
+                "tensionKeep": "大丈夫か",
+                "tensionDown": "無理するな"
+            }
+        ]
+    },
+    {
+        "name": "福丸小糸",
+        "morningEvents": [
+            {
+                "beginning": "小糸「ぴゃ……！？ ぷ、プロデューサーさん……！！！」",
+                "beforeSelection": "プロデューサー（ガチガチに緊張してるな……）",
+                "tensionUp": "頑張ろうな！",
+                "tensionKeep": "大丈夫だ！",
+                "tensionDown": "無理しなくていい"
+            },
+            {
+                "beginning": "小糸「ま、周りの子たち…… み、みんなすごそうですね……」",
+                "beforeSelection": "プロデューサー（周りに圧倒されてしまっているな……）",
+                "tensionUp": "練習量なら小糸が一番だ",
+                "tensionKeep": "きっとそう見えるだけだ",
+                "tensionDown": "小糸が一番すごいだろ"
+            },
+            {
+                "beginning": "小糸「すーはー……よ、よし……！　が、頑張りますよ……！」",
+                "beforeSelection": "（事前にレッスンしているからバッチリだけど、少し緊張しているな）",
+                "tensionUp": "努力の成果を出そう！",
+                "tensionKeep": "小糸なら大丈夫だ！",
+                "tensionDown": "緊張しないようにな！"
+            },
+            {
+                "beginning": "小糸「ここまで頑張って来ましたから…… で、できます……よね……!」",
+                "beforeSelection": "プロデューサー（小糸、自信がついてきたみたいだな……！）",
+                "tensionUp": "ああ、楽しんでこい！",
+                "tensionKeep": "ああ、できるよ！",
+                "tensionDown": "期待してるぞ！"
+            },
+            {
+                "beginning": "小糸「どどどどうしましょうプロデューサーさん......!」",
+                "beforeSelection": "プロデューサー(緊張で落ち着かないみたいだ)",
+                "tensionUp": "深呼吸しよう",
+                "tensionKeep": "お菓子食べるか？",
+                "tensionDown": "とりあえず落ち着け"
+            }
+        ]
+    },
+    {
+        "name": "市川雛菜",
+        "morningEvents": [
+            {
+                "beginning": "雛菜「ん～、なんか待ってる時間長いね～？\n　　　早く始まらないかな～」",
+                "beforeSelection": "プロデューサー（あまりにも緊張感がないな……）",
+                "tensionUp": "待つ時間も楽しもう！",
+                "tensionKeep": "準備は完璧か？",
+                "tensionDown": "緊張感を持ってくれ！"
+            },
+            {
+                "beginning": "雛菜「あは～、審査員の人怖そう～～～！\n　　　雛菜、怒られたらやだな～……」",
+                "beforeSelection": "プロデューサー（審査員のことを気にしているのか……）",
+                "tensionUp": "きっと褒められるよ",
+                "tensionKeep": "いつも通りやれば平気だ",
+                "tensionDown": "怒りはしないんじゃないか？"
+            },
+            {
+                "beginning": "雛菜「ん～、なんか可愛い子ばっかりって感じだね～？\n　　　さすがアイドル～！」",
+                "beforeSelection": "プロデューサー（他の参加者が気になるみたいだな……）",
+                "tensionUp": "雛菜が一番だろ？",
+                "tensionKeep": "雛菜もアイドルだろ？",
+                "tensionDown": "周りは気にしなくていい"
+            },
+            {
+                "beginning": "雛菜「やは～♡　早く始まらないかな～！」",
+                "beforeSelection": "プロデューサー（自信も余裕もあるみたいだな……！）",
+                "tensionUp": "みんなを幸せにしてきてくれ！",
+                "tensionKeep": "雛菜らしくやりきってくれ！",
+                "tensionDown": "心配いらないな！"
+            }
+        ]
+    }
+]

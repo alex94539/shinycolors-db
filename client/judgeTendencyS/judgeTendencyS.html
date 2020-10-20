@@ -67,6 +67,7 @@
                 <input type="checkbox" name="commentLowHPSkill" id="commentLowHPSkill"> <label for="commentLowHPSkill">壓血隊</label>
                 <input type="checkbox" name="commentHighHPSkill" id="commentHighHPSkill"> <label for="commentHighHPSkill">滿血隊</label>
                 <input type="checkbox" name="commentOmoideCharge" id="commentOmoideCharge"> <label for="commentOmoideCharge">回憶裝填</label>
+                <input type="checkbox" name="commentLiveTendencyNotMatch" id="commentLiveTendencyNotMatch"> <label for="commentLiveTendencyNotMatch">技能與傾向不一致</label>
 
                 <br>
                 <h4>卡片類別</h4>
@@ -88,7 +89,6 @@
                 <input type="checkbox" name="damageDown" id="damageDown"> <label for="damageDown">減傷</label>
                 <input type="checkbox" name="meOverflow" id="meOverflow"> <label for="meOverFlow">回血超量裝填</label-->
                 <br>
-                <br>
                 <h4>Idea Note</h4>
             
                 <input type="checkbox" name="noteVocal" id="noteVocal" disabled> <label for="noteVocal">Vocal</label>
@@ -96,11 +96,59 @@
                 <input type="checkbox" name="noteVisual" id="noteVisual" disabled> <label for="noteVisual">Visual</label>
                 <input type="checkbox" name="noteTalk" id="noteTalk" disabled> <label for="noteTalk">Talk</label>
                 <input type="checkbox" name="noteAppeal" id="noteAppeal" disabled> <label for="noteAppeal">Appeal</label>
+                <br>
             
                 <h4>ひらめき</h4>
-            
+                <input type="checkbox" name="hiramekiVo" id="hiramekiVo" disabled> <label for="hiramekiVo">Vo</label>
+                <input type="checkbox" name="hiramekiDa" id="hiramekiDa" disabled> <label for="hiramekiDa">Da</label>
+                <input type="checkbox" name="hiramekiVi" id="hiramekiVi" disabled> <label for="hiramekiVi">Vi</label>
+                <input type="checkbox" name="hiramekiMe" id="hiramekiMe" disabled> <label for="hiramekiMe">Me</label>
+                <br>
+                <br>
+
                 <input type="submit" value="送出" style="height: 50px; width: 100px;">
             </form>
+        </div>
+        <h3>SupportSkill</h3>
+        <div id="thisCardSupSkill">
+            {{#each thisCardSupSkill}}
+            <div id="skillDesc{{@index}}">{{skillName}}</div> 
+            <select name="mainSkill{{@index}}" id="mainSkill{{@index}}" class="mainSkill">
+                <option value="">--請選擇--</option>
+                {{#each supportSkills @index}}
+                <option value="{{skillName}}" {{this.selected}}>{{skillName}}</option>
+                {{/each}}
+            </select>
+            <select name="subOption{{@index}}" id="subOption{{@index}}" class="subOption">
+                <option value="">--請選擇--</option>
+                {{#each subOptions @index}}
+                <option value="{{optionabbr}}" {{this.selected}}>{{optionName}}</option>
+                {{/each}}
+            </select>
+            <br>
+            {{/each}}
+        </div>
+        <h3>LiveSkill</h3>
+        <div id="thisCardLiveSkill">
+            <table>
+                <thead>
+                    <tr>
+                        <th>技能名稱</th>
+                        <th>技能效果</th>
+                        <th>取得等級</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each thisCardLiveSkill}}
+                    <tr>
+                        <td>{{liveSkillName}}</td>
+                        <td>{{liveSkillEffect}}</td>
+                        <td>{{liveSkillLv}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            
         </div>
         <h3>技能盤</h3>
         <div id="thisCardSkillPanel">

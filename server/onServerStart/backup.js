@@ -15,7 +15,7 @@ export async function backup() {
 
     //return;
     //console.log(`%c ${moment().unix()} - ${moment(Number(lastBackupTime)).format('YYYYMMDDHHmmss')}`, 'background: orange; color: green');
-    if(Number(currentUnix) - Number(lastBackupUnix) < 43200){
+    if(Number(currentUnix) - Number(lastBackupUnix) < 432000){
         return;
     }
     console.log('%c start backup DB at ' + currentTime, 'background: orange; color: green');

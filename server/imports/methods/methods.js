@@ -115,9 +115,9 @@ Meteor.methods({
 		}
 		delete judgedObj.uuidAuth;
 
-		tendencyJudge.update({cardName: judgedObj.cardName, uuidAuth: judgedObj.uuid}, {$set: {isJudged: true}});
+		//tendencyJudge.update({cardName: judgedObj.cardName, uuidAuth: judgedObj.uuid}, {$set: {isJudged: true}});
 
-		tendency.insert(judgedObj);
+		//tendency.insert(judgedObj);
 		return true;
 	},
 	produceCardFilterQuery({queryObj, idols}){

@@ -106,7 +106,29 @@
             </div>
             <h4>ひらめき</h4>
             <div id="overviewHira">
-
+                <input type="checkbox" name="hiramekiVo" id="hiramekiVo"> <label for="hiramekiVo">Vo</label>
+                <input type="checkbox" name="hiramekiDa" id="hiramekiDa"> <label for="hiramekiDa">Da</label>
+                <input type="checkbox" name="hiramekiVi" id="hiramekiVi"> <label for="hiramekiVi">Vi</label>
+                <input type="checkbox" name="hiramekiMe" id="hiramekiMe"> <label for="hiramekiMe">Me</label>
+            </div>
+            <h4>SupportSkill</h4>
+            <div id="thisCardSupSkill">
+                {{#each thisCardSupSkill}}
+                <div id="skillDesc{{@index}}">{{skillName}}</div> 
+                <select name="mainSkill{{@index}}" id="mainSkill{{@index}}" class="mainSkill">
+                    <option value="">--請選擇--</option>
+                    {{#each supportSkills @index}}
+                    <option value="{{skillName}}" {{this.selected}}>{{skillName}}</option>
+                    {{/each}}
+                </select>
+                <select name="subOption{{@index}}" id="subOption{{@index}}" class="subOption">
+                    <option value="">--請選擇--</option>
+                    {{#each subOptions @index}}
+                    <option value="{{optionabbr}}" {{this.selected}}>{{optionName}}</option>
+                    {{/each}}
+                </select>
+                <br>
+                {{/each}}
             </div>
 
             <input type="submit" value="送出">  

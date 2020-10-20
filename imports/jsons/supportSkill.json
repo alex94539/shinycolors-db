@@ -1,0 +1,114 @@
+{
+    "mainSkill": [
+        {
+            "type": "subOption",
+            "skillName": "ボーカルマスタリー"
+        },
+        {
+            "type": "subOption",
+            "skillName": "ダンスマスタリー"
+        },
+        {
+            "type": "subOption",
+            "skillName": "ビジュアルマスタリー"
+        },
+        {
+            "type": "subOption",
+            "skillName": "ラジオマスタリー"
+        },
+        {
+            "type": "subOption",
+            "skillName": "トークマスタリー"
+        },
+        {
+            "type": "subOption",
+            "skillName": "撮影マスタリー"
+        },
+        {
+            "type": "subOption",
+            "skillName": "オーディションマスタリー"
+        },
+        {
+            "type": "subOption",
+            "skillName": "テンションマスタリー"
+        },
+        {
+            "type": "subOption",
+            "skillName": "ユニットマスタリー"
+        },
+        {
+            "type": "noOption",
+            "skillName": "パーフェクトマスタリー"
+        },
+        {
+            "type": "noOption",
+            "skillName": "エクセレントマスタリー"
+        },
+        {
+            "type": "noOption",
+            "skillName": "設施マスタリー"
+        },
+        {
+            "type": "noOption",
+            "skillName": "トラブルガード"
+        },
+        {
+            "type": "noOption",
+            "skillName": "体力サポート"
+        },
+        {
+            "type": "noOption",
+            "skillName": "約束リカバー"
+        },
+        {
+            "type": "noOption",
+            "skillName": "おやすみブースト"
+        },
+        {
+            "type": "noOption",
+            "skillName": "アイドルの絆"
+        },
+        {
+            "type": "noOption",
+            "skillName": "イベントブースト"
+        }
+    ],
+    "subOption": [
+        {
+            "optionName": "Vocal",
+            "optionabbr": "Vo"
+        },
+        {
+            "optionName": "Dance",
+            "optionabbr": "Da"
+        },
+        {
+            "optionName": "Visual",
+            "optionabbr": "Vi"
+        },
+        {
+            "optionName": "メンタル",
+            "optionabbr": "Me"
+        },
+        {
+            "optionName": "SP",
+            "optionabbr": "SP"
+        },
+        {
+            "optionName": "体力回復",
+            "optionabbr": "体力"
+        },
+        {
+            "optionName": "Vocal上限",
+            "optionabbr": "Vo上限"
+        },
+        {
+            "optionName": "Dance上限",
+            "optionabbr": "Da上限"
+        },
+        {
+            "optionName": "Visual上限",
+            "optionabbr": "Vi上限"
+        }
+    ]
+}
