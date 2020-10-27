@@ -9018,6 +9018,7 @@
 			"50": [
 				{"skillTitle": "常夏CLIMAX(☆4)", "skillDesc": "メンタル上限UP"},
 				{"skillTitle": "Dance6%UP(E●)", "skillDesc": "Dance0.8～4倍アピール/[思い出ゲージが多いほど効果UP]/思い出ゲージ30%DOWN"},
+				{"skillTitle": "メンタル上限UP", "skillDesc": "メンタル上限+50"},
 				{"skillTitle": "Dance上限UP(☆3)", "skillDesc": "[条件:凛世][確率:40%][最大:2回]"}
 			]
 		},

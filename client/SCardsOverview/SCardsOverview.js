@@ -6,11 +6,18 @@ import { Base64 } from 'js-base64';
 
 import './SCardsOverview.html';
 
+const supportSkill = require('../../imports/jsons/supportSkill.json');
+const tendency = ['VoTendency', 'DaTendency', 'ViTendency', 'MeTendency'];
+const rarityArr = ['raritySSR', 'raritySR', 'rarityR', 'rarityN'];
+const ideaArr = ['noteVocal', 'noteDance', 'noteVisual', 'noteTalk', 'noteAppeal'];
+const hiramekiArr = ['hiramekiVo', 'hiramekiDa', 'hiramekiVi', 'hiramekiMe'];
+
 Template.SCardsOverview.onCreated(function(){
     this.currentFilterResult = new ReactiveVar([]);
 	this.baseData = new ReactiveDict();
     this.checkStatus = new ReactiveDict();
     this.resultIsNull = new ReactiveVar(false);
+    this.supportSkill = new ReactiveVar(supportSkill);
     /*
     Meteor.call('produceCardFilterQuery', {queryObj: {}}, (err, result) => {
         this.currentFilterResult.set(result);
@@ -60,6 +67,15 @@ Template.SCardsOverview.helpers({
     },
     idols: function(){
         return Template.instance().baseData.get('idols').filter(idol => this.use === idol.unit);
+    },
+    supportSkills: function() {
+        return Template.instance().supportSkill.get()?.mainSkill ?? [];
+    },
+    subOptions: function(){
+        return Template.instance().supportSkill.get()?.subOption ?? [];
+    },
+    loop: function(){
+        return [{},{},{},{}]
     }
 });
 
@@ -68,7 +84,11 @@ Template.SCardsOverview.events({
         event.preventDefault();
 
         let formObj = {};
-        let queryIdolsArr = new Array();
+        let queryIdolArr = new Array(),
+            queryRarityArr = new Array(),
+            queryIdeaArr = new Array(),
+            queryHiramekiArr = new Array(),
+            queryTendencyArr = new Array();
 
         instance.findAll('input:checkbox').forEach(element => {
             if(element.checked){
@@ -82,17 +102,76 @@ Template.SCardsOverview.events({
         instance.baseData.get('idols').forEach(element => {
             if(element.name in formObj){
                 delete formObj[element.name];
-                queryIdolsArr.push({idol: element.name});
+                queryIdolArr.push({idol: element.name});
             }
         });
-        console.log(formObj, queryIdolsArr);
 
-        if(!queryIdolsArr.length){
+        generateOrArr(tendency, formObj, queryTendencyArr);
+
+        generateOrArr(rarityArr, formObj, queryRarityArr);
+
+        generateOrArr(ideaArr, formObj, queryIdeaArr);
+
+        generateOrArr(hiramekiArr, formObj, queryHiramekiArr);
+
+
+        for(let k = 0; k < 4; k++){
+            let thisSkill = instance.find(`#mainSkill${k}`).value;
+            let subOption = instance.find(`#subOption${k}`).value;
+
+            if(!thisSkill){
+                continue;
+            }
+
+            formObj[`support${thisSkill + subOption}`] = true;
+        }
+
+        if(!queryIdolArr.length){
             instance.baseData.get('idols').forEach(element => {
-                queryIdolsArr.push({idol: element.name});
+                queryIdolArr.push({idol: element.name});
             });
         }
-        Meteor.call('produceCardFilterQuery', {queryObj: formObj, idols: queryIdolsArr}, (err, result) => {
+
+        if(!queryTendencyArr.length) {
+            tendency.forEach(element => {
+                let temp = new Object();
+                temp[element] = true;
+
+                queryTendencyArr.push(temp);
+            })
+        }
+
+        if(!queryRarityArr.length){
+            rarityArr.forEach(element => {
+                let temp = new Object();
+                temp[element] = true;
+
+                queryRarityArr.push(temp);
+            });
+        }
+
+        if(!queryIdeaArr.length){
+            ideaArr.forEach(element => {
+                let temp = new Object();
+                temp[element] = true;
+
+                queryIdeaArr.push(temp);
+            });
+        }
+
+        if(!queryHiramekiArr.length){
+            hiramekiArr.forEach(element => {
+                let temp = new Object();
+                temp[element] = true;
+
+                queryHiramekiArr.push(temp);
+            });
+        }
+
+        console.log(formObj, queryIdolArr, queryRarityArr, queryIdeaArr, queryHiramekiArr);
+
+
+        Meteor.call('supportCardFilterQuery', {queryObj: formObj, idols: queryIdolArr, rarity: queryRarityArr, idea: queryIdeaArr, hirameki: queryHiramekiArr, tendency: queryTendencyArr}, (err, result) => {
             if(!result.length){
                 alert('查無結果');
                 return;
@@ -103,6 +182,7 @@ Template.SCardsOverview.events({
             instance.find('#thisFilterForm').style.display = 'none';
             instance.find('#thisFilterCards').style.display = 'block';
         });
+        
     },
     'click .unitClass'(event, instance){
         let toCheck = instance.baseData.get('idols').filter(idol => this.use === idol.unit);
@@ -125,6 +205,15 @@ Template.SCardsOverview.events({
         instance.findAll('input:checkbox').forEach(element => {
             element.checked = false;
         });
+
+        for(let k = 0; k < 4; k++){
+            let thisSkill = instance.find(`#mainSkill${k}`);
+            let subOption = instance.find(`#subOption${k}`);
+
+            thisSkill.selectedIndex = 0;
+            subOption.selectedIndex = 0;
+            subOption.disabled = true;
+        }
     },
     'click #newQuery'(event, instance){
         instance.currentFilterResult.set([]);
@@ -134,5 +223,38 @@ Template.SCardsOverview.events({
 
         instance.find('#thisFilterForm').style.display = 'block';
         instance.find('#thisFilterCards').style.display = 'none';
+    },
+    'change .mainSkill'(event, instance){
+        event.preventDefault();
+        //console.log(event)
+        toggleDisabled(instance, event.target.value, event.currentTarget.id)
     }
 });
+
+function toggleDisabled(instance, option, elementID){
+    supportSkill.mainSkill.forEach(element => {
+        if(option.match(element.skillName)){
+            let toChange = elementID.replace(/mainSkill/, 'subOption');
+            //console.log(toChange, element)
+            if(element.type == 'noOption'){
+                instance.find(`#${toChange}`).disabled = true;
+                instance.find(`#${toChange}`).selectedIndex = 0;
+            }
+            else{
+                instance.find(`#${toChange}`).disabled = false;
+            }
+        }
+    })
+}
+
+function generateOrArr(arr, formObj, orArr){
+    arr.forEach(element => {
+        if(element in formObj){
+            delete formObj[element];
+            let temp = new Object();
+            temp[element] = true;
+
+            orArr.push(temp);
+        }
+    })
+}

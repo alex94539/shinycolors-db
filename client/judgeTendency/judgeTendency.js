@@ -204,7 +204,7 @@ Template.judgeTendency.events({
                 if(keepJudging){
                     Meteor.call('getNextCardToJudge', [], (err, result) => {
                         BlazeLayout.reset();
-                        BlazeLayout.render()
+                        BlazeLayout.render();
                         FlowRouter.setParams({cardName: Base64.encodeURI(result.cardName), uuidAuth: result.uuidAuth})
                         
                     });
@@ -216,7 +216,7 @@ Template.judgeTendency.events({
             else{
                 FlowRouter.go('rejected');
             }
-        })
+        });
 	}
 });
 

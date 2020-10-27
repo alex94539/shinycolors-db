@@ -75,7 +75,7 @@ Template.judgeTendencyS.onRendered(function(instance) {
                     }
                 });
             });
-        }, 2000);
+        }, 500);
         setTimeout(() => {
             thisCardSkill.forEach((element, index) => {
                 for(let k = supportSkill.subOption.length - 1; k >= 0; k--){
@@ -84,7 +84,7 @@ Template.judgeTendencyS.onRendered(function(instance) {
                     }
                 }
             });
-        }, 3000);
+        }, 500);
         /*
         thisCardSkill.forEach((element, index) => {
             supportSkill.mainSkill.forEach(ele => {
@@ -198,26 +198,10 @@ Template.judgeTendencyS.helpers({
             return false;
         }
     },
-    supportSkills: function(par) {
-        let supSkills = Template.instance().supportSkill.get()?.mainSkill;
-        let cardSkills = Template.instance().currentCardDetail.get()?.skill?.supportSkill;
-        if(!supSkills){
-            return [];
-        }
-        else{
-            /*
-            supSkills.forEach(element => {
-                if(element.skillName.match(cardSkills[par].skillName)){
-                    element.selected = 'selected';
-                }
-            });
-            */
-            return supSkills;
-        }
-        
-        //return Template.instance().supportSkill.get()?.mainSkill ?? [];
+    supportSkills: function() {
+        return Template.instance().supportSkill.get()?.mainSkill ?? [];
     },
-    subOptions: function(par){
+    subOptions: function(){
         return Template.instance().supportSkill.get()?.subOption ?? [];
     },
     thisSkill: function(par){
@@ -237,6 +221,12 @@ Template.judgeTendencyS.events({
         instance.findAll('input:checkbox').forEach(element => {
             formObj[element.id] = element.checked;
         });
+
+        if(!formObj["VoTendency"] && !formObj["DaTendency"] && !formObj["ViTendency"]){
+            alert("請選擇至少一種屬性傾向");
+            return;
+        }
+
         formObj.idol = instance.currentCardDetail.get().idol;
         formObj.cardName = instance.currentCard.get();
         formObj.uuidAuth = FlowRouter.current().params.uuidAuth;
@@ -257,12 +247,12 @@ Template.judgeTendencyS.events({
             return;
         }
         console.log(formObj);
-        /*
-        Meteor.call('insertJudgeResultToDB', {judgedObj: formObj}, (err, result) => {
+        
+        Meteor.call('insertSJudgeResultToDB', {judgedObj: formObj}, (err, result) => {
             if(result){
                 const keepJudging = confirm('是否要繼續前往下一張卡片?');
                 if(keepJudging){
-                    Meteor.call('getNextCardToJudge', [], (err, result) => {
+                    Meteor.call('getNextCardToJudgeS', [], (err, result) => {
                         BlazeLayout.reset();
                         BlazeLayout.render()
                         FlowRouter.setParams({cardName: Base64.encodeURI(result.cardName), uuidAuth: result.uuidAuth})
@@ -277,7 +267,7 @@ Template.judgeTendencyS.events({
                 FlowRouter.go('rejected');
             }
         });
-        */
+        
     },
     'change .mainSkill'(event, instance){
         event.preventDefault();

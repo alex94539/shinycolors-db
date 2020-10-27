@@ -1,7 +1,7 @@
 <template name="SCardsOverview">
     <div id="thisFilterForm" style="display: block;">
         <form action="" style="border: solid 1px;" id="thisCardSubmitForm">
-            <h4>屬性傾向</h4> <!--input type="button" value="展開選單" id="unfoldProp"-->
+            <h4>屬性傾向 (logical OR)</h4> <!--input type="button" value="展開選單" id="unfoldProp"-->
             <div id="overviewPropTendency">
                 <input type="checkbox" name="VoTendency" id="VoTendency"> <label for="VoTendency">Vo傾向</label>
                 <input type="checkbox" name="DaTendency" id="DaTendency"> <label for="DaTendency">Da傾向</label>
@@ -9,7 +9,7 @@
                 <input type="checkbox" name="MeTendency" id="MeTendency"> <label for="MeTendency">Me傾向</label>
             </div>
             <br>
-            <h4>技能傾向</h4> <!--input type="button" value="展開選單" id="unfoldSkill"-->
+            <h4>技能傾向 (logical AND)</h4> <!--input type="button" value="展開選單" id="unfoldSkill"-->
             <div id="overviewSkillTendency">
                 <input type="checkbox" name="skillExcellentAppeal" id="skillExcellentAppeal"> <label for="skillExcellentAppeal">Excellent アピール</label>
                 <input type="checkbox" name="skillAppealAll" id="skillAppealAll"> <label for="skillAppealAll">全観客にアピール</label>
@@ -73,7 +73,7 @@
 
             <br-->
             
-            <h4>卡片稀有度</h4>
+            <h4>卡片稀有度 (logical AND)</h4>
             <div id="overviewRarity">
                 <input type="checkbox" name="raritySSR" id="raritySSR"> <label for="raritySSR">SSR</label>
                 <input type="checkbox" name="raritySR" id="raritySR"> <label for="raritySSR">SR</label>
@@ -83,7 +83,7 @@
             
             <br>
             <br>
-            <h4>偶像</h4>
+            <h4>偶像 (logical OR)</h4>
             <div id="overviewIdols">
                 {{#each units}}
                 <input type="checkbox" name={{jap}} id={{jap}} class="unitClass"> <label for={{jap}}>{{use}}</label>
@@ -96,7 +96,7 @@
                 {{/each}}
             </div>
             <br>
-            <h4>Idea Note</h4>
+            <h4>Idea Note (logical OR)</h4>
             <div id="overviewNote">
                 <input type="checkbox" name="noteVocal" id="noteVocal"> <label for="noteVocal">Vocal</label>
                 <input type="checkbox" name="noteDance" id="noteDance"> <label for="noteDance">Dance</label>
@@ -104,27 +104,26 @@
                 <input type="checkbox" name="noteTalk" id="noteTalk"> <label for="noteTalk">Talk</label>
                 <input type="checkbox" name="noteAppeal" id="noteAppeal"> <label for="noteAppeal">Appeal</label>
             </div>
-            <h4>ひらめき</h4>
+            <h4>ひらめき (logical OR)</h4>
             <div id="overviewHira">
                 <input type="checkbox" name="hiramekiVo" id="hiramekiVo"> <label for="hiramekiVo">Vo</label>
                 <input type="checkbox" name="hiramekiDa" id="hiramekiDa"> <label for="hiramekiDa">Da</label>
                 <input type="checkbox" name="hiramekiVi" id="hiramekiVi"> <label for="hiramekiVi">Vi</label>
                 <input type="checkbox" name="hiramekiMe" id="hiramekiMe"> <label for="hiramekiMe">Me</label>
             </div>
-            <h4>SupportSkill</h4>
+            <h4>SupportSkill (logical AND)</h4>
             <div id="thisCardSupSkill">
-                {{#each thisCardSupSkill}}
-                <div id="skillDesc{{@index}}">{{skillName}}</div> 
+                {{#each loop 4}}
                 <select name="mainSkill{{@index}}" id="mainSkill{{@index}}" class="mainSkill">
                     <option value="">--請選擇--</option>
                     {{#each supportSkills @index}}
-                    <option value="{{skillName}}" {{this.selected}}>{{skillName}}</option>
+                    <option value="{{skillName}}">{{skillName}}</option>
                     {{/each}}
                 </select>
-                <select name="subOption{{@index}}" id="subOption{{@index}}" class="subOption">
+                <select name="subOption{{@index}}" id="subOption{{@index}}" class="subOption" disabled>
                     <option value="">--請選擇--</option>
                     {{#each subOptions @index}}
-                    <option value="{{optionabbr}}" {{this.selected}}>{{optionName}}</option>
+                    <option value="{{optionabbr}}">{{optionName}}</option>
                     {{/each}}
                 </select>
                 <br>

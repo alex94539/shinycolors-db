@@ -115,9 +115,40 @@ Meteor.methods({
 		}
 		delete judgedObj.uuidAuth;
 
-		//tendencyJudge.update({cardName: judgedObj.cardName, uuidAuth: judgedObj.uuid}, {$set: {isJudged: true}});
+		tendencyJudge.update({cardName: judgedObj.cardName, uuidAuth: judgedObj.uuid}, {$set: {isJudged: true}});
 
-		//tendency.insert(judgedObj);
+		tendency.insert(judgedObj);
+		return true;
+	},
+	insertSJudgeResultToDB({judgedObj}){
+		try{//檢查送進來的資料的結構
+			true;
+			//check(judgedObj, judgeObjStructure_produce);
+		}
+		catch(error) {
+			if(error){
+				console.log('rejected in tryCatch');
+				return false;
+			}
+			
+		}
+		//檢查tendency不得為空
+		if(!judgedObj.ViTendency && !judgedObj.VoTendency && !judgedObj.DaTendency && !judgedObj.MeTendency){
+			console.log('rejected in tendency check');
+			return false;
+		}
+
+		//檢查uuid
+		const uuidCheck = tendencyJudge.findOne({cardName: judgedObj.cardName, uuidAuth: judgedObj.uuid});
+		if(!uuidCheck){
+			console.log('rejected in uuidCheck');
+			return false;
+		}
+		delete judgedObj.uuidAuth;
+
+		tendencyJudge.update({cardName: judgedObj.cardName, uuidAuth: judgedObj.uuid}, {$set: {isJudged: true}});
+
+		tendency.insert(judgedObj);
 		return true;
 	},
 	produceCardFilterQuery({queryObj, idols}){
@@ -131,5 +162,17 @@ Meteor.methods({
 		}
 		*/
 		return tendency.find({...queryObj, typeProduce: true, $or: idols}).fetch();
-	}
+	},
+	supportCardFilterQuery({queryObj, idols, rarity, idea, hirameki, tendency}){
+		/*
+		try {
+			check(queryObj, filterObjStructure);
+		} catch (error) {
+			if(error){
+				return [];
+			}
+		}
+		*/
+		return tendency.find({...queryObj, typeSupport: true, $and: [{$or: idols}, {$or: rarity}, {$or: idea}, {$or: hirameki}, {$or: tendency}]}).fetch();
+	},
 });
