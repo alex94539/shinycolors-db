@@ -163,7 +163,7 @@ Meteor.methods({
 		*/
 		return tendency.find({...queryObj, typeProduce: true, $or: idols}).fetch();
 	},
-	supportCardFilterQuery({queryObj, idols, rarity, idea, hirameki, tendency}){
+	supportCardFilterQuery({queryObj, queryIdols, queryRarity, queryIdea, queryHirameki, queryTendency}){
 		/*
 		try {
 			check(queryObj, filterObjStructure);
@@ -173,6 +173,7 @@ Meteor.methods({
 			}
 		}
 		*/
-		return tendency.find({...queryObj, typeSupport: true, $and: [{$or: idols}, {$or: rarity}, {$or: idea}, {$or: hirameki}, {$or: tendency}]}).fetch();
+		//console.log(queryObj, idols)
+		return tendency.find({...queryObj, typeSupport: true, $and: [{$or: queryIdols}, {$or: queryRarity}, {$or: queryIdea}, {$or: queryHirameki}, {$or: queryTendency}]}).fetch();
 	},
 });

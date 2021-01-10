@@ -12,29 +12,35 @@ import './idolunit_list.html';
 Template.idolunit_list.onCreated(function () {
 	this.baseData = new ReactiveDict();
 	this.baseData.set('units', []);
-
+	/*
 	if(!localStorage.getItem('units')){
-		Meteor.call('getUnits', [], (err, result) => {
-			this.baseData.set('units', result);
-			localStorage.setItem('units', JSON.stringify(result));
-		});
+		
 	}
 	else{
 		let localUnits = JSON.parse(localStorage.getItem('units'));
 		this.baseData.set('units', localUnits);
 	}
+	*/
+	Meteor.call('getUnits', [], (err, result) => {
+		this.baseData.set('units', result);
+		localStorage.setItem('units', JSON.stringify(result));
+	});
+
+	Meteor.call('getIdols', [], (err, result) => {
+		this.baseData.set('idols', result);
+		localStorage.setItem('idols', JSON.stringify(result));
+	});
+
+	/*
 	
 	if(!localStorage.getItem('idols')){
-		Meteor.call('getIdols', [], (err, result) => {
-			this.baseData.set('idols', result);
-			localStorage.setItem('idols', JSON.stringify(result));
-		});
+		
 	}
 	else{
 		let localIdols = JSON.parse(localStorage.getItem('idols'));
 		this.baseData.set('idols', localIdols);
 	}
-	
+	*/
 });
 
 Template.idolunit_list.helpers({

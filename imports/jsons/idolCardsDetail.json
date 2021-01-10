@@ -11262,7 +11262,7 @@
 			],
 			"40": [
 				{"skillTitle": "Visual45%UP(☆2)", "skillDesc": "[条件:VisualUPが付与されている場合][確率:30%][最大:1回]"},
-				{"skillTitle": "Visua7%UP", "skillDesc": "[条件:Visual担当][確率:30%][最大:1回]"},
+				{"skillTitle": "Visual7%UP", "skillDesc": "[条件:Visual担当][確率:30%][最大:1回]"},
 				{"skillTitle": "Visual21%UP(☆1)", "skillDesc": "[条件:冬優子][確率:30%][最大:1回]"}
 			],
 			"50": [
@@ -11896,7 +11896,7 @@
 				{"skillTitle": "ビジュアルアピールIV", "skillDesc": "Visual2.5倍アピール"}
 			],
 			"40": [
-				{"skillTitle": "Visual35%UP/メンタルダメージ30%上昇(☆2)", "skillDesc": "[条件:1位][確率:30%][最大:1回]"},
+				{"skillTitle": "Visual35%UP/メンタルダメージ30%UP(☆2)", "skillDesc": "[条件:1位][確率:30%][最大:1回]"},
 				{"skillTitle": "Visual6%UP", "skillDesc": "[条件:スター10以上][確率:30%][最大:1回]"},
 				{"skillTitle": "Visual18%UP(☆1)", "skillDesc": "[条件:Visual担当][確率:30%][最大:1回]"}
 			],
@@ -14553,7 +14553,7 @@
 		"panel": {
 			"20": [{"skillTitle": "Visual5%UP", "skillDesc": "[条件:智代子][確率:10%][最大:1回]"}],
 			"30": [
-				{"skillTitle": "Visua5%UP", "skillDesc": "[条件:メンタル75%以上][確率:20%][最大:1回]"},
+				{"skillTitle": "Visual5%UP", "skillDesc": "[条件:メンタル75%以上][確率:20%][最大:1回]"},
 				{"skillTitle": "ビジュアルアピールⅢ", "skillDesc": "Visual2倍アピール"}
 			],
 			"40": [

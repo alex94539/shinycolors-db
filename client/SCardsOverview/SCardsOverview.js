@@ -168,10 +168,10 @@ Template.SCardsOverview.events({
             });
         }
 
-        console.log(formObj, queryIdolArr, queryRarityArr, queryIdeaArr, queryHiramekiArr);
+        console.log(formObj, queryIdolArr, queryRarityArr, queryIdeaArr, queryHiramekiArr, queryTendencyArr);
 
 
-        Meteor.call('supportCardFilterQuery', {queryObj: formObj, idols: queryIdolArr, rarity: queryRarityArr, idea: queryIdeaArr, hirameki: queryHiramekiArr, tendency: queryTendencyArr}, (err, result) => {
+        Meteor.call('supportCardFilterQuery', {queryObj: formObj, queryIdols: queryIdolArr, queryRarity: queryRarityArr, queryIdea: queryIdeaArr, queryHirameki: queryHiramekiArr, queryTendency: queryTendencyArr}, (err, result) => {
             if(!result.length){
                 alert('查無結果');
                 return;
