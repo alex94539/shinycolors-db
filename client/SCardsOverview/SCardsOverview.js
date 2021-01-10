@@ -12,9 +12,9 @@ const rarityArr = ['raritySSR', 'raritySR', 'rarityR', 'rarityN'];
 const ideaArr = ['noteVocal', 'noteDance', 'noteVisual', 'noteTalk', 'noteAppeal'];
 const hiramekiArr = ['hiramekiVo', 'hiramekiDa', 'hiramekiVi', 'hiramekiMe'];
 
-Template.SCardsOverview.onCreated(function(){
+Template.SCardsOverview.onCreated(function () {
     this.currentFilterResult = new ReactiveVar([]);
-	this.baseData = new ReactiveDict();
+    this.baseData = new ReactiveDict();
     this.checkStatus = new ReactiveDict();
     this.resultIsNull = new ReactiveVar(false);
     this.supportSkill = new ReactiveVar(supportSkill);
@@ -23,64 +23,68 @@ Template.SCardsOverview.onCreated(function(){
         this.currentFilterResult.set(result);
     });
     */
-    if(!localStorage.getItem('units')){
-		Meteor.call('getUnits', [], (err, result) => {
-			this.baseData.set('units', result);
-			localStorage.setItem('units', JSON.stringify(result));
-		});
-	}
-	else{
-		let localUnits = JSON.parse(localStorage.getItem('units'));
-		this.baseData.set('units', localUnits);
-	}
-	
-	if(!localStorage.getItem('idols')){
-		Meteor.call('getIdols', [], (err, result) => {
-			this.baseData.set('idols', result);
-			localStorage.setItem('idols', JSON.stringify(result));
-		});
-	}
-	else{
-		let localIdols = JSON.parse(localStorage.getItem('idols'));
-		this.baseData.set('idols', localIdols);
-	}
+    Meteor.call('getIdols', [], (err, result) => {
+        this.baseData.set('idols', result);
+        localStorage.setItem('idols', JSON.stringify(result));
+    });
+    Meteor.call('getUnits', [], (err, result) => {
+        this.baseData.set('units', result);
+        localStorage.setItem('units', JSON.stringify(result));
+    });
+    /*
+    if (!localStorage.getItem('units')) {
+
+    }
+    else {
+        let localUnits = JSON.parse(localStorage.getItem('units'));
+        this.baseData.set('units', localUnits);
+    }
+
+    if (!localStorage.getItem('idols')) {
+
+    }
+    else {
+        let localIdols = JSON.parse(localStorage.getItem('idols'));
+        this.baseData.set('idols', localIdols);
+    }
+    */
 });
 
 Template.SCardsOverview.helpers({
-    thisFilterResult: function(){
+    thisFilterResult: function () {
         return Template.instance().currentFilterResult.get();
     },
-    thisResultType: function(){
-        if(this.typeProduce){
+    thisResultType: function () {
+        if (this.typeProduce) {
             return 'PCardDetail';
         }
-        else if(this.typeSupport){
+        else if (this.typeSupport) {
             return 'SCardDetail';
         }
         return;
     },
-    thisResultLink: function(){
+    thisResultLink: function () {
         return Base64.encodeURI(this.cardName);
     },
-    units: function(){
+    units: function () {
         return Template.instance().baseData.get('units');
     },
-    idols: function(){
+    idols: function () {
         return Template.instance().baseData.get('idols').filter(idol => this.use === idol.unit);
     },
-    supportSkills: function() {
+    supportSkills: function () {
         return Template.instance().supportSkill.get()?.mainSkill ?? [];
     },
-    subOptions: function(){
+    subOptions: function () {
         return Template.instance().supportSkill.get()?.subOption ?? [];
     },
-    loop: function(){
-        return [{},{},{},{}]
+    loop: function () {
+        return [{}, {}, {}, {}]
     }
 });
 
 Template.SCardsOverview.events({
-    'submit #thisFilterForm'(event, instance){
+    'submit #thisFilterForm'(event, instance) {
         event.preventDefault();
 
         let formObj = {};
@@ -91,7 +95,7 @@ Template.SCardsOverview.events({
             queryTendencyArr = new Array();
 
         instance.findAll('input:checkbox').forEach(element => {
-            if(element.checked){
+            if (element.checked) {
                 formObj[element.id] = element.checked;
             }
         });
@@ -100,9 +104,9 @@ Template.SCardsOverview.events({
             delete formObj[element.jap];
         });
         instance.baseData.get('idols').forEach(element => {
-            if(element.name in formObj){
+            if (element.name in formObj) {
                 delete formObj[element.name];
-                queryIdolArr.push({idol: element.name});
+                queryIdolArr.push({ idol: element.name });
             }
         });
 
@@ -115,24 +119,24 @@ Template.SCardsOverview.events({
         generateOrArr(hiramekiArr, formObj, queryHiramekiArr);
 
 
-        for(let k = 0; k < 4; k++){
+        for (let k = 0; k < 4; k++) {
             let thisSkill = instance.find(`#mainSkill${k}`).value;
             let subOption = instance.find(`#subOption${k}`).value;
 
-            if(!thisSkill){
+            if (!thisSkill) {
                 continue;
             }
 
             formObj[`support${thisSkill + subOption}`] = true;
         }
 
-        if(!queryIdolArr.length){
+        if (!queryIdolArr.length) {
             instance.baseData.get('idols').forEach(element => {
-                queryIdolArr.push({idol: element.name});
+                queryIdolArr.push({ idol: element.name });
             });
         }
 
-        if(!queryTendencyArr.length) {
+        if (!queryTendencyArr.length) {
             tendency.forEach(element => {
                 let temp = new Object();
                 temp[element] = true;
@@ -141,7 +145,7 @@ Template.SCardsOverview.events({
             })
         }
 
-        if(!queryRarityArr.length){
+        if (!queryRarityArr.length) {
             rarityArr.forEach(element => {
                 let temp = new Object();
                 temp[element] = true;
@@ -150,7 +154,7 @@ Template.SCardsOverview.events({
             });
         }
 
-        if(!queryIdeaArr.length){
+        if (!queryIdeaArr.length) {
             ideaArr.forEach(element => {
                 let temp = new Object();
                 temp[element] = true;
@@ -159,7 +163,7 @@ Template.SCardsOverview.events({
             });
         }
 
-        if(!queryHiramekiArr.length){
+        if (!queryHiramekiArr.length) {
             hiramekiArr.forEach(element => {
                 let temp = new Object();
                 temp[element] = true;
@@ -171,42 +175,42 @@ Template.SCardsOverview.events({
         console.log(formObj, queryIdolArr, queryRarityArr, queryIdeaArr, queryHiramekiArr, queryTendencyArr);
 
 
-        Meteor.call('supportCardFilterQuery', {queryObj: formObj, queryIdols: queryIdolArr, queryRarity: queryRarityArr, queryIdea: queryIdeaArr, queryHirameki: queryHiramekiArr, queryTendency: queryTendencyArr}, (err, result) => {
-            if(!result.length){
+        Meteor.call('supportCardFilterQuery', { queryObj: formObj, queryIdols: queryIdolArr, queryRarity: queryRarityArr, queryIdea: queryIdeaArr, queryHirameki: queryHiramekiArr, queryTendency: queryTendencyArr }, (err, result) => {
+            if (!result.length) {
                 alert('查無結果');
                 return;
             }
-            
+
             instance.currentFilterResult.set(result);
 
             instance.find('#thisFilterForm').style.display = 'none';
             instance.find('#thisFilterCards').style.display = 'block';
         });
-        
+
     },
-    'click .unitClass'(event, instance){
+    'click .unitClass'(event, instance) {
         let toCheck = instance.baseData.get('idols').filter(idol => this.use === idol.unit);
         //console.log(toCheck);
-        if(!instance.checkStatus.get(this.use)){
+        if (!instance.checkStatus.get(this.use)) {
             toCheck.forEach(element => {
                 instance.find(`#${element.name}`).checked = true;
             });
             instance.checkStatus.set(this.use, true);
         }
-        else{
+        else {
             toCheck.forEach(element => {
                 instance.find(`#${element.name}`).checked = false;
             });
             instance.checkStatus.set(this.use, false);
         }
-        
+
     },
-    'click #resetForm'(event, instance){
+    'click #resetForm'(event, instance) {
         instance.findAll('input:checkbox').forEach(element => {
             element.checked = false;
         });
 
-        for(let k = 0; k < 4; k++){
+        for (let k = 0; k < 4; k++) {
             let thisSkill = instance.find(`#mainSkill${k}`);
             let subOption = instance.find(`#subOption${k}`);
 
@@ -215,7 +219,7 @@ Template.SCardsOverview.events({
             subOption.disabled = true;
         }
     },
-    'click #newQuery'(event, instance){
+    'click #newQuery'(event, instance) {
         instance.currentFilterResult.set([]);
         instance.findAll('input:checkbox').forEach(element => {
             element.checked = false;
@@ -224,32 +228,32 @@ Template.SCardsOverview.events({
         instance.find('#thisFilterForm').style.display = 'block';
         instance.find('#thisFilterCards').style.display = 'none';
     },
-    'change .mainSkill'(event, instance){
+    'change .mainSkill'(event, instance) {
         event.preventDefault();
         //console.log(event)
         toggleDisabled(instance, event.target.value, event.currentTarget.id)
     }
 });
 
-function toggleDisabled(instance, option, elementID){
+function toggleDisabled(instance, option, elementID) {
     supportSkill.mainSkill.forEach(element => {
-        if(option.match(element.skillName)){
+        if (option.match(element.skillName)) {
             let toChange = elementID.replace(/mainSkill/, 'subOption');
             //console.log(toChange, element)
-            if(element.type == 'noOption'){
+            if (element.type == 'noOption') {
                 instance.find(`#${toChange}`).disabled = true;
                 instance.find(`#${toChange}`).selectedIndex = 0;
             }
-            else{
+            else {
                 instance.find(`#${toChange}`).disabled = false;
             }
         }
     })
 }
 
-function generateOrArr(arr, formObj, orArr){
+function generateOrArr(arr, formObj, orArr) {
     arr.forEach(element => {
-        if(element in formObj){
+        if (element in formObj) {
             delete formObj[element];
             let temp = new Object();
             temp[element] = true;

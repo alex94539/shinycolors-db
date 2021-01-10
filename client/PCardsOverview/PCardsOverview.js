@@ -16,11 +16,17 @@ Template.PCardsOverview.onCreated(function(){
     Meteor.call('produceCardFilterQuery', {queryObj: {}}, (err, result) => {
         this.currentFilterResult.set(result);
     });
+    Meteor.call('getUnits', [], (err, result) => {
+        this.baseData.set('units', result);
+        localStorage.setItem('units', JSON.stringify(result));
+    });
+    Meteor.call('getIdols', [], (err, result) => {
+        this.baseData.set('idols', result);
+        localStorage.setItem('idols', JSON.stringify(result));
+    });
+    /*
     if(!localStorage.getItem('units')){
-		Meteor.call('getUnits', [], (err, result) => {
-			this.baseData.set('units', result);
-			localStorage.setItem('units', JSON.stringify(result));
-		});
+		
 	}
 	else{
 		let localUnits = JSON.parse(localStorage.getItem('units'));
@@ -28,15 +34,13 @@ Template.PCardsOverview.onCreated(function(){
 	}
 	
 	if(!localStorage.getItem('idols')){
-		Meteor.call('getIdols', [], (err, result) => {
-			this.baseData.set('idols', result);
-			localStorage.setItem('idols', JSON.stringify(result));
-		});
+		
 	}
 	else{
 		let localIdols = JSON.parse(localStorage.getItem('idols'));
 		this.baseData.set('idols', localIdols);
-	}
+    }
+    */
 });
 
 Template.PCardsOverview.helpers({
